@@ -1,7 +1,7 @@
 name: scatesdk_flutter
 description: "Scate SDK is made for developers to integrate Scate's services into their apps. Please visit https://www.scate.io for more information."
-version: 0.0.1
-homepage: https://github.com/scateio/scatesdk_flutter.git
+version: 0.2.0
+homepage: https://github.com/scate-io/scatesdk_flutter.git
 
 environment:
   sdk: '>=3.3.1 <4.0.0'
