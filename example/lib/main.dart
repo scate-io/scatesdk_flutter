@@ -16,7 +16,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  
   @override
   void initState() {
     super.initState();
@@ -25,12 +24,22 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-   
-
-    ScateSDK.Init("test_appID");
+    ScateSDK.Init("uw2YK");
     ScateSDK.SetAdid("test_adid");
     ScateSDK.Event("test_event");
     ScateSDK.EventWithValue("test_event", "test_value");
+
+    var localConfig = await ScateSDK.GetRemoteConfig('test', 'default');
+    print('Local: $localConfig');
+
+    ScateSDK.AddListener(ScateEvents.REMOTE_CONFIG_READY, (event) async {
+      print(event);
+      var remoteConfig = await ScateSDK.GetRemoteConfig('test', 'default');
+      print('Remote: $remoteConfig');
+    });
+
+    //ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY, '1');
+    //ScateSDK.ClearListeners(ScateEvents.REMOTE_CONFIG_READY);
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling

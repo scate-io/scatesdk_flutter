@@ -72,3 +72,28 @@ ScateSDK.EventWithValue("button_clicked", "subscribe_btn");
 
 ```
 
+### Get Remote Config for Key
+
+```dart
+
+ScateSDK.GetRemoteConfig('key', 'defaultValue');
+
+```
+
+### Add Listener
+
+```dart
+ScateSDK.AddListener(ScateEvents.REMOTE_CONFIG_READY, (event) => {});
+```
+
+### Remove Listener
+
+```dart
+ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY, "id"); //Listener id
+```
+
+### Clean Listeners
+
+```dart
+ScateSDK.CleanListeners(ScateEvents.REMOTE_CONFIG_READY);
+```
