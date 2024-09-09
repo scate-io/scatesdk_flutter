@@ -15,6 +15,8 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
   /// Defaults to [MethodChannelScatesdkFlutter].
   static ScatesdkFlutterPlatform get instance => _instance;
 
+  Stream<String> get eventsStream;
+
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [ScatesdkFlutterPlatform] when
   /// they register themselves.
@@ -39,4 +41,15 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     _instance.EventWithValue(name, value);
   }
 
+  Future<String?> GetRemoteConfig(String key, String defaultValue) async {
+    _instance.GetRemoteConfig(key, defaultValue);
+  }
+
+  Future<void> AddListener(String name) async {
+    _instance.AddListener(name);
+  }
+
+  Future<void> RemoveListener(String name) async {
+    _instance.RemoveListener(name);
+  }
 }
