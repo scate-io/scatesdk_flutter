@@ -1,3 +1,6 @@
+## 0.2.1
+* Android package name bug fixed
+
 ## 0.2.0
 
 * ATT request is removed from iOS SDK
