@@ -14,7 +14,7 @@ extension ScateEventsExtension on ScateEvents {
 }
 
 class ScateSDK {
-  static final Map<String, Map<String, Function>> _listeners = {};
+  static final Map<String, Function> _listeners = {};
 
   static Future<void> Init(String appID) {
     return ScatesdkFlutterPlatform.instance.Init(appID);
@@ -38,31 +38,23 @@ class ScateSDK {
         .GetRemoteConfig(key, defaultValue);
   }
 
-  static String AddListener(ScateEvents eventType, Function listener) {
+  static void AddListener(ScateEvents eventType, Function listener) {
     var name = eventType.name;
-    final listenerId = DateTime.now().millisecondsSinceEpoch.toString();
 
     if (!_listeners.containsKey(name)) {
-      _listeners[name] = {};
+      _listeners[name] = listener;
       ScatesdkFlutterPlatform.instance.AddListener(name);
       ScatesdkFlutterPlatform.instance.eventsStream.listen((event) {
         HandleEvent(name, event);
       });
     }
-
-    _listeners[name]![listenerId] = listener;
-    return listenerId;
   }
 
-  static void RemoveListener(ScateEvents eventType, String listenerId) {
+  static void RemoveListener(ScateEvents eventType) {
     var name = eventType.name;
-    final listeners = _listeners[name];
-    if (listeners != null) {
-      listeners.remove(listenerId);
-      if (listeners.isEmpty) {
-        _listeners.remove(name);
-        ScatesdkFlutterPlatform.instance.RemoveListener(name);
-      }
+    if (_listeners.containsKey(name)) {
+      _listeners.remove(name);
+      ScatesdkFlutterPlatform.instance.RemoveListener(name);
     }
   }
 
@@ -73,11 +65,9 @@ class ScateSDK {
   }
 
   static void HandleEvent(String name, dynamic event) {
-    final listeners = _listeners[name];
-    if (listeners != null) {
-      listeners.values.toList().forEach((listener) {
-        listener(event);
-      });
+    final listener = _listeners[name];
+    if (listener != null) {
+      listener(event);
     }
   }
 }

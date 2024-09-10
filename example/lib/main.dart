@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
       print('Remote: $remoteConfig');
     });
 
-    //ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY, '1');
+    //ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY);
     //ScateSDK.ClearListeners(ScateEvents.REMOTE_CONFIG_READY);
 
     // If the widget was removed from the tree while the asynchronous platform
