@@ -1,0 +1,57 @@
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - "v*" # Triggers the workflow on any tag that starts with 'v'
+
+jobs:
+  publish:
+    runs-on: macos-latest # Use macOS as the runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }} # Use the repository's GITHUB_TOKEN to authenticate
+          fetch-depth: 0
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "stable"
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Check out the default branch
+        run: git checkout main
+
+      - name: Update version
+        run: |
+          sed -i '' "s/^version:.*/version: $VERSION/" pubspec.yaml
+          sed -i '' "s/^\([[:space:]]*\)scatesdk_flutter:.*/\1scatesdk_flutter: ^$VERSION/" README.md
+
+      - name: Commit version changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add pubspec.yaml
+          git add README.md
+          git commit -m "chore: update version to $VERSION from tag"
+          git push origin main
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Test the package
+        run: flutter test
+
+      - name: Validate the package
+        run: flutter pub publish --dry-run
+
+      - name: Publish the package
+        run: flutter pub publish --force
+        env:
+          PUB_DEV_CREDENTIALS: ${{ secrets.PUB_DEV_CREDENTIALS }}
