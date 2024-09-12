@@ -16,6 +16,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  String _remoteConfigValue = 'Loading...';
+
   @override
   void initState() {
     super.initState();
@@ -30,12 +32,20 @@ class _MyAppState extends State<MyApp> {
     ScateSDK.EventWithValue("test_event", "test_value");
 
     var localConfig = await ScateSDK.GetRemoteConfig('test', 'default');
-    print('Local: $localConfig');
+    setState(() {
+      _remoteConfigValue = 'Local -> ' + (localConfig ?? 'not found');
+    });
 
     ScateSDK.AddListener(ScateEvents.REMOTE_CONFIG_READY, (success) async {
       print('Remote Fetched: $success');
       var remoteConfig = await ScateSDK.GetRemoteConfig('test', 'default');
-      print('Remote: $remoteConfig');
+
+       setState(() {
+        _remoteConfigValue = 'Remote -> ' +
+            (remoteConfig ?? 'not found') +
+            '\n success -> ' +
+            success.toString(); // Convert boolean to string
+      });
     });
 
     //ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY);
@@ -55,7 +65,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('ScateSDK example app'),
         ),
         body: Center(
-          child: Text('Running \n'),
+          child: Text(_remoteConfigValue + '\n'),
         ),
       ),
     );
