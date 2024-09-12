@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish:
-    runs-on: macos-latest # Use macOS as the runner
+    runs-on: ubuntu-latest # Use macOS as the runner
 
     steps:
       - name: Checkout repository
@@ -30,8 +30,8 @@ jobs:
 
       - name: Update version
         run: |
-          sed -i '' "s/^version:.*/version: $VERSION/" pubspec.yaml
-          sed -i '' "s/^\([[:space:]]*\)scatesdk_flutter:.*/\1scatesdk_flutter: ^$VERSION/" README.md
+          sed -i "s/^version:.*/version: $VERSION/" pubspec.yaml
+          sed -i "s/^\([[:space:]]*\)scatesdk_flutter:.*/\1scatesdk_flutter: ^$VERSION/" README.md
 
       - name: Commit version changes
         run: |
