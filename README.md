@@ -89,7 +89,7 @@ ScateSDK.AddListener(ScateEvents.REMOTE_CONFIG_READY, (event) => {});
 ### Remove Listener
 
 ```dart
-ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY, "id"); //Listener id
+ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY);
 ```
 
 ### Clean Listeners
