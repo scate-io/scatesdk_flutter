@@ -16,7 +16,7 @@ Add the following into your `pubspec.yaml` file;
 
 ```yaml
 dependencies:
-  scatesdk_flutter: ^0.2.1
+  scatesdk_flutter: ^0.3.3
 ```
 
 ## Usage
