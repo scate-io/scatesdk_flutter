@@ -50,6 +50,13 @@ jobs:
       - name: Validate the package
         run: flutter pub publish --dry-run
 
+      - name: pub.dev authenticate
+        run: |
+          mkdir -p $HOME/.config/dart
+          cat <<EOF > $HOME/.config/dart/pub-credentials.json
+          ${{ secrets.PUB_DEV_CREDENTIALS }}
+          EOF
+
       - name: Publish the package
         run: flutter pub publish --force
         env:
