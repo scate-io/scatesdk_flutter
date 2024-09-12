@@ -32,8 +32,8 @@ class _MyAppState extends State<MyApp> {
     var localConfig = await ScateSDK.GetRemoteConfig('test', 'default');
     print('Local: $localConfig');
 
-    ScateSDK.AddListener(ScateEvents.REMOTE_CONFIG_READY, (event) async {
-      print(event);
+    ScateSDK.AddListener(ScateEvents.REMOTE_CONFIG_READY, (success) async {
+      print('Remote Fetched: $success');
       var remoteConfig = await ScateSDK.GetRemoteConfig('test', 'default');
       print('Remote: $remoteConfig');
     });

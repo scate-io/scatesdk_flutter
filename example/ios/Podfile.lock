@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  integration_test: 13825b8a9334a850581300559b8839134b124670
+  integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
   ScateSDK: 6d8b12ddd3f189d881aa0817133fd722aa0215ed
   scatesdk_flutter: e691c6d4f2fc91cd1e3aae64c182221278b1b10e
 

@@ -104,7 +104,7 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
 
         // Event data (success status)
         val data = mutableMapOf<String, Any>()
-        data["success"] = success
+        data["remoteConfigFetched"] = success
         event["data"] = data
 
         try {

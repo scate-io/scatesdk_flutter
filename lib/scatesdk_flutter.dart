@@ -1,4 +1,5 @@
 import 'scatesdk_flutter_platform_interface.dart';
+import 'dart:convert';
 
 enum ScateEvents {
   REMOTE_CONFIG_READY,
@@ -67,7 +68,19 @@ class ScateSDK {
   static void HandleEvent(String name, dynamic event) {
     final listener = _listeners[name];
     if (listener != null) {
-      listener(event);
+      try {
+        // Assuming the event is a JSON string, parse it into a map.
+        final Map<String, dynamic> parsedEvent = jsonDecode(event);
+
+        // Access the `data` field and then `remoteConfigFetched`.
+        final remoteConfigFetched = parsedEvent['data']?['remoteConfigFetched'];
+
+        // Pass the extracted value to the listener.
+        listener(remoteConfigFetched);
+      } catch (e) {
+        // Handle the case where parsing or accessing fields fails.
+        print("Error parsing event: $e");
+      }
     }
   }
 }
