@@ -30,26 +30,26 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
   }
 
   Future<void> SetAdid(String adid) async {
-    _instance.SetAdid(adid);
+    return _instance.SetAdid(adid);
   }
 
   Future<void> Event(String name) async {
-    _instance.Event(name);
+    return _instance.Event(name);
   }
 
   Future<void> EventWithValue(String name, String value) async {
-    _instance.EventWithValue(name, value);
+    return _instance.EventWithValue(name, value);
   }
 
   Future<String?> GetRemoteConfig(String key, String defaultValue) async {
-    _instance.GetRemoteConfig(key, defaultValue);
+    return _instance.GetRemoteConfig(key, defaultValue);
   }
 
   Future<void> AddListener(String name) async {
-    _instance.AddListener(name);
+    return _instance.AddListener(name);
   }
 
   Future<void> RemoveListener(String name) async {
-    _instance.RemoveListener(name);
+    return _instance.RemoveListener(name);
   }
 }

@@ -1,3 +1,7 @@
+## 0.3.5
+* Remote config feature added
+* new Android SDK 
+
 ## 0.2.1
 * Android package name bug fixed
 
