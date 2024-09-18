@@ -19,6 +19,21 @@ dependencies:
   scatesdk_flutter: ^0.3.6
 ```
 
+## Android Integration
+
+To ensure that the ScateSDK works properly on Android, you need to add the Maven repository to your build.gradle file.
+
+In your project's android/build.gradle file, add the following Maven repository:
+
+```
+repositories {
+        // Other repositories
+        maven {
+            url "https://europe-west1-maven.pkg.dev/mavenrepo-433814/scatecoresdk-android"
+        }
+    }
+```   
+
 ## Usage
 
 ### Initialize the SDK
