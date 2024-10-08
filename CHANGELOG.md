@@ -1,5 +1,5 @@
-## 0.3.7
-* App Icon Fix
+## 0.3.9
+* App icon Fix
 
 ## 0.3.6
 * Remote config feature added
