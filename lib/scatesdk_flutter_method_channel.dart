@@ -276,15 +276,6 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
-  Future<void> PaywallGranted(String paywall) async {
-    try {
-      await methodChannel.invokeMethod('PaywallGranted', {'paywall': paywall});
-    } on PlatformException catch (e) {
-      print("Failed to call PaywallShown: ${e.message}");
-    }
-  }
-
-  @override
   Future<void> PaywallAttempted(String paywall) async {
     try {
       await methodChannel

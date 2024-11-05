@@ -161,10 +161,6 @@ class ScateSDK {
     ScatesdkFlutterPlatform.instance.PaywallClosed(paywall);
   }
 
-  static void PaywallGranted(String paywall) {
-    ScatesdkFlutterPlatform.instance.PaywallGranted(paywall);
-  }
-
   static void PaywallAttempted(String paywall) {
     ScatesdkFlutterPlatform.instance.PaywallAttempted(paywall);
   }

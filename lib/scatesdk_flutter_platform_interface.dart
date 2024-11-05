@@ -129,10 +129,6 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.PaywallClosed(paywall);
   }
 
-  Future<void> PaywallGranted(String paywall) async {
-    return _instance.PaywallGranted(paywall);
-  }
-
   Future<void> PaywallAttempted(String paywall) async {
     return _instance.PaywallAttempted(paywall);
   }
