@@ -112,3 +112,73 @@ ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY);
 ```dart
 ScateSDK.CleanListeners(ScateEvents.REMOTE_CONFIG_READY);
 ```
+
+### Onboarding Event Functions
+
+```dart
+ScateSDK.OnboardingStart();
+ScateSDK.OnboardingStep("location_screen");
+ScateSDK.OnboardingStep("notification_screen");
+ScateSDK.OnboardingStep("personalization_screen");
+ScateSDK.OnboardingStep("journey_screen");
+ScateSDK.OnboardingStep("intro_paywall_screen");
+ScateSDK.OnboardingStep("fullscreen_ad");
+ScateSDK.OnboardingFinish();
+```
+
+### Login Event Functions
+
+```dart
+ScateSDK.LoginSuccess("apple");
+ScateSDK.LoginSuccess("email");
+ScateSDK.LoginSuccess("fb");
+ScateSDK.LoginSuccess("google");
+```
+
+### Ad Event Functions
+
+```dart
+ScateSDK.InterstitialAdShown();
+ScateSDK.InterstitialAdClosed();
+ScateSDK.RewardedAdShown();
+ScateSDK.RewardedAdClosed();
+ScateSDK.RewardedAdClaimed();
+ScateSDK.BannerAdShown();
+```
+
+### Permission Event Functions
+
+```dart
+ScateSDK.NotificationPermissionGranted();
+ScateSDK.NotificationPermissionDenied();
+ScateSDK.LocationPermissionGranted();
+ScateSDK.LocationPermissionDenied();
+ScateSDK.ATTPromptShown();
+ScateSDK.ATTPermissionGranted();
+ScateSDK.ATTPermissionDenied();
+```
+
+### Paywall Event Functions
+
+```dart
+ScateSDK.PaywallShown("paywall_name");
+ScateSDK.PaywallClosed("paywall_name");
+ScateSDK.PaywallAttempted("paywall_name");
+ScateSDK.PaywallPurchased("paywall_name");
+ScateSDK.PaywallCancelled("paywall_name");
+```
+
+### Tab And Feature Event Functions
+
+```dart
+ScateSDK.TabClicked("x");
+ScateSDK.FeatureClicked("x");
+```
+
+### Daily Streak Event Functions
+
+```dart
+ScateSDK.DailyStreakShown();
+ScateSDK.DailyStreakClaimed();
+ScateSDK.DailyStreakClosed();
+```

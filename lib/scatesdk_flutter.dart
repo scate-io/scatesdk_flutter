@@ -83,4 +83,117 @@ class ScateSDK {
       }
     }
   }
+
+  //Event functions
+  static void OnboardingStart() {
+    ScatesdkFlutterPlatform.instance.OnboardingStart();
+  }
+
+  static void OnboardingStep(String step) {
+    ScatesdkFlutterPlatform.instance.OnboardingStep(step);
+  }
+
+  static void OnboardingFinish() {
+    ScatesdkFlutterPlatform.instance.OnboardingFinish();
+  }
+
+  static void LoginSuccess(String source) {
+    ScatesdkFlutterPlatform.instance.LoginSuccess(source);
+  }
+
+  static void InterstitialAdShown() {
+    ScatesdkFlutterPlatform.instance.InterstitialAdShown();
+  }
+
+  static void InterstitialAdClosed() {
+    ScatesdkFlutterPlatform.instance.InterstitialAdClosed();
+  }
+
+  static void RewardedAdShown() {
+    ScatesdkFlutterPlatform.instance.RewardedAdShown();
+  }
+
+  static void RewardedAdClosed() {
+    ScatesdkFlutterPlatform.instance.RewardedAdClosed();
+  }
+
+  static void RewardedAdClaimed() {
+    ScatesdkFlutterPlatform.instance.RewardedAdClaimed();
+  }
+
+  static void BannerAdShown() {
+    ScatesdkFlutterPlatform.instance.BannerAdShown();
+  }
+
+  static void NotificationPermissionGranted() {
+    ScatesdkFlutterPlatform.instance.NotificationPermissionGranted();
+  }
+
+  static void NotificationPermissionDenied() {
+    ScatesdkFlutterPlatform.instance.NotificationPermissionDenied();
+  }
+
+  static void LocationPermissionGranted() {
+    ScatesdkFlutterPlatform.instance.LocationPermissionGranted();
+  }
+
+  static void LocationPermissionDenied() {
+    ScatesdkFlutterPlatform.instance.LocationPermissionDenied();
+  }
+
+  static void ATTPromptShown() {
+    ScatesdkFlutterPlatform.instance.ATTPromptShown();
+  }
+
+  static void ATTPermissionGranted() {
+    ScatesdkFlutterPlatform.instance.ATTPermissionGranted();
+  }
+
+  static void ATTPermissionDenied() {
+    ScatesdkFlutterPlatform.instance.ATTPermissionDenied();
+  }
+
+  static void PaywallShown(String paywall) {
+    ScatesdkFlutterPlatform.instance.PaywallShown(paywall);
+  }
+
+  static void PaywallClosed(String paywall) {
+    ScatesdkFlutterPlatform.instance.PaywallClosed(paywall);
+  }
+
+  static void PaywallGranted(String paywall) {
+    ScatesdkFlutterPlatform.instance.PaywallGranted(paywall);
+  }
+
+  static void PaywallAttempted(String paywall) {
+    ScatesdkFlutterPlatform.instance.PaywallAttempted(paywall);
+  }
+
+  static void PaywallPurchased(String paywall) {
+    ScatesdkFlutterPlatform.instance.PaywallPurchased(paywall);
+  }
+
+  static void PaywallCancelled(String paywall) {
+    ScatesdkFlutterPlatform.instance.PaywallCancelled(paywall);
+  }
+
+  static void TabClicked(String tab) {
+    ScatesdkFlutterPlatform.instance.TabClicked(tab);
+  }
+
+  static void FeatureClicked(String feature) {
+    ScatesdkFlutterPlatform.instance.FeatureClicked(feature);
+  }
+
+  static void DailyStreakShown() {
+    ScatesdkFlutterPlatform.instance.DailyStreakShown();
+  }
+
+  static void DailyStreakClaimed() {
+    ScatesdkFlutterPlatform.instance.DailyStreakClaimed();
+  }
+
+  static void DailyStreakClosed() {
+    ScatesdkFlutterPlatform.instance.DailyStreakClosed();
+  }
 }

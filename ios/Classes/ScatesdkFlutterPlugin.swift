@@ -75,6 +75,159 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             }
             removeListener(name)
             result(nil)
+        case "OnboardingStart":
+            ScateCoreSDK.OnboardingStart()
+            result(nil)
+            
+        case "OnboardingStep":
+            guard let args = call.arguments as? [String: Any],
+                  let step = args["step"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing step", details: nil))
+                return
+            }
+            ScateCoreSDK.OnboardingStep(step: step)
+            result(nil)
+            
+        case "OnboardingFinish":
+            ScateCoreSDK.OnboardingFinish()
+            result(nil)
+            
+        case "LoginSuccess":
+            guard let args = call.arguments as? [String: Any],
+                  let source = args["source"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing source", details: nil))
+                return
+            }
+            ScateCoreSDK.LoginSuccess(source: source)
+            result(nil)
+            
+        case "InterstitialAdShown":
+            ScateCoreSDK.InterstitialAdShown()
+            result(nil)
+            
+        case "InterstitialAdClosed":
+            ScateCoreSDK.InterstitialAdClosed()
+            result(nil)
+            
+        case "RewardedAdShown":
+            ScateCoreSDK.RewardedAdShown()
+            result(nil)
+            
+        case "RewardedAdClosed":
+            ScateCoreSDK.RewardedAdClosed()
+            result(nil)
+            
+        case "RewardedAdClaimed":
+            ScateCoreSDK.RewardedAdClaimed()
+            result(nil)
+            
+        case "BannerAdShown":
+            ScateCoreSDK.BannerAdShown()
+            result(nil)
+            
+        case "NotificationPermissionGranted":
+            ScateCoreSDK.NotificationPermissionGranted()
+            result(nil)
+            
+        case "NotificationPermissionDenied":
+            ScateCoreSDK.NotificationPermissionDenied()
+            result(nil)
+            
+        case "LocationPermissionGranted":
+            ScateCoreSDK.LocationPermissionGranted()
+            result(nil)
+            
+        case "LocationPermissionDenied":
+            ScateCoreSDK.LocationPermissionDenied()
+            result(nil)
+            
+        case "ATTPromptShown":
+            ScateCoreSDK.ATTPromptShown()
+            result(nil)
+            
+        case "ATTPermissionGranted":
+            ScateCoreSDK.ATTPermissionGranted()
+            result(nil)
+            
+        case "ATTPermissionDenied":
+            ScateCoreSDK.ATTPermissionDenied()
+            result(nil)
+            
+        case "PaywallShown":
+            guard let args = call.arguments as? [String: Any],
+                  let paywall = args["paywall"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing paywall", details: nil))
+                return
+            }
+            ScateCoreSDK.PaywallShown(paywall: paywall)
+            result(nil)
+            
+        case "PaywallClosed":
+            guard let args = call.arguments as? [String: Any],
+                  let paywall = args["paywall"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing paywall", details: nil))
+                return
+            }
+            ScateCoreSDK.PaywallClosed(paywall: paywall)
+            result(nil)
+            
+        case "PaywallAttempted":
+            guard let args = call.arguments as? [String: Any],
+                  let paywall = args["paywall"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing paywall", details: nil))
+                return
+            }
+            ScateCoreSDK.PaywallAttempted(paywall: paywall)
+            result(nil)
+            
+        case "PaywallPurchased":
+            guard let args = call.arguments as? [String: Any],
+                  let paywall = args["paywall"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing paywall", details: nil))
+                return
+            }
+            ScateCoreSDK.PaywallPurchased(paywall: paywall)
+            result(nil)
+            
+        case "PaywallCancelled":
+            guard let args = call.arguments as? [String: Any],
+                  let paywall = args["paywall"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing paywall", details: nil))
+                return
+            }
+            ScateCoreSDK.PaywallCancelled(paywall: paywall)
+            result(nil)
+            
+        case "TabClicked":
+            guard let args = call.arguments as? [String: Any],
+                  let tab = args["tab"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing tab", details: nil))
+                return
+            }
+            ScateCoreSDK.TabClicked(tab: tab)
+            result(nil)
+            
+        case "FeatureClicked":
+            guard let args = call.arguments as? [String: Any],
+                  let feature = args["feature"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing feature", details: nil))
+                return
+            }
+            ScateCoreSDK.FeatureClicked(feature: feature)
+            result(nil)
+            
+        case "DailyStreakShown":
+            ScateCoreSDK.DailyStreakShown()
+            result(nil)
+            
+        case "DailyStreakClaimed":
+            ScateCoreSDK.DailyStreakClaimed()
+            result(nil)
+            
+        case "DailyStreakClosed":
+            ScateCoreSDK.DailyStreakClosed()
+            result(nil)    
+            
         default:
             result(FlutterMethodNotImplemented)
         }
