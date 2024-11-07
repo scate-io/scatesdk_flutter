@@ -103,4 +103,250 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       print("Failed to remove listener for $name: ${e.message}");
     }
   }
+
+  @override
+  Future<void> OnboardingStart() async {
+    try {
+      await methodChannel.invokeMethod('OnboardingStart');
+    } on PlatformException catch (e) {
+      print("Failed to call OnboardingStart: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> OnboardingStep(String step) async {
+    try {
+      await methodChannel.invokeMethod('OnboardingStep', {'step': step});
+    } on PlatformException catch (e) {
+      print("Failed to call OnboardingStep: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> OnboardingFinish() async {
+    try {
+      await methodChannel.invokeMethod('OnboardingFinish');
+    } on PlatformException catch (e) {
+      print("Failed to call OnboardingFinish: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> LoginSuccess(String source) async {
+    try {
+      await methodChannel.invokeMethod('LoginSuccess', {'source': source});
+    } on PlatformException catch (e) {
+      print("Failed to call LoginSuccess: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> InterstitialAdShown() async {
+    try {
+      await methodChannel.invokeMethod('InterstitialAdShown');
+    } on PlatformException catch (e) {
+      print("Failed to call InterstitialAdShown: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> InterstitialAdClosed() async {
+    try {
+      await methodChannel.invokeMethod('InterstitialAdClosed');
+    } on PlatformException catch (e) {
+      print("Failed to call InterstitialAdClosed: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> RewardedAdShown() async {
+    try {
+      await methodChannel.invokeMethod('RewardedAdShown');
+    } on PlatformException catch (e) {
+      print("Failed to call RewardedAdShown: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> RewardedAdClosed() async {
+    try {
+      await methodChannel.invokeMethod('RewardedAdClosed');
+    } on PlatformException catch (e) {
+      print("Failed to call RewardedAdClosed: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> RewardedAdClaimed() async {
+    try {
+      await methodChannel.invokeMethod('RewardedAdClaimed');
+    } on PlatformException catch (e) {
+      print("Failed to call RewardedAdClaimed: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> BannerAdShown() async {
+    try {
+      await methodChannel.invokeMethod('BannerAdShown');
+    } on PlatformException catch (e) {
+      print("Failed to call BannerAdShown: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> NotificationPermissionGranted() async {
+    try {
+      await methodChannel.invokeMethod('NotificationPermissionGranted');
+    } on PlatformException catch (e) {
+      print("Failed to call NotificationPermissionGranted: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> NotificationPermissionDenied() async {
+    try {
+      await methodChannel.invokeMethod('NotificationPermissionDenied');
+    } on PlatformException catch (e) {
+      print("Failed to call NotificationPermissionDenied: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> LocationPermissionGranted() async {
+    try {
+      await methodChannel.invokeMethod('LocationPermissionGranted');
+    } on PlatformException catch (e) {
+      print("Failed to call LocationPermissionGranted: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> LocationPermissionDenied() async {
+    try {
+      await methodChannel.invokeMethod('LocationPermissionDenied');
+    } on PlatformException catch (e) {
+      print("Failed to call LocationPermissionDenied: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> ATTPromptShown() async {
+    try {
+      await methodChannel.invokeMethod('ATTPromptShown');
+    } on PlatformException catch (e) {
+      print("Failed to call ATTPromptShown: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> ATTPermissionGranted() async {
+    try {
+      await methodChannel.invokeMethod('ATTPermissionGranted');
+    } on PlatformException catch (e) {
+      print("Failed to call ATTPermissionGranted: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> ATTPermissionDenied() async {
+    try {
+      await methodChannel.invokeMethod('ATTPermissionDenied');
+    } on PlatformException catch (e) {
+      print("Failed to call ATTPermissionDenied: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> PaywallShown(String paywall) async {
+    try {
+      await methodChannel.invokeMethod('PaywallShown', {'paywall': paywall});
+    } on PlatformException catch (e) {
+      print("Failed to call PaywallShown: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> PaywallClosed(String paywall) async {
+    try {
+      await methodChannel.invokeMethod('PaywallClosed', {'paywall': paywall});
+    } on PlatformException catch (e) {
+      print("Failed to call PaywallClosed: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> PaywallAttempted(String paywall) async {
+    try {
+      await methodChannel
+          .invokeMethod('PaywallAttempted', {'paywall': paywall});
+    } on PlatformException catch (e) {
+      print("Failed to call PaywallAttempted: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> PaywallPurchased(String paywall) async {
+    try {
+      await methodChannel
+          .invokeMethod('PaywallPurchased', {'paywall': paywall});
+    } on PlatformException catch (e) {
+      print("Failed to call PaywallPurchased: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> PaywallCancelled(String paywall) async {
+    try {
+      await methodChannel
+          .invokeMethod('PaywallCancelled', {'paywall': paywall});
+    } on PlatformException catch (e) {
+      print("Failed to call PaywallCancelled: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> TabClicked(String tab) async {
+    try {
+      await methodChannel.invokeMethod('TabClicked', {'tab': tab});
+    } on PlatformException catch (e) {
+      print("Failed to call TabClicked: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> FeatureClicked(String tab) async {
+    try {
+      await methodChannel.invokeMethod('FeatureClicked', {'feature': tab});
+    } on PlatformException catch (e) {
+      print("Failed to call FeatureClicked: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> DailyStreakShown() async {
+    try {
+      await methodChannel.invokeMethod('DailyStreakShown');
+    } on PlatformException catch (e) {
+      print("Failed to call DailyStreakShown: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> DailyStreakClaimed() async {
+    try {
+      await methodChannel.invokeMethod('DailyStreakClaimed');
+    } on PlatformException catch (e) {
+      print("Failed to call DailyStreakClaimed: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> DailyStreakClosed() async {
+    try {
+      await methodChannel.invokeMethod('DailyStreakClosed');
+    } on PlatformException catch (e) {
+      print("Failed to call DailyStreakClosed: ${e.message}");
+    }
+  }
 }

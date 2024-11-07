@@ -1,3 +1,6 @@
+## 0.4.1
+* Event Functions
+
 ## 0.3.10
 * App icon Fix
 

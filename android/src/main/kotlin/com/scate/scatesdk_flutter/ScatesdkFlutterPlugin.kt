@@ -75,7 +75,151 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
             "RemoveListener" -> {
                 result.success(null)
             }
-            else -> result.notImplemented()
+                "OnboardingStart" -> {
+            ScateCoreSDK.OnboardingStart()
+            result.success(null)
+            }
+            "OnboardingStep" -> {
+                val step = call.argument<String>("step") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing step", null)
+                    return
+                }
+                ScateCoreSDK.OnboardingStep(step)
+                result.success(null)
+            }
+            "OnboardingFinish" -> {
+                ScateCoreSDK.OnboardingFinish()
+                result.success(null)
+            }
+            "LoginSuccess" -> {
+                val source = call.argument<String>("source") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing source", null)
+                    return
+                }
+                ScateCoreSDK.LoginSuccess(source)
+                result.success(null)
+            }
+            "InterstitialAdShown" -> {
+                ScateCoreSDK.InterstitialAdShown()
+                result.success(null)
+            }
+            "InterstitialAdClosed" -> {
+                ScateCoreSDK.InterstitialAdClosed()
+                result.success(null)
+            }
+            "RewardedAdShown" -> {
+                ScateCoreSDK.RewardedAdShown()
+                result.success(null)
+            }
+            "RewardedAdClosed" -> {
+                ScateCoreSDK.RewardedAdClosed()
+                result.success(null)
+            }
+            "RewardedAdClaimed" -> {
+                ScateCoreSDK.RewardedAdClaimed()
+                result.success(null)
+            }
+            "BannerAdShown" -> {
+                ScateCoreSDK.BannerAdShown()
+                result.success(null)
+            }
+            "NotificationPermissionGranted" -> {
+                ScateCoreSDK.NotificationPermissionGranted()
+                result.success(null)
+            }
+            "NotificationPermissionDenied" -> {
+                ScateCoreSDK.NotificationPermissionDenied()
+                result.success(null)
+            }
+            "LocationPermissionGranted" -> {
+                ScateCoreSDK.LocationPermissionGranted()
+                result.success(null)
+            }
+            "LocationPermissionDenied" -> {
+                ScateCoreSDK.LocationPermissionDenied()
+                result.success(null)
+            }
+            "ATTPromptShown" -> {
+                ScateCoreSDK.ATTPromptShown()
+                result.success(null)
+            }
+            "ATTPermissionGranted" -> {
+                ScateCoreSDK.ATTPermissionGranted()
+                result.success(null)
+            }
+            "ATTPermissionDenied" -> {
+                ScateCoreSDK.ATTPermissionDenied()
+                result.success(null)
+            }
+            "PaywallShown" -> {
+                val paywall = call.argument<String>("paywall") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing paywall", null)
+                    return
+                }
+                ScateCoreSDK.PaywallShown(paywall)
+                result.success(null)
+            }
+            "PaywallClosed" -> {
+                val paywall = call.argument<String>("paywall") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing paywall", null)
+                    return
+                }
+                ScateCoreSDK.PaywallClosed(paywall)
+                result.success(null)
+            }
+            "PaywallAttempted" -> {
+                val paywall = call.argument<String>("paywall") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing paywall", null)
+                    return
+                }
+                ScateCoreSDK.PaywallAttempted(paywall)
+                result.success(null)
+            }
+            "PaywallPurchased" -> {
+                val paywall = call.argument<String>("paywall") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing paywall", null)
+                    return
+                }
+                ScateCoreSDK.PaywallPurchased(paywall)
+                result.success(null)
+            }
+            "PaywallCancelled" -> {
+                val paywall = call.argument<String>("paywall") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing paywall", null)
+                    return
+                }
+                ScateCoreSDK.PaywallCancelled(paywall)
+                result.success(null)
+            }
+            "TabClicked" -> {
+                val tab = call.argument<String>("tab") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing tab", null)
+                    return
+                }
+                ScateCoreSDK.TabClicked(tab)
+                result.success(null)
+            }
+            "FeatureClicked" -> {
+                val feature = call.argument<String>("feature") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing feature", null)
+                    return
+                }
+                ScateCoreSDK.FeatureClicked(feature)
+                result.success(null)
+            }
+            "DailyStreakShown" -> {
+                ScateCoreSDK.DailyStreakShown()
+                result.success(null)
+            }
+            "DailyStreakClaimed" -> {
+                ScateCoreSDK.DailyStreakClaimed()
+                result.success(null)
+            }
+            "DailyStreakClosed" -> {
+                ScateCoreSDK.DailyStreakClosed()
+                result.success(null)
+            }
+             else -> result.notImplemented()
         }
     }
 

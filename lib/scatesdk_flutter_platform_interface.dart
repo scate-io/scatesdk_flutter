@@ -52,4 +52,112 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
   Future<void> RemoveListener(String name) async {
     return _instance.RemoveListener(name);
   }
+
+  Future<void> OnboardingStart() async {
+    return _instance.OnboardingStart();
+  }
+
+  Future<void> OnboardingStep(String step) async {
+    return _instance.OnboardingStep(step);
+  }
+
+  Future<void> OnboardingFinish() async {
+    return _instance.OnboardingFinish();
+  }
+
+  Future<void> LoginSuccess(String source) async {
+    return _instance.LoginSuccess(source);
+  }
+
+  Future<void> InterstitialAdShown() async {
+    return _instance.InterstitialAdShown();
+  }
+
+  Future<void> InterstitialAdClosed() async {
+    return _instance.InterstitialAdClosed();
+  }
+
+  Future<void> RewardedAdShown() async {
+    return _instance.RewardedAdShown();
+  }
+
+  Future<void> RewardedAdClosed() async {
+    return _instance.RewardedAdClosed();
+  }
+
+  Future<void> RewardedAdClaimed() async {
+    return _instance.RewardedAdClaimed();
+  }
+
+  Future<void> BannerAdShown() async {
+    return _instance.BannerAdShown();
+  }
+
+  Future<void> NotificationPermissionGranted() async {
+    return _instance.NotificationPermissionGranted();
+  }
+
+  Future<void> NotificationPermissionDenied() async {
+    return _instance.NotificationPermissionDenied();
+  }
+
+  Future<void> LocationPermissionGranted() async {
+    return _instance.LocationPermissionGranted();
+  }
+
+  Future<void> LocationPermissionDenied() async {
+    return _instance.LocationPermissionDenied();
+  }
+
+  Future<void> ATTPromptShown() async {
+    return _instance.ATTPromptShown();
+  }
+
+  Future<void> ATTPermissionGranted() async {
+    return _instance.ATTPermissionGranted();
+  }
+
+  Future<void> ATTPermissionDenied() async {
+    return _instance.ATTPermissionDenied();
+  }
+
+  Future<void> PaywallShown(String paywall) async {
+    return _instance.PaywallShown(paywall);
+  }
+
+  Future<void> PaywallClosed(String paywall) async {
+    return _instance.PaywallClosed(paywall);
+  }
+
+  Future<void> PaywallAttempted(String paywall) async {
+    return _instance.PaywallAttempted(paywall);
+  }
+
+  Future<void> PaywallPurchased(String paywall) async {
+    return _instance.PaywallPurchased(paywall);
+  }
+
+  Future<void> PaywallCancelled(String paywall) async {
+    return _instance.PaywallCancelled(paywall);
+  }
+
+  Future<void> TabClicked(String tab) async {
+    return _instance.TabClicked(tab);
+  }
+
+  Future<void> FeatureClicked(String feature) async {
+    return _instance.FeatureClicked(feature);
+  }
+
+  Future<void> DailyStreakShown() async {
+    return _instance.DailyStreakShown();
+  }
+
+  Future<void> DailyStreakClaimed() async {
+    return _instance.DailyStreakClosed();
+  }
+
+  Future<void> DailyStreakClosed() async {
+    return _instance.DailyStreakClaimed();
+  }
 }

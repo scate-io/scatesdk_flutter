@@ -2,10 +2,10 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - ScateSDK (0.3.26)
+  - ScateSDK (0.4.1)
   - scatesdk_flutter (0.3.0):
     - Flutter
-    - ScateSDK (= 0.3.26)
+    - ScateSDK (= 0.4.1)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -27,8 +27,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
-  ScateSDK: 6d8b12ddd3f189d881aa0817133fd722aa0215ed
-  scatesdk_flutter: e691c6d4f2fc91cd1e3aae64c182221278b1b10e
+  ScateSDK: 64bc5d3f82bc060b74089d4a5366cb58c2df32bc
+  scatesdk_flutter: 557359c1a45da7bdcb32733bc1397d38cd059530
 
 PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
 
