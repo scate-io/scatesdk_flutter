@@ -1,3 +1,6 @@
+## 0.4.2
+* Scate Android Core SDK Logs Added
+
 ## 0.4.1
 * Event Functions
 
