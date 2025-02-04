@@ -1,3 +1,6 @@
+## 0.4.8
+* Scate Android Core SDK Gson Serialization Fix
+
 ## 0.4.7
 * Scate Android Core SDK Add Logs To File
 
