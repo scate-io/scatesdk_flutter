@@ -1,3 +1,6 @@
+## 0.4.9
+* Scate Android Core SDK Removed Debug Logs
+
 ## 0.4.8
 * Scate Android Core SDK Gson Serialization Fix
 

@@ -58,7 +58,7 @@ android {
     dependencies {
         testImplementation 'org.jetbrains.kotlin:kotlin-test'
         testImplementation 'org.mockito:mockito-core:5.0.0'
-        implementation 'com.scate:scatesdk:0.4.7'
+        implementation 'com.scate:scatesdk:0.4.8'
     }
 
     testOptions {
