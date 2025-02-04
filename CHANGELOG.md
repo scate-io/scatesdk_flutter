@@ -1,3 +1,6 @@
+## 0.4.3
+* Scate Android Core SDK Add Logs To File
+
 ## 0.4.2
 * Scate Android Core SDK Logs Added
 
