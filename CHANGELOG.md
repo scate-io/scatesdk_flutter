@@ -1,4 +1,4 @@
-## 0.4.5
+## 0.4.7
 * Scate Android Core SDK Add Logs To File
 
 ## 0.4.2
