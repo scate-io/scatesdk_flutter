@@ -1,3 +1,6 @@
+## 0.4.10
+* Scate IOS Core SDK Improvements
+
 ## 0.4.9
 * Scate Android Core SDK Removed Debug Logs
 

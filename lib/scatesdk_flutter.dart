@@ -3,6 +3,12 @@ import 'dart:convert';
 
 enum ScateEvents {
   REMOTE_CONFIG_READY,
+  PAID_PRODUCT_CLICKED,
+  ONBOARDING_SCREENS_FINISHED,
+  PAYWALL_SCREEN_CLOSED,
+  ONBOARDING_SCREEN_CLOSED,
+  PAYWALL_SCREEN_FINISHED,
+  RESTORE_PURCHASE_CLICKED
 }
 
 extension ScateEventsExtension on ScateEvents {
@@ -10,9 +16,22 @@ extension ScateEventsExtension on ScateEvents {
     switch (this) {
       case ScateEvents.REMOTE_CONFIG_READY:
         return 'Scate_RemoteConfigsReady';
+      case ScateEvents.PAID_PRODUCT_CLICKED:
+        return 'Scate_PaidProductClicked';
+      case ScateEvents.ONBOARDING_SCREENS_FINISHED:
+        return 'Scate_OnboardingScreensFinished';
+      case ScateEvents.PAYWALL_SCREEN_CLOSED:
+        return 'Scate_PaywallScreenClosed';
+      case ScateEvents.ONBOARDING_SCREEN_CLOSED:
+        return 'Scate_OnboardingScreenClosed';
+      case ScateEvents.PAYWALL_SCREEN_FINISHED:
+        return 'Scate_PaywallScreenFinished';
+      case ScateEvents.RESTORE_PURCHASE_CLICKED:
+        return 'Scate_RestorePurchaseClicked';
     }
   }
 }
+
 
 class ScateSDK {
   static final Map<String, Function> _listeners = {};
@@ -46,7 +65,7 @@ class ScateSDK {
       _listeners[name] = listener;
       ScatesdkFlutterPlatform.instance.AddListener(name);
       ScatesdkFlutterPlatform.instance.eventsStream.listen((event) {
-        HandleEvent(name, event);
+          HandleEvent(name, event);
       });
     }
   }
@@ -72,13 +91,38 @@ class ScateSDK {
         // Assuming the event is a JSON string, parse it into a map.
         final Map<String, dynamic> parsedEvent = jsonDecode(event);
 
-        // Access the `data` field and then `remoteConfigFetched`.
-        final remoteConfigFetched = parsedEvent['data']?['remoteConfigFetched'];
+        if(name != parsedEvent['event']){
+          return;
+        }
 
-        // Pass the extracted value to the listener.
-        listener(remoteConfigFetched);
+        // Use if-else to handle each event type.
+        if (name == 'Scate_RemoteConfigsReady') {
+          final remoteConfigFetched =
+          parsedEvent['data']?['remoteConfigFetched'];
+          listener(remoteConfigFetched);
+        } else if (name == 'Scate_PaidProductClicked') {
+          final productClicked = parsedEvent['data']?['identifier'];
+          listener(productClicked);
+        } else if (name == 'Scate_OnboardingScreensFinished') {
+          final onboardingFinished = parsedEvent['data']?['identifier'];
+          listener(onboardingFinished);
+        } else if (name == 'Scate_PaywallScreenClosed') {
+          final paywallScreenClosed = parsedEvent['data']?['success'];
+          listener(paywallScreenClosed);
+        } else if (name == 'Scate_OnboardingScreenClosed') {
+          final onboardingScreenClosed = parsedEvent['data']?['success'];
+          listener(onboardingScreenClosed);
+        } else if (name == 'Scate_PaywallScreensFinished') {
+          final onboardingFinished = parsedEvent['data']?['identifier'];
+          listener(onboardingFinished);
+        } else if (name == 'Scate_RestorePurchaseClicked') {
+          final restorePurchaseClicked = parsedEvent['data']?['success'];
+          listener(restorePurchaseClicked);
+        } 
+        else {
+          print("Unknown event: $name");
+        }
       } catch (e) {
-        // Handle the case where parsing or accessing fields fails.
         print("Error parsing event: $e");
       }
     }
@@ -191,5 +235,21 @@ class ScateSDK {
 
   static void DailyStreakClosed() {
     ScatesdkFlutterPlatform.instance.DailyStreakClosed();
+  }
+
+  static void ShowPaywall(String jsonString){
+    ScatesdkFlutterPlatform.instance.ShowPaywall(jsonString);
+  }
+
+  static void ShowOnboarding(String jsonString) {
+    ScatesdkFlutterPlatform.instance.ShowOnboarding(jsonString);
+  }
+
+  static void ClosePaywall() {
+    ScatesdkFlutterPlatform.instance.ClosePaywall();
+  }
+
+  static void CloseOnboarding() {
+    ScatesdkFlutterPlatform.instance.CloseOnboarding();
   }
 }

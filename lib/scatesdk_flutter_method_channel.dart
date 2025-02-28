@@ -349,4 +349,44 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       print("Failed to call DailyStreakClosed: ${e.message}");
     }
   }
+
+  @override
+  Future<void> ShowPaywall(String jsonString) async {
+    try {
+      await methodChannel.invokeMethod('ShowPaywall', {'jsonString': jsonString});
+    } on PlatformException catch (e) {
+      print("Failed to call ShowPaywall: '${e.message}'.");
+    }
+
+    return null;
+  }
+
+  @override
+  Future<void> ShowOnboarding(String jsonString) async {
+    try {
+      await methodChannel.invokeMethod('ShowOnboarding', {'jsonString': jsonString});
+    } on PlatformException catch (e) {
+      print("Failed to call ShowOnboarding: '${e.message}'.");
+    }
+
+    return null;
+  }
+
+  @override
+  Future<void> ClosePaywall() async {
+    try {
+      await methodChannel.invokeMethod('ClosePaywall');
+    } on PlatformException catch (e) {
+      print("Failed to call ClosePaywall: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> CloseOnboarding() async {
+    try {
+      await methodChannel.invokeMethod('CloseOnboarding');
+    } on PlatformException catch (e) {
+      print("Failed to call CloseOnboarding: ${e.message}");
+    }
+  }
 }
