@@ -123,6 +123,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     ShowOnboarding();
+    //ShowPaywall();
 
     //ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY);
     //ScateSDK.ClearListeners(ScateEvents.REMOTE_CONFIG_READY);
@@ -134,50 +135,57 @@ class _MyAppState extends State<MyApp> {
   }
 
   void ShowPaywall() {
+
+    //For media you can also use image path like this
+    //String imagePath = "/path/to/image.jpg";
+    //String fileUrl = Uri.file(imagePath).toString();
+
     final Map<String, dynamic> paywallData = {
       "media":
-          "https://ninegshort.b-cdn.net/Apps/ScateSDK/InApp_Paywall_Image.png",
-      "heading": "Unlock More!",
-      "details": [
-        "✓ Choose your plan",
-        "✓ Right now",
-        "✓ Right here",
-        "✓ Fast"
-      ],
+          "https://ninegshort.b-cdn.net/Apps/ScateSDK/ob_sample.png",
+      "heading": "Heading",
+      "details":  ["✓ Details 1", "✓ Details 2", "✓ Details 3", "✓ Details 4"],
       "paidProducts": [
         {
-          "identifier": "Product1",
-          "price": "\$9.99",
-          "title": "Premium Plan",
-          "discount": "20% OFF",
-          "selectedBackgroundColor": "#5466c1",
-          "unselectedBackgroundColor": "#495a6f",
-          "selectedBorderColor": "#51338e",
-          "unselectedBorderColor": "#7fb3d5",
+          "selectedBackgroundColor": "#22264B",
+          "unselectedBackgroundColor": "#1E1E1E",
+          "unselectedBorderColor": "#587BF6",
+          "badgeSelectedColor": "#9747FF",
+          "identifier": "Identifier1",
+          "title": "[Product]",
+          "badgeText": "Badge1",
+          "badgeUnselectedColor": "#587BF6",
+          "selectedBorderColor": "#EA43FB",
+          "price": "\$Price1"
         },
         {
-          "identifier": "Product2",
-          "price": "\$14.99",
-          "title": "Pro Plan",
-          "discount": "10% OFF",
-          "selectedBackgroundColor": "#5466c1",
-          "unselectedBackgroundColor": "#495a6f",
-          "selectedBorderColor": "#51338e",
-          "unselectedBorderColor": "#7fb3d5",
+          "tagUnselectedColor": "#587BF6",
+          "badgeSelectedColor": "#9747FF",
+          "unselectedBackgroundColor": "#1E1E1E",
+          "badgeText": "Badge2",
+          "tagSelectedColor": "#587BF6",
+          "price": "\$Price2",
+          "identifier": "Identifier2",
+          "unselectedBorderColor": "#587BF6",
+          "badgeUnselectedColor": "#587BF6",
+          "title": "[Product]",
+          "selectedBackgroundColor": "#22264B",
+          "selectedBorderColor": "#EA43FB",
+          "tagText": "Tag2"
         },
         {
-          "identifier": "Product3",
-          "price": "\$19.99",
-          "title": "Ultimate Plan",
-          "discount": "",
-          "selectedBackgroundColor": "#5466c1", 
-          "unselectedBackgroundColor": "#495a6f", 
-          "selectedBorderColor": "#51338e", 
-          "unselectedBorderColor": "#7fb3d5", 
+          "descriptionText": "Description",
+          "unselectedBackgroundColor": "#1E1E1E",
+          "price": "\$Price3",
+          "identifier": "Identifier3",
+          "selectedBackgroundColor": "#22264B",
+          "selectedBorderColor": "#EA43FB",
+          "unselectedBorderColor": "#587BF6",
+          "title": "[Product]"
         }
       ],
-      "selectedPaidProduct": "Product2",
-      "buttonTitle": "Accept",
+      "selectedPaidProduct": "Identifier2",
+      "buttonTitle": "Button",
       "termsOfUse": "https://www.ign.com/articles/avowed-review",
       "privacyPolicy":
           "https://www.ign.com/articles/monster-hunter-wilds-review",
@@ -192,89 +200,83 @@ class _MyAppState extends State<MyApp> {
   }
 
   void ShowOnboarding() {
+
+    //For media you can also use image path like this
+    //String imagePath = "/path/to/image.jpg";
+    //String fileUrl = Uri.file(imagePath).toString();
+
     final jsonString = jsonEncode([
       {
         "type": "basic",
-        "media": "https://ninegshort.b-cdn.net/Apps/ScateSDK/OB_Image.png",
-        "heading": "Make your own music",
-        "details": [
-          "Mozart AI will analyze your photo or text",
-          "to compose an incredible song just for you."
-        ],
-        "buttonTitle": "Continue",
+        "media": "https://ninegshort.b-cdn.net/Apps/ScateSDK/ob_sample.png",
+        "heading": "Heading 1",
+        "details":  ["Details 1", "Details 2"],
+        "buttonTitle": "Button 1",
         "paidProducts": [],
-        "title": "Mozart AI",
+        "title": "[App Name]",
         "backgroundColor": "#000000",
-        "actionButtonColor": "#5466c1",
+        "actionButtonColor": "#2C58F3",
         "detailsColor": "#a62893"
       },
       {
         "type": "basic",
-        "media": "https://ninegshort.b-cdn.net/Apps/ScateSDK/OB_Image.png",
-        "heading": "Apply your taste",
-        "details": [
-          "Let Mozart AI know your",
-          "preferred style and genre for your song"
-        ],
-        "buttonTitle": "Continue",
+        "media": "https://ninegshort.b-cdn.net/Apps/ScateSDK/ob_sample.png",
+        "heading": "Heading 2",
+        "details": ["Details 1", "Details 2"],
+        "buttonTitle": "Button 2",
         "paidProducts": [],
-        "title": "Mozart AI",
+        "title": "[App Name]",
         "backgroundColor": "#000000",
-        "actionButtonColor": "#5466c1",
+        "actionButtonColor": "#2C58F3",
         "detailsColor": "#a62893"
       },
       {
         "type": "paywall",
-        "media": "https://ninegshort.b-cdn.net/Apps/ScateSDK/OB_Image.png",
-        "heading": "Create, enjoy and share",
-        "details": [
-          "Mozart AI will compose",
-          "Perfect song tailored to your needs."
-        ],
-        "buttonTitle": "Continue",
+        "media": "https://ninegshort.b-cdn.net/Apps/ScateSDK/ob_sample.png",
+        "heading": "Heading 3",
+        "details": ["Details 1", "Details 2"],
+        "buttonTitle": "Button 3",
         "paidProducts": [
-          {
-            "price": "\$9.99",
-            "discount": "20% OFF",
-            "identifier": "Product1",
-            "title": "Premium Plan",
-            "selectedBackgroundColor": "#5466c1",
-            "unselectedBackgroundColor": "#495a6f",
-            "selectedBorderColor": "#51338e",
-            "unselectedBorderColor": "#7fb3d5",
-          },
-          {
-            "price": "\$14.99",
-            "discount": "10% OFF",
-            "identifier": "Product2",
-            "title": "Pro Plan",
-            "selectedBackgroundColor": "#5466c1",
-            "unselectedBackgroundColor": "#495a6f",
-            "selectedBorderColor": "#51338e",
-            "unselectedBorderColor": "#7fb3d5",
-          },
-          {
-            "identifier": "Product3",
-            "discount": "",
-            "title": "Ultimate Plan",
-            "price": "\$19.99",
-            "selectedBackgroundColor": "#5466c1",
-            "unselectedBackgroundColor": "#495a6f",
-            "selectedBorderColor": "#51338e",
-            "unselectedBorderColor": "#7fb3d5",
-          }
-        ],
-        "selectedPaidProduct": "Product2",
+          {"selectedBackgroundColor":"#22264B",
+          "unselectedBackgroundColor":"#1E1E1E",
+          "unselectedBorderColor":"#587BF6",
+          "badgeSelectedColor":"#9747FF",
+          "identifier":"Identifier1",
+          "title":"[Product]",
+          "badgeText":"Badge1",
+          "badgeUnselectedColor":"#587BF6",
+          "selectedBorderColor":"#EA43FB",
+          "price":"\$Price1"},
+          {"tagUnselectedColor":"#587BF6",
+          "badgeSelectedColor":"#9747FF",
+          "unselectedBackgroundColor":"#1E1E1E",
+          "badgeText":"Badge2",
+          "tagSelectedColor":"#587BF6",
+          "price":"\$Price2",
+          "identifier":"Identifier2",
+          "unselectedBorderColor":"#587BF6",
+          "badgeUnselectedColor":"#587BF6",
+          "title":"[Product]",
+          "selectedBackgroundColor":"#22264B",
+          "selectedBorderColor":"#EA43FB",
+          "tagText":"Tag2"},
+          {"descriptionText":"Description",
+          "unselectedBackgroundColor":"#1E1E1E",
+          "price":"\$Price3",
+          "identifier":"Identifier3",
+          "selectedBackgroundColor":"#22264B",
+          "selectedBorderColor":"#EA43FB",
+          "unselectedBorderColor":"#587BF6",
+          "title":"[Product]"}],
+        "selectedPaidProduct": "Identifier2",
         "termsOfUse": "https://www.ign.com/articles/avowed-review",
-        "privacyPolicy":
-            "https://www.ign.com/articles/monster-hunter-wilds-review",
-        "title": "Mozart AI",
-        "footNote": "Auto Renewable. Cancel Anytime.",
-        "backgroundColor": "#000000",
-        "actionButtonColor": "#5466c1",
+        "privacyPolicy":"https:\/\/www.ign.com\/articles\/monster-hunter-wilds-review",
+        "title": "[App Name]",
+        "footNote":"Auto Renewable, Cancel Anytime",
+        "backgroundColor":"#000000",
+        "actionButtonColor": "#2C58F3",
         "detailsColor": "#a62893"
-      }
-    ]);
+      }]);
 
     ScateSDK.ShowOnboarding(jsonString);
   }

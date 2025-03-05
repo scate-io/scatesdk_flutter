@@ -1,3 +1,6 @@
+## 0.4.11
+* Scate IOS Core SDK Improvements
+
 ## 0.4.10
 * Scate IOS Core SDK Improvements
 
