@@ -1,3 +1,6 @@
+## 0.4.12
+* Event List Screen Function Added (iOS only)
+
 ## 0.4.11
 * Scate IOS Core SDK Improvements
 

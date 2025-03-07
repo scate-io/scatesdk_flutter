@@ -176,4 +176,8 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
   Future<void> CloseOnboarding() async {
     return _instance.CloseOnboarding();
   }
+
+  Future<void> ShowEventList() async {
+    return _instance.ShowEventList();
+  }
 }

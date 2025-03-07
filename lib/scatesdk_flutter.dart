@@ -252,4 +252,8 @@ class ScateSDK {
   static void CloseOnboarding() {
     ScatesdkFlutterPlatform.instance.CloseOnboarding();
   }
+
+  static void ShowEventList() {
+    ScatesdkFlutterPlatform.instance.ShowEventList();
+  }
 }

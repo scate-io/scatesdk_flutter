@@ -16,7 +16,7 @@ Add the following into your `pubspec.yaml` file;
 
 ```yaml
 dependencies:
-  scatesdk_flutter: ^0.4.11
+  scatesdk_flutter: ^0.4.12
 ```
 
 ## Android Integration
@@ -181,4 +181,10 @@ ScateSDK.FeatureClicked("x");
 ScateSDK.DailyStreakShown();
 ScateSDK.DailyStreakClaimed();
 ScateSDK.DailyStreakClosed();
+```
+
+## Event List Screen Function (IOS Only)
+
+```dart
+ScateSDK.ShowEventList();
 ```

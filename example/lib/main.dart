@@ -122,8 +122,10 @@ class _MyAppState extends State<MyApp> {
       print('Restore Purchase Clicked: $success');
     });
 
-    ShowOnboarding();
+    //ShowOnboarding();
     //ShowPaywall();
+
+    ScateSDK.ShowEventList();
 
     //ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY);
     //ScateSDK.ClearListeners(ScateEvents.REMOTE_CONFIG_READY);
@@ -186,9 +188,9 @@ class _MyAppState extends State<MyApp> {
       ],
       "selectedPaidProduct": "Identifier2",
       "buttonTitle": "Button",
-      "termsOfUse": "https://www.ign.com/articles/avowed-review",
+      "termsOfUse": "https://www.google.com/",
       "privacyPolicy":
-          "https://www.ign.com/articles/monster-hunter-wilds-review",
+          "https://www.google.com/",
       "footNote": "Auto Renewable. Cancel Anytime.",
       "backgroundColor": "#000000",
       "actionButtonColor": "#5466c1"
@@ -269,8 +271,8 @@ class _MyAppState extends State<MyApp> {
           "unselectedBorderColor":"#587BF6",
           "title":"[Product]"}],
         "selectedPaidProduct": "Identifier2",
-        "termsOfUse": "https://www.ign.com/articles/avowed-review",
-        "privacyPolicy":"https:\/\/www.ign.com\/articles\/monster-hunter-wilds-review",
+        "termsOfUse": "https://www.google.com/",
+        "privacyPolicy":"https://www.google.com/",
         "title": "[App Name]",
         "footNote":"Auto Renewable, Cancel Anytime",
         "backgroundColor":"#000000",

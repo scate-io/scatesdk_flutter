@@ -389,4 +389,13 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       print("Failed to call CloseOnboarding: ${e.message}");
     }
   }
+
+  @override
+  Future<void> ShowEventList() async {
+    try {
+      await methodChannel.invokeMethod('ShowEventList');
+    } on PlatformException catch (e) {
+      print("Failed to call ShowEventList: ${e.message}");
+    }
+  }
 }
