@@ -16,7 +16,7 @@ Add the following into your `pubspec.yaml` file;
 
 ```yaml
 dependencies:
-  scatesdk_flutter: ^0.4.12
+  scatesdk_flutter: ^0.4.13
 ```
 
 ## Android Integration
@@ -187,4 +187,36 @@ ScateSDK.DailyStreakClosed();
 
 ```dart
 ScateSDK.ShowEventList();
+```
+
+## Onboarding And Paywall Screen Functions and Events
+
+## Show Paywall Screen
+```dart
+ScateSDK.ShowPaywall("jsonString");
+```
+
+## Close Paywall Screen
+```dart
+ScateSDK.ClosePaywall();
+```
+
+## Show Onboarding Screen
+```dart
+ScateSDK.ShowOnboarding("jsonString");
+```
+
+## Close Onboarding Screen
+```dart
+ScateSDK.CloseOnboarding();
+```
+
+## Paywall And Onboarding Screen Events 
+```dart
+  ScateSDK.AddListener(ScateEvents.ONBOARDING_SCREENS_FINISHED, (identifier) => {});
+  ScateSDK.AddListener(ScateEvents.PAYWALL_SCREEN_FINISHED,(identifier) => {});
+  ScateSDK.AddListener(ScateEvents.PAID_PRODUCT_CLICKED, (identifier) => {});
+  ScateSDK.AddListener(ScateEvents.PAYWALL_SCREEN_CLOSED, (success) => {});
+  ScateSDK.AddListener(ScateEvents.ONBOARDING_SCREEN_CLOSED, (success) => {});
+  ScateSDK.AddListener(ScateEvents.RESTORE_PURCHASE_CLICKED, (success) => {});
 ```

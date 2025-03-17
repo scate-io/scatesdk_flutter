@@ -1,3 +1,6 @@
+## 0.4.13
+* Onboarding and paywall functions
+
 ## 0.4.12
 * Event List Screen Function Added (iOS only)
 
