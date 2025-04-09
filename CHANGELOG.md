@@ -1,3 +1,6 @@
+## 0.4.14
+* Paywall screen finished event listener fix
+
 ## 0.4.13
 * Onboarding and paywall functions
 

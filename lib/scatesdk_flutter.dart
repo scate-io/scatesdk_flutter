@@ -32,7 +32,6 @@ extension ScateEventsExtension on ScateEvents {
   }
 }
 
-
 class ScateSDK {
   static final Map<String, Function> _listeners = {};
 
@@ -65,7 +64,7 @@ class ScateSDK {
       _listeners[name] = listener;
       ScatesdkFlutterPlatform.instance.AddListener(name);
       ScatesdkFlutterPlatform.instance.eventsStream.listen((event) {
-          HandleEvent(name, event);
+        HandleEvent(name, event);
       });
     }
   }
@@ -91,14 +90,14 @@ class ScateSDK {
         // Assuming the event is a JSON string, parse it into a map.
         final Map<String, dynamic> parsedEvent = jsonDecode(event);
 
-        if(name != parsedEvent['event']){
+        if (name != parsedEvent['event']) {
           return;
         }
 
         // Use if-else to handle each event type.
         if (name == 'Scate_RemoteConfigsReady') {
           final remoteConfigFetched =
-          parsedEvent['data']?['remoteConfigFetched'];
+              parsedEvent['data']?['remoteConfigFetched'];
           listener(remoteConfigFetched);
         } else if (name == 'Scate_PaidProductClicked') {
           final productClicked = parsedEvent['data']?['identifier'];
@@ -112,14 +111,13 @@ class ScateSDK {
         } else if (name == 'Scate_OnboardingScreenClosed') {
           final onboardingScreenClosed = parsedEvent['data']?['success'];
           listener(onboardingScreenClosed);
-        } else if (name == 'Scate_PaywallScreensFinished') {
+        } else if (name == 'Scate_PaywallScreenFinished') {
           final onboardingFinished = parsedEvent['data']?['identifier'];
           listener(onboardingFinished);
         } else if (name == 'Scate_RestorePurchaseClicked') {
           final restorePurchaseClicked = parsedEvent['data']?['success'];
           listener(restorePurchaseClicked);
-        } 
-        else {
+        } else {
           print("Unknown event: $name");
         }
       } catch (e) {
@@ -237,7 +235,7 @@ class ScateSDK {
     ScatesdkFlutterPlatform.instance.DailyStreakClosed();
   }
 
-  static void ShowPaywall(String jsonString){
+  static void ShowPaywall(String jsonString) {
     ScatesdkFlutterPlatform.instance.ShowPaywall(jsonString);
   }
 
