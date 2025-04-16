@@ -94,7 +94,8 @@ class _MyAppState extends State<MyApp> {
       });
     });
 
-    ScateSDK.AddListener(ScateEvents.ONBOARDING_SCREENS_FINISHED, (identifier) async {
+    ScateSDK.AddListener(ScateEvents.ONBOARDING_SCREENS_FINISHED,
+        (identifier) async {
       print('Onboarding Screens Finished: $identifier');
     });
 
@@ -103,9 +104,8 @@ class _MyAppState extends State<MyApp> {
       print('Paywall Screen Finished: $identifier');
     });
 
-    ScateSDK.AddListener(ScateEvents.PAID_PRODUCT_CLICKED,
-        (identifier) async {
-        print('Paid Product Clicked: $identifier');
+    ScateSDK.AddListener(ScateEvents.PAID_PRODUCT_CLICKED, (identifier) async {
+      print('Paid Product Clicked: $identifier');
     });
 
     ScateSDK.AddListener(ScateEvents.PAYWALL_SCREEN_CLOSED, (success) async {
@@ -123,9 +123,9 @@ class _MyAppState extends State<MyApp> {
     });
 
     //ShowOnboarding();
-    //ShowPaywall();
+    ShowPaywall();
 
-    ScateSDK.ShowEventList();
+    //ScateSDK.ShowEventList();
 
     //ScateSDK.RemoveListener(ScateEvents.REMOTE_CONFIG_READY);
     //ScateSDK.ClearListeners(ScateEvents.REMOTE_CONFIG_READY);
@@ -137,16 +137,14 @@ class _MyAppState extends State<MyApp> {
   }
 
   void ShowPaywall() {
-
     //For media you can also use image path like this
     //String imagePath = "/path/to/image.jpg";
     //String fileUrl = Uri.file(imagePath).toString();
 
     final Map<String, dynamic> paywallData = {
-      "media":
-          "https://ninegshort.b-cdn.net/Apps/ScateSDK/ob_sample.png",
+      "media": "https://ninegshort.b-cdn.net/Apps/ScateSDK/ob_sample.png",
       "heading": "Heading",
-      "details":  ["✓ Details 1", "✓ Details 2", "✓ Details 3", "✓ Details 4"],
+      "details": ["✓ Details 1", "✓ Details 2", "✓ Details 3", "✓ Details 4"],
       "paidProducts": [
         {
           "selectedBackgroundColor": "#22264B",
@@ -158,7 +156,10 @@ class _MyAppState extends State<MyApp> {
           "badgeText": "Badge1",
           "badgeUnselectedColor": "#587BF6",
           "selectedBorderColor": "#EA43FB",
-          "price": "\$Price1"
+          "price": "\$Price1",
+          "badgeTextColor": "#ffffff",
+          "titleColor": "#ffffff",
+          "priceColor": "#ffffff",
         },
         {
           "tagUnselectedColor": "#587BF6",
@@ -173,7 +174,11 @@ class _MyAppState extends State<MyApp> {
           "title": "[Product]",
           "selectedBackgroundColor": "#22264B",
           "selectedBorderColor": "#EA43FB",
-          "tagText": "Tag2"
+          "tagText": "Tag2",
+          "badgeTextColor": "#ffffff",
+          "titleColor": "#ffffff",
+          "priceColor": "#ffffff",
+          "tagTextColor": "#ffffff"
         },
         {
           "descriptionText": "Description",
@@ -183,17 +188,27 @@ class _MyAppState extends State<MyApp> {
           "selectedBackgroundColor": "#22264B",
           "selectedBorderColor": "#EA43FB",
           "unselectedBorderColor": "#587BF6",
-          "title": "[Product]"
+          "title": "[Product]",
+          "titleColor": "#ffffff",
+          "priceColor": "#ffffff",
+          "descriptionTextColor": "#ffffff"
         }
       ],
       "selectedPaidProduct": "Identifier2",
       "buttonTitle": "Button",
       "termsOfUse": "https://www.google.com/",
-      "privacyPolicy":
-          "https://www.google.com/",
+      "privacyPolicy": "https://www.google.com/",
       "footNote": "Auto Renewable. Cancel Anytime.",
       "backgroundColor": "#000000",
-      "actionButtonColor": "#5466c1"
+      "actionButtonColor1": "#587BF6",
+      "actionButtonColor2": "#2C58F3",
+      "headingColor": "#ffffff",
+      "buttonTitleColor": "#ffffff",
+      "termsOfUseColor": "#ffffff",
+      "footNoteColor": "#ffffff",
+      "restoreButtonColor": "#ffffff",
+      "privacyPolicyColor": "#ffffff",
+      "detailsColor": "#ffffff",
     };
 
     String jsonString = jsonEncode(paywallData);
@@ -202,7 +217,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   void ShowOnboarding() {
-
     //For media you can also use image path like this
     //String imagePath = "/path/to/image.jpg";
     //String fileUrl = Uri.file(imagePath).toString();
@@ -212,13 +226,17 @@ class _MyAppState extends State<MyApp> {
         "type": "basic",
         "media": "https://ninegshort.b-cdn.net/Apps/ScateSDK/ob_sample.png",
         "heading": "Heading 1",
-        "details":  ["Details 1", "Details 2"],
+        "details": ["Details 1", "Details 2"],
         "buttonTitle": "Button 1",
         "paidProducts": [],
         "title": "[App Name]",
         "backgroundColor": "#000000",
-        "actionButtonColor": "#2C58F3",
-        "detailsColor": "#a62893"
+        "detailsColor": "#a62893",
+        "actionButtonColor1": "#587BF6",
+        "actionButtonColor2": "#2C58F3",
+        "titleColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "buttonTitleColor": "#ffffff"
       },
       {
         "type": "basic",
@@ -229,8 +247,12 @@ class _MyAppState extends State<MyApp> {
         "paidProducts": [],
         "title": "[App Name]",
         "backgroundColor": "#000000",
-        "actionButtonColor": "#2C58F3",
-        "detailsColor": "#a62893"
+        "detailsColor": "#a62893",
+        "actionButtonColor1": "#587BF6",
+        "actionButtonColor2": "#2C58F3",
+        "titleColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "buttonTitleColor": "#ffffff"
       },
       {
         "type": "paywall",
@@ -239,46 +261,72 @@ class _MyAppState extends State<MyApp> {
         "details": ["Details 1", "Details 2"],
         "buttonTitle": "Button 3",
         "paidProducts": [
-          {"selectedBackgroundColor":"#22264B",
-          "unselectedBackgroundColor":"#1E1E1E",
-          "unselectedBorderColor":"#587BF6",
-          "badgeSelectedColor":"#9747FF",
-          "identifier":"Identifier1",
-          "title":"[Product]",
-          "badgeText":"Badge1",
-          "badgeUnselectedColor":"#587BF6",
-          "selectedBorderColor":"#EA43FB",
-          "price":"\$Price1"},
-          {"tagUnselectedColor":"#587BF6",
-          "badgeSelectedColor":"#9747FF",
-          "unselectedBackgroundColor":"#1E1E1E",
-          "badgeText":"Badge2",
-          "tagSelectedColor":"#587BF6",
-          "price":"\$Price2",
-          "identifier":"Identifier2",
-          "unselectedBorderColor":"#587BF6",
-          "badgeUnselectedColor":"#587BF6",
-          "title":"[Product]",
-          "selectedBackgroundColor":"#22264B",
-          "selectedBorderColor":"#EA43FB",
-          "tagText":"Tag2"},
-          {"descriptionText":"Description",
-          "unselectedBackgroundColor":"#1E1E1E",
-          "price":"\$Price3",
-          "identifier":"Identifier3",
-          "selectedBackgroundColor":"#22264B",
-          "selectedBorderColor":"#EA43FB",
-          "unselectedBorderColor":"#587BF6",
-          "title":"[Product]"}],
+          {
+            "selectedBackgroundColor": "#22264B",
+            "unselectedBackgroundColor": "#1E1E1E",
+            "unselectedBorderColor": "#587BF6",
+            "badgeSelectedColor": "#9747FF",
+            "identifier": "Identifier1",
+            "title": "[Product]",
+            "badgeText": "Badge1",
+            "badgeUnselectedColor": "#587BF6",
+            "selectedBorderColor": "#EA43FB",
+            "price": "\$Price1",
+            "badgeTextColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "priceColor": "#ffffff",
+          },
+          {
+            "tagUnselectedColor": "#587BF6",
+            "badgeSelectedColor": "#9747FF",
+            "unselectedBackgroundColor": "#1E1E1E",
+            "badgeText": "Badge2",
+            "tagSelectedColor": "#587BF6",
+            "price": "\$Price2",
+            "identifier": "Identifier2",
+            "unselectedBorderColor": "#587BF6",
+            "badgeUnselectedColor": "#587BF6",
+            "title": "[Product]",
+            "selectedBackgroundColor": "#22264B",
+            "selectedBorderColor": "#EA43FB",
+            "tagText": "Tag2",
+            "badgeTextColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "priceColor": "#ffffff",
+            "tagTextColor": "#ffffff"
+          },
+          {
+            "descriptionText": "Description",
+            "unselectedBackgroundColor": "#1E1E1E",
+            "price": "\$Price3",
+            "identifier": "Identifier3",
+            "selectedBackgroundColor": "#22264B",
+            "selectedBorderColor": "#EA43FB",
+            "unselectedBorderColor": "#587BF6",
+            "title": "[Product]",
+            "titleColor": "#ffffff",
+            "priceColor": "#ffffff",
+            "descriptionTextColor": "#ffffff"
+          }
+        ],
         "selectedPaidProduct": "Identifier2",
         "termsOfUse": "https://www.google.com/",
-        "privacyPolicy":"https://www.google.com/",
+        "privacyPolicy": "https://www.google.com/",
         "title": "[App Name]",
-        "footNote":"Auto Renewable, Cancel Anytime",
-        "backgroundColor":"#000000",
-        "actionButtonColor": "#2C58F3",
-        "detailsColor": "#a62893"
-      }]);
+        "footNote": "Auto Renewable, Cancel Anytime",
+        "backgroundColor": "#000000",
+        "detailsColor": "#a62893",
+        "actionButtonColor1": "#587BF6",
+        "actionButtonColor2": "#2C58F3",
+        "titleColor": "#ffffff",
+        "headingColor": "#ffffff",
+        "buttonTitleColor": "#ffffff",
+        "termsOfUseColor": "#D3D3D3",
+        "footNoteColor": "#D3D3D3",
+        "restoreButtonColor": "#D3D3D3",
+        "privacyPolicyColor": "#D3D3D3"
+      }
+    ]);
 
     ScateSDK.ShowOnboarding(jsonString);
   }

@@ -180,4 +180,8 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
   Future<void> ShowEventList() async {
     return _instance.ShowEventList();
   }
+
+  Future<void> ClosePaidProductLoadingScreen() async {
+    return _instance.ClosePaidProductLoadingScreen();
+  }
 }

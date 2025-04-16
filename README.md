@@ -211,6 +211,11 @@ ScateSDK.ShowOnboarding("jsonString");
 ScateSDK.CloseOnboarding();
 ```
 
+## Close Paid Product Loading Screen
+```dart
+ScateSDK.ClosePaidProductLoadingScreen();
+```
+
 ## Paywall And Onboarding Screen Events 
 ```dart
   ScateSDK.AddListener(ScateEvents.ONBOARDING_SCREENS_FINISHED, (identifier) => {});

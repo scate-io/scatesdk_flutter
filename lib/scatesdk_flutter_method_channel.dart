@@ -353,7 +353,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   @override
   Future<void> ShowPaywall(String jsonString) async {
     try {
-      await methodChannel.invokeMethod('ShowPaywall', {'jsonString': jsonString});
+      await methodChannel
+          .invokeMethod('ShowPaywall', {'jsonString': jsonString});
     } on PlatformException catch (e) {
       print("Failed to call ShowPaywall: '${e.message}'.");
     }
@@ -364,7 +365,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   @override
   Future<void> ShowOnboarding(String jsonString) async {
     try {
-      await methodChannel.invokeMethod('ShowOnboarding', {'jsonString': jsonString});
+      await methodChannel
+          .invokeMethod('ShowOnboarding', {'jsonString': jsonString});
     } on PlatformException catch (e) {
       print("Failed to call ShowOnboarding: '${e.message}'.");
     }
@@ -396,6 +398,15 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       await methodChannel.invokeMethod('ShowEventList');
     } on PlatformException catch (e) {
       print("Failed to call ShowEventList: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> ClosePaidProductLoadingScreen() async {
+    try {
+      await methodChannel.invokeMethod('ClosePaidProductLoadingScreen');
+    } on PlatformException catch (e) {
+      print("Failed to call ClosePaidProductLoadingScreen: ${e.message}");
     }
   }
 }

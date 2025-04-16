@@ -1,3 +1,10 @@
+## 0.4.15
+*Updated JSON configurations required to launch onboarding and paywall screens
+* Onboarding Screen Updates: Updated customizable color fields for components: title text, heading text, action button (added additional customization for gradient), action button text, "Terms of Use" text, footnote text, "Restore Purchases" button, "Privacy Policy" text, details text  
+* Paywall Screen Updates: Updated customizable color fields for components: action button (added additional customization for gradient), heading text, action button text, "Terms of Use" text, footnote text, "Restore Purchases" button, "Privacy Policy" text, details text  
+* Paid Product Updates: Updated customizable color fields for components: badge text, title text, price text, tag text, description text  
+* Added loading screen triggered when a paid product is selected, along with a function to dismiss it
+
 ## 0.4.14
 * Paywall screen finished event listener fix
 

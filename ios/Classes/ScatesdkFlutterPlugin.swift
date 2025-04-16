@@ -250,6 +250,9 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
         case "CloseOnboarding":
             ScateCoreSDK.CloseOnboarding()
             result(nil)  
+        case "ClosePaidProductLoadingScreen":
+            ScateCoreSDK.ClosePaidProductLoadingScreen()
+            result(nil)  
         case "ShowEventList":
             ScateCoreSDK.ShowEventList()
             result(nil) 
