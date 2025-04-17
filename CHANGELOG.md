@@ -1,3 +1,6 @@
+## 0.4.17
+* ShowPaidProductLoadingScreen() function added.
+
 ## 0.4.15
 *Updated JSON configurations required to launch onboarding and paywall screens
 * Onboarding Screen Updates: Updated customizable color fields for components: title text, heading text, action button (added additional customization for gradient), action button text, "Terms of Use" text, footnote text, "Restore Purchases" button, "Privacy Policy" text, details text  
