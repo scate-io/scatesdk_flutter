@@ -211,6 +211,11 @@ ScateSDK.ShowOnboarding("jsonString");
 ScateSDK.CloseOnboarding();
 ```
 
+## Show Paid Product Loading Screen
+```dart
+ScateSDK.ShowPaidProductLoadingScreen();
+```
+
 ## Close Paid Product Loading Screen
 ```dart
 ScateSDK.ClosePaidProductLoadingScreen();

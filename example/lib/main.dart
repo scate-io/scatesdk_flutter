@@ -97,15 +97,27 @@ class _MyAppState extends State<MyApp> {
     ScateSDK.AddListener(ScateEvents.ONBOARDING_SCREENS_FINISHED,
         (identifier) async {
       print('Onboarding Screens Finished: $identifier');
+      ScateSDK.ShowPaidProductLoadingScreen();
+      Future.delayed(const Duration(seconds: 5), () {
+        ScateSDK.ClosePaidProductLoadingScreen();
+      });
     });
 
     ScateSDK.AddListener(ScateEvents.PAYWALL_SCREEN_FINISHED,
         (identifier) async {
       print('Paywall Screen Finished: $identifier');
+      ScateSDK.ShowPaidProductLoadingScreen();
+      Future.delayed(const Duration(seconds: 5), () {
+        ScateSDK.ClosePaidProductLoadingScreen();
+      });
     });
 
     ScateSDK.AddListener(ScateEvents.PAID_PRODUCT_CLICKED, (identifier) async {
       print('Paid Product Clicked: $identifier');
+      ScateSDK.ShowPaidProductLoadingScreen();
+      Future.delayed(const Duration(seconds: 5), () {
+        ScateSDK.ClosePaidProductLoadingScreen();
+      });
     });
 
     ScateSDK.AddListener(ScateEvents.PAYWALL_SCREEN_CLOSED, (success) async {
@@ -122,8 +134,8 @@ class _MyAppState extends State<MyApp> {
       print('Restore Purchase Clicked: $success');
     });
 
-    //ShowOnboarding();
-    ShowPaywall();
+    ShowOnboarding();
+    //ShowPaywall();
 
     //ScateSDK.ShowEventList();
 

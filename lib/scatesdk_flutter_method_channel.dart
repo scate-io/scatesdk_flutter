@@ -402,6 +402,15 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
+  Future<void> ShowPaidProductLoadingScreen() async {
+    try {
+      await methodChannel.invokeMethod('ShowPaidProductLoadingScreen');
+    } on PlatformException catch (e) {
+      print("Failed to call ShowPaidProductLoadingScreen: ${e.message}");
+    }
+  }
+
+  @override
   Future<void> ClosePaidProductLoadingScreen() async {
     try {
       await methodChannel.invokeMethod('ClosePaidProductLoadingScreen');
