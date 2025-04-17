@@ -1,3 +1,6 @@
+## 0.4.19
+* Onboarding screen background interaction fixed.
+
 ## 0.4.18
 * ShowPaidProductLoadingScreen() function added.
 
