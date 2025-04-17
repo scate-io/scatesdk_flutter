@@ -1,4 +1,4 @@
-## 0.4.17
+## 0.4.18
 * ShowPaidProductLoadingScreen() function added.
 
 ## 0.4.15
