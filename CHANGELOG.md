@@ -1,3 +1,6 @@
+## 0.4.21
+* Onboarding and paywall screens updated.
+
 ## 0.4.19
 * Onboarding screen background interaction fixed.
 
