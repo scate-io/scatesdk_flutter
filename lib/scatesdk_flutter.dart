@@ -36,7 +36,11 @@ class ScateSDK {
   static final Map<String, Function> _listeners = {};
 
   static Future<void> Init(String appID) {
-    return ScatesdkFlutterPlatform.instance.Init(appID);
+    ScatesdkFlutterPlatform.instance.Init(appID);
+    for (var event in ScateEvents.values) {
+      ScateSDK.ClearListeners(event);
+    }
+    return Future.value(); // fixes the warning
   }
 
   static Future<void> SetAdid(String adid) {
