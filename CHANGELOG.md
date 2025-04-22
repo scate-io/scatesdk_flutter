@@ -1,3 +1,6 @@
+## 0.4.22
+* IOS Debug Logs On.
+
 ## 0.4.21
 * Onboarding and paywall screens updated.
 
