@@ -149,9 +149,37 @@ class _MyAppState extends State<MyApp> {
   }
 
   void ShowPaywall() {
-    //For media you can also use image path like this
-    //String imagePath = "/path/to/image.jpg";
-    //String fileUrl = Uri.file(imagePath).toString();
+    // For media, you can also use an image path like this
+    /*
+    import 'package:path_provider/path_provider.dart';
+
+    Future<String> getAssetFilePath(String assetPath) async {
+      try {
+        // Load the asset from the bundle
+        final byteData = await rootBundle.load(assetPath);
+        // Get the temporary directory
+        final tempDir = await getTemporaryDirectory();
+        // Extract the file name from the asset path (if any)
+        final fileName = assetPath.split('/').last;
+        // Create a file in the temporary directory
+        final file = File('${tempDir.path}/$fileName');
+        // Write the asset data to the file
+        await file.writeAsBytes(byteData.buffer.asUint8List());
+        // Return the file path with the 'file://' scheme
+        return Uri.file(file.path).toString();
+      } catch (e) {
+        print("Error getting asset file path: $e");
+        // Return an empty string or default path on error
+        return "";
+      }
+    }
+
+    // Specify the full path of the asset file
+    String assetFullPath = "assets/images/png/app_logo_s.png";
+
+    // Get the file path from the asset
+    String fileUrl = await getAssetFilePath(assetFullPath);
+    */
 
     final Map<String, dynamic> paywallData = {
       "media": "https://ninegshort.b-cdn.net/Apps/ScateSDK/ob_sample.png",
@@ -229,9 +257,38 @@ class _MyAppState extends State<MyApp> {
   }
 
   void ShowOnboarding() {
-    //For media you can also use image path like this
-    //String imagePath = "/path/to/image.jpg";
-    //String fileUrl = Uri.file(imagePath).toString();
+    // For media, you can also use an image path like this
+    /*
+
+    import 'package:path_provider/path_provider.dart';
+
+    Future<String> getAssetFilePath(String assetPath) async {
+      try {
+        // Load the asset from the bundle
+        final byteData = await rootBundle.load(assetPath);
+        // Get the temporary directory
+        final tempDir = await getTemporaryDirectory();
+        // Extract the file name from the asset path (if any)
+        final fileName = assetPath.split('/').last;
+        // Create a file in the temporary directory
+        final file = File('${tempDir.path}/$fileName');
+        // Write the asset data to the file
+        await file.writeAsBytes(byteData.buffer.asUint8List());
+        // Return the file path with the 'file://' scheme
+        return Uri.file(file.path).toString();
+      } catch (e) {
+        print("Error getting asset file path: $e");
+        // Return an empty string or default path on error
+        return "";
+      }
+    }
+
+    // Specify the full path of the asset file
+    String assetFullPath = "assets/images/png/app_logo_s.png";
+
+    // Get the file path from the asset
+    String fileUrl = await getAssetFilePath(assetFullPath);
+    */
 
     final jsonString = jsonEncode([
       {

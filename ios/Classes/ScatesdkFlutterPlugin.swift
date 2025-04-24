@@ -259,6 +259,9 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
         case "ShowEventList":
             ScateCoreSDK.ShowEventList()
             result(nil) 
+        case "ManuallyTriggerDidBecomeActive":
+            NotificationCenter.default.post(name: Notification.Name("Scate_AppDidBecomeActive"), object: nil)
+            result(nil)
         default:
             result(FlutterMethodNotImplemented)
         }

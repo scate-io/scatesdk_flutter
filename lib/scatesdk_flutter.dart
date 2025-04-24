@@ -37,6 +37,9 @@ class ScateSDK {
 
   static Future<void> Init(String appID) {
     ScatesdkFlutterPlatform.instance.Init(appID);
+
+    // To trigger Scate_AppDidBecomeActive manually
+    ScatesdkFlutterPlatform.instance.ManuallyTriggerDidBecomeActive();
     for (var event in ScateEvents.values) {
       ScateSDK.ClearListeners(event);
     }

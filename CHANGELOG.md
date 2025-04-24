@@ -1,3 +1,7 @@
+## 0.4.23
+* Session event bug fixed.
+* Detailed explanation for using local images when opening onboarding and paywall screens added.
+
 ## 0.4.22
 * IOS Debug Logs On.
 

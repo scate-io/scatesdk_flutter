@@ -418,4 +418,13 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       print("Failed to call ClosePaidProductLoadingScreen: ${e.message}");
     }
   }
+
+  @override
+  Future<void> ManuallyTriggerDidBecomeActive() async {
+    try {
+      await methodChannel.invokeMethod('ManuallyTriggerDidBecomeActive');
+    } on PlatformException catch (e) {
+      print("Failed to call ManuallyTriggerDidBecomeActive: ${e.message}");
+    }
+  }
 }
