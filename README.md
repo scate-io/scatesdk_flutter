@@ -34,6 +34,11 @@ repositories {
     }
 ```   
 
+### ⚠️ Attention ⚠️
+
+If you enable `minifyEnabled` (code shrinking and obfuscation) in your `build.gradle`,
+you must keep ScateSDK classes to avoid issues with JSON serialization (such as `@SerializedName` fields turning into random letters).
+
 ## Usage
 
 ### Initialize the SDK

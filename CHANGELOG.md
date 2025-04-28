@@ -1,3 +1,6 @@
+## 0.4.24
+* Scate SDK README.md updated for Android integration.
+
 ## 0.4.23
 * Session event bug fixed.
 * Detailed explanation for using local images when opening onboarding and paywall screens added.
