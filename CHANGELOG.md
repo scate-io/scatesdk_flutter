@@ -1,3 +1,6 @@
+## 0.4.25
+* Scate SDK README.md updated for Android integration.
+
 ## 0.4.24
 * Scate SDK README.md updated for Android integration.
 

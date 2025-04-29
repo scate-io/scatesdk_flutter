@@ -36,8 +36,27 @@ repositories {
 
 ### ⚠️ Attention ⚠️
 
+In your android/app/build.gradle file, under buildTypes, please add the following lines:
+
+```
+buildTypes {
+    release {
+        minifyEnabled false
+        shrinkResources false
+    }
+}
+```
+
+**Note:**
 If you enable `minifyEnabled` (code shrinking and obfuscation) in your `build.gradle`,
 you must keep ScateSDK classes to avoid issues with JSON serialization (such as `@SerializedName` fields turning into random letters).
+
+To do this, add the following to your proguard-rules.pro file:
+
+```
+-keep class com.scate.scatesdk_flutter.** { *; }
+-keepclassmembers class com.scate.scatesdk_flutter.** { *; }
+```
 
 ## Usage
 
