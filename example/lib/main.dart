@@ -29,9 +29,11 @@ class _MyAppState extends State<MyApp> {
   Future<void> initPlatformState() async {
     ScateSDK.Init("uw2YK");
     ScateSDK.SetAdid("test_adid");
+  
+    // Example ScateSDK event functions.
+    // If you need to send events, you can use these functions.
     ScateSDK.Event("test_event");
     ScateSDK.EventWithValue("test_event", "test_value");
-
     ScateSDK.OnboardingStart();
     ScateSDK.OnboardingStep("location_screen");
     ScateSDK.OnboardingStep("notification_screen");
@@ -77,11 +79,15 @@ class _MyAppState extends State<MyApp> {
     ScateSDK.DailyStreakClaimed();
     ScateSDK.DailyStreakClosed();
 
+    // Example usage of ScateSDK remote config.
+    // Use these function if you have set up remote config in your Scate dashboard.
     var localConfig = await ScateSDK.GetRemoteConfig('test', 'default');
     setState(() {
       _remoteConfigValue = 'Local -> ' + (localConfig ?? 'not found');
     });
 
+    // Example usage of ScateSDK event listeners.
+    // Add these listeners if you need to handle specific events in your app.
     ScateSDK.AddListener(ScateEvents.REMOTE_CONFIG_READY, (success) async {
       print('Remote Fetched: $success');
       var remoteConfig = await ScateSDK.GetRemoteConfig('test', 'default');
