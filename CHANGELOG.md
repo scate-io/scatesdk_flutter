@@ -1,3 +1,6 @@
+## 0.4.27
+* Fixed incorrect session events when the user sends the app to background immediately after launch on IOS.
+
 ## 0.4.26
 * Scate SDK Documentation Updated.
 
