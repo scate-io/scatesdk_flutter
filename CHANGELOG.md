@@ -1,3 +1,6 @@
+## 0.4.28
+* Scate Android SDK Updated.
+
 ## 0.4.27
 * Fixed incorrect session events when the user sends the app to background immediately after launch on IOS.
 

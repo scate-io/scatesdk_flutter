@@ -357,6 +357,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
           .invokeMethod('ShowPaywall', {'jsonString': jsonString});
     } on PlatformException catch (e) {
       print("Failed to call ShowPaywall: '${e.message}'.");
+    } on MissingPluginException catch (e) {
+      print("Failed to call ShowPaywall: ${e.message}");
     }
 
     return null;
@@ -369,6 +371,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
           .invokeMethod('ShowOnboarding', {'jsonString': jsonString});
     } on PlatformException catch (e) {
       print("Failed to call ShowOnboarding: '${e.message}'.");
+    } on MissingPluginException catch (e) {
+      print("Failed to call ShowOnboarding: ${e.message}");
     }
 
     return null;
@@ -380,6 +384,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       await methodChannel.invokeMethod('ClosePaywall');
     } on PlatformException catch (e) {
       print("Failed to call ClosePaywall: ${e.message}");
+    } on MissingPluginException catch (e) {
+      print("Failed to call ClosePaywall: ${e.message}");
     }
   }
 
@@ -388,6 +394,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
     try {
       await methodChannel.invokeMethod('CloseOnboarding');
     } on PlatformException catch (e) {
+      print("Failed to call CloseOnboarding: ${e.message}");
+    } on MissingPluginException catch (e) {
       print("Failed to call CloseOnboarding: ${e.message}");
     }
   }
@@ -398,6 +406,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       await methodChannel.invokeMethod('ShowEventList');
     } on PlatformException catch (e) {
       print("Failed to call ShowEventList: ${e.message}");
+    } on MissingPluginException catch (e) {
+      print("Failed to call ShowEventList: ${e.message}");
     }
   }
 
@@ -406,6 +416,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
     try {
       await methodChannel.invokeMethod('ShowPaidProductLoadingScreen');
     } on PlatformException catch (e) {
+      print("Failed to call ShowPaidProductLoadingScreen: ${e.message}");
+    } on MissingPluginException catch (e) {
       print("Failed to call ShowPaidProductLoadingScreen: ${e.message}");
     }
   }
@@ -416,6 +428,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       await methodChannel.invokeMethod('ClosePaidProductLoadingScreen');
     } on PlatformException catch (e) {
       print("Failed to call ClosePaidProductLoadingScreen: ${e.message}");
+    } on MissingPluginException catch (e) {
+      print("Failed to call ClosePaidProductLoadingScreen: ${e.message}");
     }
   }
 
@@ -424,6 +438,8 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
     try {
       await methodChannel.invokeMethod('ManuallyTriggerDidBecomeActive');
     } on PlatformException catch (e) {
+      print("Failed to call ManuallyTriggerDidBecomeActive: ${e.message}");
+    } on MissingPluginException catch (e) {
       print("Failed to call ManuallyTriggerDidBecomeActive: ${e.message}");
     }
   }
