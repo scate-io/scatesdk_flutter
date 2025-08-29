@@ -219,7 +219,47 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 ScateCoreSDK.DailyStreakClosed()
                 result.success(null)
             }
-             else -> result.notImplemented()
+            "RevenuecatInitiated" -> {
+                ScateCoreSDK.RevenuecatInitiated()
+                result.success(null)
+            }
+
+            "AdjustInitiated" -> {
+                ScateCoreSDK.AdjustInitiated()
+                result.success(null)
+            }
+
+            "AdjustSetToRevenuecat" -> {
+                ScateCoreSDK.AdjustSetToRevenuecat()
+                result.success(null)
+            }
+
+            "SplashCompleted" -> {
+                ScateCoreSDK.SplashCompleted()
+                result.success(null)
+            }
+
+            "FirebaseRemoteInitiated" -> {
+                ScateCoreSDK.FirebaseRemoteInitiated()
+                result.success(null)
+            }
+
+            "HomeScreenOpen" -> {
+                ScateCoreSDK.HomeScreenOpen()
+                result.success(null)
+            }
+
+            "OnboardingPaywallShown" -> {
+                ScateCoreSDK.OnboardingPaywallShown()
+                result.success(null)
+            }
+
+            "OnboardingPaywallClosed" -> {
+                ScateCoreSDK.OnboardingPaywallClosed()
+                result.success(null)
+            }
+
+            else -> result.notImplemented()
         }
     }
 

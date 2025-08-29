@@ -242,6 +242,38 @@ class ScateSDK {
     ScatesdkFlutterPlatform.instance.DailyStreakClosed();
   }
 
+  static void RevenuecatInitiated() {
+    ScatesdkFlutterPlatform.instance.RevenuecatInitiated();
+  }
+
+  static void AdjustInitiated() {
+    ScatesdkFlutterPlatform.instance.AdjustInitiated();
+  }
+
+  static void AdjustSetToRevenuecat() {
+    ScatesdkFlutterPlatform.instance.AdjustSetToRevenuecat();
+  }
+
+  static void SplashCompleted() {
+    ScatesdkFlutterPlatform.instance.SplashCompleted();
+  }
+
+  static void FirebaseRemoteInitiated() {
+    ScatesdkFlutterPlatform.instance.FirebaseRemoteInitiated();
+  }
+
+  static void HomeScreenOpen() {
+    ScatesdkFlutterPlatform.instance.HomeScreenOpen();
+  }
+
+  static void OnboardingPaywallShown() {
+    ScatesdkFlutterPlatform.instance.OnboardingPaywallShown();
+  }
+
+  static void OnboardingPaywallClosed() {
+    ScatesdkFlutterPlatform.instance.OnboardingPaywallClosed();
+  }
+
   static void ShowPaywall(String jsonString) {
     ScatesdkFlutterPlatform.instance.ShowPaywall(jsonString);
   }

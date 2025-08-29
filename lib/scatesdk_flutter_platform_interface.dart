@@ -161,6 +161,38 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.DailyStreakClaimed();
   }
 
+  Future<void> RevenuecatInitiated() async {
+    return _instance.RevenuecatInitiated();
+  }
+
+  Future<void> AdjustInitiated() async {
+    return _instance.AdjustInitiated();
+  }
+
+  Future<void> AdjustSetToRevenuecat() async {
+    return _instance.AdjustSetToRevenuecat();
+  }
+
+  Future<void> SplashCompleted() async {
+    return _instance.SplashCompleted();
+  }
+
+  Future<void> FirebaseRemoteInitiated() async {
+    return _instance.FirebaseRemoteInitiated();
+  }
+
+  Future<void> HomeScreenOpen() async {
+    return _instance.HomeScreenOpen();
+  }
+
+  Future<void> OnboardingPaywallShown() async {
+    return _instance.OnboardingPaywallShown();
+  }
+
+  Future<void> OnboardingPaywallClosed() async {
+    return _instance.OnboardingPaywallClosed();
+  }
+
   Future<void> ShowPaywall(String jsonString) async {
     return _instance.ShowPaywall(jsonString);
   }

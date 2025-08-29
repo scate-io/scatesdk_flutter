@@ -1,3 +1,6 @@
+## 0.4.29
+* New Event Functions Added.
+
 ## 0.4.28
 * Scate Android SDK Updated.
 

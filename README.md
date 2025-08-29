@@ -207,6 +207,34 @@ ScateSDK.DailyStreakClaimed();
 ScateSDK.DailyStreakClosed();
 ```
 
+### Adjust And Revenuecat Event Functions
+```dart
+ScateSDK.RevenuecatInitiated();
+ScateSDK.AdjustInitiated();
+ScateSDK.AdjustSetToRevenuecat();
+```
+
+### Splash Event Function
+```dart
+ScateSDK.SplashCompleted();
+```
+
+### Firebase Event Function
+```dart
+ScateSDK.FirebaseRemoteInitiated();
+```
+
+### Home Screen Event Function
+```dart
+ScateSDK.HomeScreenOpen();
+```
+
+### Onboarding Paywall Event Functions
+```dart
+ScateSDK.OnboardingPaywallShown();
+ScateSDK.OnboardingPaywallClosed();
+```
+
 ## Event List Screen Function (IOS Only)
 
 ```dart

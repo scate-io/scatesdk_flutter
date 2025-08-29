@@ -228,6 +228,38 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             ScateCoreSDK.DailyStreakClosed()
             result(nil)   
 
+        case "RevenuecatInitiated":
+            ScateCoreSDK.RevenuecatInitiated()
+            result(nil)
+        
+        case "AdjustInitiated":
+            ScateCoreSDK.AdjustInitiated()
+            result(nil)
+        
+        case "AdjustSetToRevenuecat":
+            ScateCoreSDK.AdjustSetToRevenuecat()
+            result(nil)
+        
+        case "SplashCompleted":
+            ScateCoreSDK.SplashCompleted()
+            result(nil)
+
+        case "FirebaseRemoteInitiated":
+            ScateCoreSDK.FirebaseRemoteInitiated()
+            result(nil)
+        
+        case "HomeScreenOpen":
+            ScateCoreSDK.HomeScreenOpen()
+            result(nil)
+        
+        case "OnboardingPaywallShown":
+            ScateCoreSDK.OnboardingPaywallShown()
+            result(nil)
+
+        case "OnboardingPaywallClosed":
+            ScateCoreSDK.OnboardingPaywallClosed()
+            result(nil)
+
         case "ShowPaywall":
             guard let args = call.arguments as? [String: Any],
                   let jsonString = args["jsonString"] as? String else {

@@ -79,6 +79,15 @@ class _MyAppState extends State<MyApp> {
     ScateSDK.DailyStreakClaimed();
     ScateSDK.DailyStreakClosed();
 
+    ScateSDK.RevenuecatInitiated();
+    ScateSDK.AdjustInitiated();
+    ScateSDK.AdjustSetToRevenuecat();
+    ScateSDK.SplashCompleted();
+    ScateSDK.FirebaseRemoteInitiated();
+    ScateSDK.HomeScreenOpen();
+    ScateSDK.OnboardingPaywallShown();
+    ScateSDK.OnboardingPaywallClosed();
+
     // Example usage of ScateSDK remote config.
     // Use these function if you have set up remote config in your Scate dashboard.
     var localConfig = await ScateSDK.GetRemoteConfig('test', 'default');

@@ -351,6 +351,78 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
+  Future<void> RevenuecatInitiated() async {
+    try {
+      await methodChannel.invokeMethod('RevenuecatInitiated');
+    } on PlatformException catch (e) {
+      print("Failed to call RevenuecatInitiated: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> AdjustInitiated() async {
+    try {
+      await methodChannel.invokeMethod('AdjustInitiated');
+    } on PlatformException catch (e) {
+      print("Failed to call AdjustInitiated: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> AdjustSetToRevenuecat() async {
+    try {
+      await methodChannel.invokeMethod('AdjustSetToRevenuecat');
+    } on PlatformException catch (e) {
+      print("Failed to call AdjustSetToRevenuecat: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> SplashCompleted() async {
+    try {
+      await methodChannel.invokeMethod('SplashCompleted');
+    } on PlatformException catch (e) {
+      print("Failed to call SplashCompleted: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> FirebaseRemoteInitiated() async {
+    try {
+      await methodChannel.invokeMethod('FirebaseRemoteInitiated');
+    } on PlatformException catch (e) {
+      print("Failed to call FirebaseRemoteInitiated: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> HomeScreenOpen() async {
+    try {
+      await methodChannel.invokeMethod('HomeScreenOpen');
+    } on PlatformException catch (e) {
+      print("Failed to call HomeScreenOpen: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> OnboardingPaywallShown() async {
+    try {
+      await methodChannel.invokeMethod('OnboardingPaywallShown');
+    } on PlatformException catch (e) {
+      print("Failed to call OnboardingPaywallShown: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> OnboardingPaywallClosed() async {
+    try {
+      await methodChannel.invokeMethod('OnboardingPaywallClosed');
+    } on PlatformException catch (e) {
+      print("Failed to call OnboardingPaywallClosed: ${e.message}");
+    }
+  }
+
+  @override
   Future<void> ShowPaywall(String jsonString) async {
     try {
       await methodChannel
