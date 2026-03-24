@@ -1,4 +1,4 @@
-## 0.5.1
+## 0.5.2
 * Firebase integration logic added
 * Updated Scate iOS SDK to 0.5.1.
 * Aligned the Flutter iOS plugin minimum deployment target with the native iOS SDK requirement.
