@@ -2,34 +2,33 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - ScateSDK (0.4.26)
+  - ScateSDK (0.5.1)
   - scatesdk_flutter (0.3.0):
     - Flutter
-    - ScateSDK (= 0.4.26)
+    - ScateSDK (= 0.5.1)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - ScateSDK (from `https://raw.githubusercontent.com/scate-io/ScateSDK-ios/main/ScateSDK.podspec`)
   - scatesdk_flutter (from `.symlinks/plugins/scatesdk_flutter/ios`)
-
-SPEC REPOS:
-  trunk:
-    - ScateSDK
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
   integration_test:
     :path: ".symlinks/plugins/integration_test/ios"
+  ScateSDK:
+    :podspec: https://raw.githubusercontent.com/scate-io/ScateSDK-ios/main/ScateSDK.podspec
   scatesdk_flutter:
     :path: ".symlinks/plugins/scatesdk_flutter/ios"
 
 SPEC CHECKSUMS:
-  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
-  ScateSDK: 51131ea678f799275d69c71b3d871a242f594af1
-  scatesdk_flutter: a4839f1532a56c2c6ecb73f9b1b8c85574699ad3
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
+  ScateSDK: fd7718964633dd311fe548c9feca5c3b995906ff
+  scatesdk_flutter: c6372c64217c9651812d499bb68a7cd1eaa69e36
 
-PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
+PODFILE CHECKSUM: 0daf9e3674c3cfa9872c083d7fbc9d65d2060805
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

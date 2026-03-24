@@ -38,9 +38,15 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
-  Future<void> Init(String appID) async {
+  Future<void> Init(
+    String appID, {
+    bool firebaseUserIdSyncEnabled = true,
+  }) async {
     try {
-      await methodChannel.invokeMethod('Init', {'appID': appID});
+      await methodChannel.invokeMethod('Init', {
+        'appID': appID,
+        'firebaseUserIdSyncEnabled': firebaseUserIdSyncEnabled,
+      });
       await _initializeEventChannel();
     } on PlatformException catch (e) {
       print("Failed to call Init: '${e.message}'.");

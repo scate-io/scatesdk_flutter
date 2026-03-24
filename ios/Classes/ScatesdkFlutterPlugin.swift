@@ -23,7 +23,11 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
                 result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing appID", details: nil))
                 return
             }
-            ScateCoreSDK.Init(appID: appId)
+            let configuration = ScateSDKConfiguration()
+            if let firebaseUserIdSyncEnabled = args["firebaseUserIdSyncEnabled"] as? Bool {
+                configuration.firebaseUserIdSyncEnabled = firebaseUserIdSyncEnabled
+            }
+            ScateCoreSDK.Init(appID: appId, configuration: configuration)
             result(nil)
         case "SetAdid":
             guard let args = call.arguments as? [String: Any],

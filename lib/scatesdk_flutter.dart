@@ -35,8 +35,14 @@ extension ScateEventsExtension on ScateEvents {
 class ScateSDK {
   static final Map<String, Function> _listeners = {};
 
-  static Future<void> Init(String appID) {
-    ScatesdkFlutterPlatform.instance.Init(appID);
+  static Future<void> Init(
+    String appID, {
+    bool firebaseUserIdSyncEnabled = true,
+  }) {
+    ScatesdkFlutterPlatform.instance.Init(
+      appID,
+      firebaseUserIdSyncEnabled: firebaseUserIdSyncEnabled,
+    );
 
     // To trigger Scate_AppDidBecomeActive manually
     ScatesdkFlutterPlatform.instance.ManuallyTriggerDidBecomeActive();

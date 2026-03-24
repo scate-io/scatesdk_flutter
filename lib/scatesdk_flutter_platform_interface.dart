@@ -25,8 +25,14 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> Init(String appID) async {
-    _instance.Init(appID);
+  Future<void> Init(
+    String appID, {
+    bool firebaseUserIdSyncEnabled = true,
+  }) async {
+    _instance.Init(
+      appID,
+      firebaseUserIdSyncEnabled: firebaseUserIdSyncEnabled,
+    );
   }
 
   Future<void> SetAdid(String adid) async {

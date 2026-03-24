@@ -93,6 +93,15 @@ class _MyAppState extends State<MyApp> {
 
 ```
 
+By default, on iOS, when Firebase Analytics is linked and configured in the host app, ScateSDK sets Firebase `user_id` to the Scate user ID during initialization. If your app already manages Firebase `user_id`, disable this before initialization:
+
+```dart
+ScateSDK.Init(
+  "<your app id>",
+  firebaseUserIdSyncEnabled: false,
+);
+```
+
 ### Send Events
 
 To send events, you can use the following code:
