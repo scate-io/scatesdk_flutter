@@ -16,7 +16,7 @@ Add the following into your `pubspec.yaml` file;
 
 ```yaml
 dependencies:
-  scatesdk_flutter: ^0.5.0
+  scatesdk_flutter: ^0.5.2
 ```
 
 ## Android Integration
