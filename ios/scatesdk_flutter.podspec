@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'scatesdk_flutter'
-  s.version          = '6.0.0'
+  s.version          = '6.0.1'
   s.summary          = 'Scate SDK is made for developers to integrate Scate\'s services into their apps. Please visit https://www.scate.io for more information.'
   s.homepage         = 'https://github.com/scate-io/scatesdk_flutter.git'
   s.license          = { :file => '../LICENSE' }

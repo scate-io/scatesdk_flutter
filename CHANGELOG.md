@@ -1,4 +1,4 @@
-## 6.0.0
+## 6.0.1
 * Updated native Scate SDK dependencies to 6.0.0.
 * Added parameterized events with JSON dictionary payload support.
 * Added debug initialization and user id access to the Flutter wrapper.
