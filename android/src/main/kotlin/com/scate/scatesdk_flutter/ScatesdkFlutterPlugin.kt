@@ -44,6 +44,8 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
         when (call.method) {
             "Init" -> {
                 val appID: String? = call.argument("appID")
+                val debug: Boolean = call.argument("debug") ?: false
+                ScateCoreSDK.debug = debug
                 ScateCoreSDK.init(appID, context)
                 result.success(null)
             }
@@ -52,9 +54,17 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 ScateCoreSDK.SetAdid(adid)
                 result.success(null)
             }
+            "GetUserID" -> {
+                result.success(ScateCoreSDK.GetUserID())
+            }
             "Event" -> {
                 val name: String? = call.argument("name")
-                ScateCoreSDK.event(name)
+                val parameters: Map<String, Any?>? = call.argument("parameters")
+                if (parameters != null) {
+                    ScateCoreSDK.event(name, parameters)
+                } else {
+                    ScateCoreSDK.event(name)
+                }
                 result.success(null)
             }
             "EventWithValue" -> {
@@ -256,6 +266,10 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
 
             "OnboardingPaywallClosed" -> {
                 ScateCoreSDK.OnboardingPaywallClosed()
+                result.success(null)
+            }
+
+            "ManuallyTriggerDidBecomeActive" -> {
                 result.success(null)
             }
 

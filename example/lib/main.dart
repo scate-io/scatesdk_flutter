@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
 import 'package:scatesdk_flutter/scatesdk_flutter.dart';
 
 void main() {
@@ -27,13 +27,24 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    ScateSDK.Init("uw2YK");
-    ScateSDK.SetAdid("test_adid");
-  
+    await ScateSDK.Init("uw2YK", debug: true);
+    await ScateSDK.SetAdid("test_adid");
+    final scateUserId = await ScateSDK.GetUserID();
+    print('Scate userId: $scateUserId');
+
     // Example ScateSDK event functions.
     // If you need to send events, you can use these functions.
-    ScateSDK.Event("test_event");
-    ScateSDK.EventWithValue("test_event", "test_value");
+    await ScateSDK.Event("test_event");
+    await ScateSDK.Event(
+      "test_event_with_parameters",
+      parameters: {
+        "button_id": "flutter_example_purchase",
+        "attempt": 1,
+        "is_trial": true,
+        "price": 9.99,
+      },
+    );
+    await ScateSDK.EventWithValue("test_event", "test_value");
     ScateSDK.OnboardingStart();
     ScateSDK.OnboardingStep("location_screen");
     ScateSDK.OnboardingStep("notification_screen");
@@ -149,7 +160,9 @@ class _MyAppState extends State<MyApp> {
       print('Restore Purchase Clicked: $success');
     });
 
-    ShowOnboarding();
+    if (defaultTargetPlatform == TargetPlatform.iOS) {
+      ShowOnboarding();
+    }
     //ShowPaywall();
 
     //ScateSDK.ShowEventList();

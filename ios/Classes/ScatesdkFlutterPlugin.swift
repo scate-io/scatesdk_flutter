@@ -27,6 +27,9 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             if let firebaseUserIdSyncEnabled = args["firebaseUserIdSyncEnabled"] as? Bool {
                 configuration.firebaseUserIdSyncEnabled = firebaseUserIdSyncEnabled
             }
+            if let debug = args["debug"] as? Bool {
+                ScateCoreSDK.debug = debug
+            }
             ScateCoreSDK.Init(appID: appId, configuration: configuration)
             result(nil)
         case "SetAdid":
@@ -37,13 +40,19 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             }
             ScateCoreSDK.SetAdid(adid: adid)
             result(nil)
+        case "GetUserID":
+            result(ScateCoreSDK.GetUserID())
         case "Event":
             guard let args = call.arguments as? [String: Any],
                   let name = args["name"] as? String else {
                 result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing name", details: nil))
                 return
             }
-            ScateCoreSDK.Event(name: name)
+            if let parameters = args["parameters"] as? [String: Any] {
+                ScateCoreSDK.Event(name: name, parameters: parameters as NSDictionary)
+            } else {
+                ScateCoreSDK.Event(name: name)
+            }
             result(nil)
         case "EventWithValue":
             guard let args = call.arguments as? [String: Any],

@@ -38,26 +38,37 @@ class ScateSDK {
   static Future<void> Init(
     String appID, {
     bool firebaseUserIdSyncEnabled = true,
-  }) {
-    ScatesdkFlutterPlatform.instance.Init(
+    bool debug = false,
+  }) async {
+    await ScatesdkFlutterPlatform.instance.Init(
       appID,
       firebaseUserIdSyncEnabled: firebaseUserIdSyncEnabled,
+      debug: debug,
     );
 
     // To trigger Scate_AppDidBecomeActive manually
-    ScatesdkFlutterPlatform.instance.ManuallyTriggerDidBecomeActive();
+    await ScatesdkFlutterPlatform.instance.ManuallyTriggerDidBecomeActive();
     for (var event in ScateEvents.values) {
       ScateSDK.ClearListeners(event);
     }
-    return Future.value(); // fixes the warning
   }
 
   static Future<void> SetAdid(String adid) {
     return ScatesdkFlutterPlatform.instance.SetAdid(adid);
   }
 
-  static Future<void> Event(String name) {
-    return ScatesdkFlutterPlatform.instance.Event(name);
+  static Future<String?> GetUserID() {
+    return ScatesdkFlutterPlatform.instance.GetUserID();
+  }
+
+  static Future<void> Event(
+    String name, {
+    Map<String, dynamic>? parameters,
+  }) {
+    return ScatesdkFlutterPlatform.instance.Event(
+      name,
+      parameters: parameters,
+    );
   }
 
   static Future<void> EventWithValue(String name, String value) async {

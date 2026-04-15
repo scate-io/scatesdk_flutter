@@ -16,7 +16,7 @@ Add the following into your `pubspec.yaml` file;
 
 ```yaml
 dependencies:
-  scatesdk_flutter: ^0.5.2
+  scatesdk_flutter: ^6.0.0
 ```
 
 ## Android Integration
@@ -109,6 +109,18 @@ To send events, you can use the following code:
 ```dart
     
 ScateSDK.Event("button_clicked");
+
+```
+
+### Send Events with Parameters
+
+```dart
+
+ScateSDK.Event("button_clicked", parameters: {
+  "screen": "paywall",
+  "position": 1,
+  "isPrimary": true,
+});
 
 ```
 

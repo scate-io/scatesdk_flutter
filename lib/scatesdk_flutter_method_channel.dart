@@ -19,6 +19,7 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       StreamController<String>.broadcast();
 
   /// Stream getter for exposing events stream.
+  @override
   Stream<String> get eventsStream => _eventsController.stream;
 
   Future<void> _initializeEventChannel() async {
@@ -41,11 +42,13 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   Future<void> Init(
     String appID, {
     bool firebaseUserIdSyncEnabled = true,
+    bool debug = false,
   }) async {
     try {
       await methodChannel.invokeMethod('Init', {
         'appID': appID,
         'firebaseUserIdSyncEnabled': firebaseUserIdSyncEnabled,
+        'debug': debug,
       });
       await _initializeEventChannel();
     } on PlatformException catch (e) {
@@ -63,9 +66,26 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
-  Future<void> Event(String name) async {
+  Future<String?> GetUserID() async {
     try {
-      await methodChannel.invokeMethod('Event', {'name': name});
+      return await methodChannel.invokeMethod<String>('GetUserID');
+    } on PlatformException catch (e) {
+      print("Failed to call GetUserID: '${e.message}'.");
+    }
+
+    return null;
+  }
+
+  @override
+  Future<void> Event(
+    String name, {
+    Map<String, dynamic>? parameters,
+  }) async {
+    try {
+      await methodChannel.invokeMethod('Event', {
+        'name': name,
+        if (parameters != null) 'parameters': parameters,
+      });
     } on PlatformException catch (e) {
       print("Failed to call Event: '${e.message}'.");
     }

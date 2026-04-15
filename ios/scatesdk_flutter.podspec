@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'scatesdk_flutter'
-  s.version          = '0.3.0'
+  s.version          = '6.0.0'
   s.summary          = 'Scate SDK is made for developers to integrate Scate\'s services into their apps. Please visit https://www.scate.io for more information.'
   s.homepage         = 'https://github.com/scate-io/scatesdk_flutter.git'
   s.license          = { :file => '../LICENSE' }
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency "ScateSDK", "0.5.1"
+  s.dependency "ScateSDK", "6.0.0"
   s.platform = :ios, '12.0'
 
   # Flutter.framework does not contain a i386 slice.

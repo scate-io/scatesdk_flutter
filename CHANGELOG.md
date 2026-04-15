@@ -1,9 +1,8 @@
-## 0.5.3
-* Firebase integration logic added
-* Updated Scate iOS SDK to 0.5.1.
-* Aligned the Flutter iOS plugin minimum deployment target with the native iOS SDK requirement.
-* Updated Scate Android SDK to 0.5.0.
-* Updated the Android example project build tooling for current Flutter/Gradle compatibility.
+## 6.0.0
+* Updated native Scate SDK dependencies to 6.0.0.
+* Added parameterized events with JSON dictionary payload support.
+* Added debug initialization and user id access to the Flutter wrapper.
+* Updated the example app to send parameterized events and log the Scate user id.
 
 ## 0.4.29
 * New Event Functions Added.

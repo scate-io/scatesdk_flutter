@@ -28,10 +28,12 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
   Future<void> Init(
     String appID, {
     bool firebaseUserIdSyncEnabled = true,
+    bool debug = false,
   }) async {
     _instance.Init(
       appID,
       firebaseUserIdSyncEnabled: firebaseUserIdSyncEnabled,
+      debug: debug,
     );
   }
 
@@ -39,8 +41,15 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.SetAdid(adid);
   }
 
-  Future<void> Event(String name) async {
-    return _instance.Event(name);
+  Future<String?> GetUserID() async {
+    return _instance.GetUserID();
+  }
+
+  Future<void> Event(
+    String name, {
+    Map<String, dynamic>? parameters,
+  }) async {
+    return _instance.Event(name, parameters: parameters);
   }
 
   Future<void> EventWithValue(String name, String value) async {
