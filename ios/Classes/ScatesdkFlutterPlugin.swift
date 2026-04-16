@@ -40,6 +40,19 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             }
             ScateCoreSDK.SetAdid(adid: adid)
             result(nil)
+        case "InitAdjust":
+            guard let args = call.arguments as? [String: Any],
+                  let adjustToken = args["adjustToken"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing adjustToken", details: nil))
+                return
+            }
+            let noATT = args["noATT"] as? Bool ?? false
+            ScateCoreSDK.InitAdjust(adjustToken: adjustToken, noATT: noATT)
+            result(nil)
+        case "GetAdjustId":
+            ScateCoreSDK.GetAdjustId { adid in
+                result(adid)
+            }
         case "GetUserID":
             result(ScateCoreSDK.GetUserID())
         case "Event":

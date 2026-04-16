@@ -57,6 +57,23 @@ class ScateSDK {
     return ScatesdkFlutterPlatform.instance.SetAdid(adid);
   }
 
+  static Future<void> InitAdjust(
+    String adjustToken, {
+    bool noATT = false,
+  }) {
+    return ScatesdkFlutterPlatform.instance.InitAdjust(
+      adjustToken,
+      noATT: noATT,
+    );
+  }
+
+  static Future<void> GetAdjustId(void Function(String adid) callback) async {
+    final adid = await ScatesdkFlutterPlatform.instance.GetAdjustId();
+    if (adid != null && adid.isNotEmpty) {
+      callback(adid);
+    }
+  }
+
   static Future<String?> GetUserID() {
     return ScatesdkFlutterPlatform.instance.GetUserID();
   }

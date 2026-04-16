@@ -66,6 +66,32 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
+  Future<void> InitAdjust(
+    String adjustToken, {
+    bool noATT = false,
+  }) async {
+    try {
+      await methodChannel.invokeMethod('InitAdjust', {
+        'adjustToken': adjustToken,
+        'noATT': noATT,
+      });
+    } on PlatformException catch (e) {
+      print("Failed to call InitAdjust: '${e.message}'.");
+    }
+  }
+
+  @override
+  Future<String?> GetAdjustId() async {
+    try {
+      return await methodChannel.invokeMethod<String>('GetAdjustId');
+    } on PlatformException catch (e) {
+      print("Failed to call GetAdjustId: '${e.message}'.");
+    }
+
+    return null;
+  }
+
+  @override
   Future<String?> GetUserID() async {
     try {
       return await methodChannel.invokeMethod<String>('GetUserID');

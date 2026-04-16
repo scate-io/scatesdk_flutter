@@ -41,6 +41,17 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.SetAdid(adid);
   }
 
+  Future<void> InitAdjust(
+    String adjustToken, {
+    bool noATT = false,
+  }) async {
+    return _instance.InitAdjust(adjustToken, noATT: noATT);
+  }
+
+  Future<String?> GetAdjustId() async {
+    return _instance.GetAdjustId();
+  }
+
   Future<String?> GetUserID() async {
     return _instance.GetUserID();
   }

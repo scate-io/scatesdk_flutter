@@ -17,7 +17,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  static const String _adjustToken = '19atefbehslc';
+
   String _remoteConfigValue = 'Loading...';
+  String _adjustStatus = 'Adjust not started';
+  String _adjustId = 'Waiting...';
 
   @override
   void initState() {
@@ -28,7 +32,18 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     await ScateSDK.Init("uw2YK", debug: true);
-    await ScateSDK.SetAdid("test_adid");
+    await ScateSDK.InitAdjust(_adjustToken);
+    setState(() {
+      _adjustStatus = 'Adjust initialized, waiting for ADID';
+    });
+    ScateSDK.GetAdjustId((adid) {
+      print('Adjust ADID: $adid');
+      if (!mounted) return;
+      setState(() {
+        _adjustStatus = 'Adjust ADID ready';
+        _adjustId = adid;
+      });
+    });
     final scateUserId = await ScateSDK.GetUserID();
     print('Scate userId: $scateUserId');
 
@@ -430,7 +445,12 @@ class _MyAppState extends State<MyApp> {
           title: const Text('ScateSDK example app'),
         ),
         body: Center(
-          child: Text(_remoteConfigValue + '\n'),
+          child: Text(
+            'Adjust: $_adjustStatus\n'
+            'ADID: $_adjustId\n'
+            'Remote config: $_remoteConfigValue\n',
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     );

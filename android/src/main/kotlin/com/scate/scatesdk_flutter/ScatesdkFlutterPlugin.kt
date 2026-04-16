@@ -54,6 +54,23 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 ScateCoreSDK.SetAdid(adid)
                 result.success(null)
             }
+            "InitAdjust" -> {
+                val adjustToken: String? = call.argument("adjustToken")
+                val noATT: Boolean = call.argument("noATT") ?: false
+                if (adjustToken.isNullOrBlank()) {
+                    result.error("INVALID_ARGUMENT", "Missing adjustToken", null)
+                    return
+                }
+                ScateCoreSDK.InitAdjust(adjustToken, context, noATT)
+                result.success(null)
+            }
+            "GetAdjustId" -> {
+                ScateCoreSDK.GetAdjustId { adid ->
+                    Handler(Looper.getMainLooper()).post {
+                        result.success(adid)
+                    }
+                }
+            }
             "GetUserID" -> {
                 result.success(ScateCoreSDK.GetUserID())
             }

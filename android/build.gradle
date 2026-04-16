@@ -58,7 +58,9 @@ android {
     dependencies {
         testImplementation 'org.jetbrains.kotlin:kotlin-test'
         testImplementation 'org.mockito:mockito-core:5.0.0'
-        implementation 'com.scate:scatesdk:6.0.0'
+        implementation 'com.scate:scatesdk:7.0.1'
+        implementation 'com.adjust.sdk:adjust-android:5.6.0'
+        implementation 'com.android.installreferrer:installreferrer:2.2'
     }
 
     testOptions {

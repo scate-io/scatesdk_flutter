@@ -1,3 +1,7 @@
+## 7.0.0
+* Updated native Scate SDK dependencies to 7.0.1.
+* Added Adjust initialization and ADID access support.
+
 ## 6.0.1
 * Updated native Scate SDK dependencies to 6.0.0.
 * Added parameterized events with JSON dictionary payload support.
