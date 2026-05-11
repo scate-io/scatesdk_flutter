@@ -1,3 +1,7 @@
+## 7.0.2
+* Updated native iOS ScateSDK dependency to 7.0.2.
+* Added remote-targeted debug event list support through the iOS SDK integration.
+
 ## 7.0.0
 * Updated native Scate SDK dependencies to 7.0.1.
 * Added Adjust initialization and ADID access support.
