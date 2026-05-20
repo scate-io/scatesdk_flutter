@@ -317,6 +317,36 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
         case "ShowEventList":
             ScateCoreSDK.ShowEventList()
             result(nil) 
+        case "SubscriptionSuccess":
+            ScateCoreSDK.SubscriptionSuccess()
+            result(nil)
+        case "InAppPurchaseSuccess":
+            ScateCoreSDK.InAppPurchaseSuccess()
+            result(nil)
+        case "ContentCreateStart":
+            ScateCoreSDK.ContentCreateStart()
+            result(nil)
+        case "ContentCreateSuccess":
+            ScateCoreSDK.ContentCreateSuccess()
+            result(nil)
+        case "ContentCreateFail":
+            ScateCoreSDK.ContentCreateFail()
+            result(nil)
+        case "SubsStart":
+            ScateCoreSDK.SubsStart()
+            result(nil)
+        case "SubsSuccess":
+            ScateCoreSDK.SubsSuccess()
+            result(nil)
+        case "SubsFail":
+            ScateCoreSDK.SubsFail()
+            result(nil)
+        case "SubsCancel":
+            ScateCoreSDK.SubsCancel()
+            result(nil)
+        case "AllServicesInitialized":
+            ScateCoreSDK.AllServicesInitialized()
+            result(nil)
         case "ManuallyTriggerDidBecomeActive":
             NotificationCenter.default.post(name: Notification.Name("Scate_AppDidBecomeActive"), object: nil)
             result(nil)

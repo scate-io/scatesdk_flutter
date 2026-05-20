@@ -250,4 +250,44 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
   Future<void> ManuallyTriggerDidBecomeActive() async {
     return _instance.ManuallyTriggerDidBecomeActive();
   }
+
+  Future<void> SubscriptionSuccess() async {
+    return _instance.SubscriptionSuccess();
+  }
+
+  Future<void> InAppPurchaseSuccess() async {
+    return _instance.InAppPurchaseSuccess();
+  }
+
+  Future<void> ContentCreateStart() async {
+    return _instance.ContentCreateStart();
+  }
+
+  Future<void> ContentCreateSuccess() async {
+    return _instance.ContentCreateSuccess();
+  }
+
+  Future<void> ContentCreateFail() async {
+    return _instance.ContentCreateFail();
+  }
+
+  Future<void> SubsStart() async {
+    return _instance.SubsStart();
+  }
+
+  Future<void> SubsSuccess() async {
+    return _instance.SubsSuccess();
+  }
+
+  Future<void> SubsFail() async {
+    return _instance.SubsFail();
+  }
+
+  Future<void> SubsCancel() async {
+    return _instance.SubsCancel();
+  }
+
+  Future<void> AllServicesInitialized() async {
+    return _instance.AllServicesInitialized();
+  }
 }

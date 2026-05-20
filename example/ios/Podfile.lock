@@ -1,23 +1,23 @@
 PODS:
-  - Adjust (5.6.1):
-    - Adjust/Adjust (= 5.6.1)
-  - Adjust/Adjust (5.6.1):
-    - AdjustSignature (= 3.62.0)
-  - AdjustSignature (3.62.0)
+  - Adjust (5.6.2):
+    - Adjust/Adjust (= 5.6.2)
+  - Adjust/Adjust (5.6.2):
+    - AdjustSignature (= 3.67.0)
+  - AdjustSignature (3.67.0)
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - ScateSDK (7.0.1):
+  - ScateSDK (7.0.3):
     - Adjust (~> 5.6.1)
-  - scatesdk_flutter (7.0.1):
+  - scatesdk_flutter (7.0.3):
     - Adjust (~> 5.6.1)
     - Flutter
-    - ScateSDK (= 7.0.1)
+    - ScateSDK (= 7.0.3)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
-  - ScateSDK (from `https://raw.githubusercontent.com/scate-io/ScateSDK-ios/v7.0.1/ScateSDK.podspec`)
+  - ScateSDK (from `https://raw.githubusercontent.com/scate-io/ScateSDK-ios/v7.0.3/ScateSDK.podspec`)
   - scatesdk_flutter (from `.symlinks/plugins/scatesdk_flutter/ios`)
 
 SPEC REPOS:
@@ -31,18 +31,18 @@ EXTERNAL SOURCES:
   integration_test:
     :path: ".symlinks/plugins/integration_test/ios"
   ScateSDK:
-    :podspec: https://raw.githubusercontent.com/scate-io/ScateSDK-ios/v7.0.1/ScateSDK.podspec
+    :podspec: https://raw.githubusercontent.com/scate-io/ScateSDK-ios/v7.0.3/ScateSDK.podspec
   scatesdk_flutter:
     :path: ".symlinks/plugins/scatesdk_flutter/ios"
 
 SPEC CHECKSUMS:
-  Adjust: d236fde04959ba2726aa71fd1e6854dfe680b513
-  AdjustSignature: 682d788005a6e21557913a9dc0381ae8d943ca0a
+  Adjust: 62ea53a252534df416676e7ac2f1558d60e6e39e
+  AdjustSignature: 9498705a4ac67b719e31828be4d74fbb8656950c
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
-  integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
-  ScateSDK: 5e0dadaa7194073b41802e0c63b1dac7ec8d7322
-  scatesdk_flutter: db5ede8823b64c51cc763c53d3e6e7dcd5dfe41e
+  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+  ScateSDK: 30a046d89c30626f544de159580c1480cbb1c932
+  scatesdk_flutter: f108e4915110c8f054fff63d7cb99f58791d8e87
 
-PODFILE CHECKSUM: 2ab7df34f5683d969f5583dcbd695f428a57049a
+PODFILE CHECKSUM: 451ba2c65a93f8ed6e8cecdceb1a63ca7e30d29e
 
 COCOAPODS: 1.16.2

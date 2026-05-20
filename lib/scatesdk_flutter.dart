@@ -335,4 +335,44 @@ class ScateSDK {
   static void ClosePaidProductLoadingScreen() {
     ScatesdkFlutterPlatform.instance.ClosePaidProductLoadingScreen();
   }
+
+  static void SubscriptionSuccess() {
+    ScatesdkFlutterPlatform.instance.SubscriptionSuccess();
+  }
+
+  static void InAppPurchaseSuccess() {
+    ScatesdkFlutterPlatform.instance.InAppPurchaseSuccess();
+  }
+
+  static void ContentCreateStart() {
+    ScatesdkFlutterPlatform.instance.ContentCreateStart();
+  }
+
+  static void ContentCreateSuccess() {
+    ScatesdkFlutterPlatform.instance.ContentCreateSuccess();
+  }
+
+  static void ContentCreateFail() {
+    ScatesdkFlutterPlatform.instance.ContentCreateFail();
+  }
+
+  static void SubsStart() {
+    ScatesdkFlutterPlatform.instance.SubsStart();
+  }
+
+  static void SubsSuccess() {
+    ScatesdkFlutterPlatform.instance.SubsSuccess();
+  }
+
+  static void SubsFail() {
+    ScatesdkFlutterPlatform.instance.SubsFail();
+  }
+
+  static void SubsCancel() {
+    ScatesdkFlutterPlatform.instance.SubsCancel();
+  }
+
+  static void AllServicesInitialized() {
+    ScatesdkFlutterPlatform.instance.AllServicesInitialized();
+  }
 }

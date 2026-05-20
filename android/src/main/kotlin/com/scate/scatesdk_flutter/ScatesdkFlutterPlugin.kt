@@ -286,6 +286,56 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 result.success(null)
             }
 
+            "SubscriptionSuccess" -> {
+                ScateCoreSDK.SubscriptionSuccess()
+                result.success(null)
+            }
+
+            "InAppPurchaseSuccess" -> {
+                ScateCoreSDK.InAppPurchaseSuccess()
+                result.success(null)
+            }
+
+            "ContentCreateStart" -> {
+                ScateCoreSDK.ContentCreateStart()
+                result.success(null)
+            }
+
+            "ContentCreateSuccess" -> {
+                ScateCoreSDK.ContentCreateSuccess()
+                result.success(null)
+            }
+
+            "ContentCreateFail" -> {
+                ScateCoreSDK.ContentCreateFail()
+                result.success(null)
+            }
+
+            "SubsStart" -> {
+                ScateCoreSDK.SubsStart()
+                result.success(null)
+            }
+
+            "SubsSuccess" -> {
+                ScateCoreSDK.SubsSuccess()
+                result.success(null)
+            }
+
+            "SubsFail" -> {
+                ScateCoreSDK.SubsFail()
+                result.success(null)
+            }
+
+            "SubsCancel" -> {
+                ScateCoreSDK.SubsCancel()
+                result.success(null)
+            }
+
+            "AllServicesInitialized" -> {
+                ScateCoreSDK.AllServicesInitialized()
+                result.success(null)
+            }
+
             "ManuallyTriggerDidBecomeActive" -> {
                 result.success(null)
             }

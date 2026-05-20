@@ -567,4 +567,94 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       print("Failed to call ManuallyTriggerDidBecomeActive: ${e.message}");
     }
   }
+
+  @override
+  Future<void> SubscriptionSuccess() async {
+    try {
+      await methodChannel.invokeMethod('SubscriptionSuccess');
+    } on PlatformException catch (e) {
+      print("Failed to call SubscriptionSuccess: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> InAppPurchaseSuccess() async {
+    try {
+      await methodChannel.invokeMethod('InAppPurchaseSuccess');
+    } on PlatformException catch (e) {
+      print("Failed to call InAppPurchaseSuccess: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> ContentCreateStart() async {
+    try {
+      await methodChannel.invokeMethod('ContentCreateStart');
+    } on PlatformException catch (e) {
+      print("Failed to call ContentCreateStart: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> ContentCreateSuccess() async {
+    try {
+      await methodChannel.invokeMethod('ContentCreateSuccess');
+    } on PlatformException catch (e) {
+      print("Failed to call ContentCreateSuccess: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> ContentCreateFail() async {
+    try {
+      await methodChannel.invokeMethod('ContentCreateFail');
+    } on PlatformException catch (e) {
+      print("Failed to call ContentCreateFail: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> SubsStart() async {
+    try {
+      await methodChannel.invokeMethod('SubsStart');
+    } on PlatformException catch (e) {
+      print("Failed to call SubsStart: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> SubsSuccess() async {
+    try {
+      await methodChannel.invokeMethod('SubsSuccess');
+    } on PlatformException catch (e) {
+      print("Failed to call SubsSuccess: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> SubsFail() async {
+    try {
+      await methodChannel.invokeMethod('SubsFail');
+    } on PlatformException catch (e) {
+      print("Failed to call SubsFail: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> SubsCancel() async {
+    try {
+      await methodChannel.invokeMethod('SubsCancel');
+    } on PlatformException catch (e) {
+      print("Failed to call SubsCancel: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> AllServicesInitialized() async {
+    try {
+      await methodChannel.invokeMethod('AllServicesInitialized');
+    } on PlatformException catch (e) {
+      print("Failed to call AllServicesInitialized: ${e.message}");
+    }
+  }
 }

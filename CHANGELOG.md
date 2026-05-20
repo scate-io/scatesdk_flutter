@@ -1,3 +1,10 @@
+## 7.0.3
+
+- Added `SubscriptionSuccess`, `InAppPurchaseSuccess`, `ContentCreateStart`, `ContentCreateSuccess`, `ContentCreateFail`, `SubsStart`, `SubsSuccess`, `SubsFail`, `SubsCancel`, and `AllServicesInitialized` event methods.
+- Documented `Event` and `EventWithValue` usage for onboarding conversion share, onboarding finish rate, and content created chart events in README.
+- Updated native Android Scate SDK dependency to 7.0.2.
+- Updated native iOS ScateSDK dependency to 7.0.3.
+
 ## 7.0.2
 * Updated native iOS ScateSDK dependency to 7.0.2.
 * Added remote-targeted debug event list support through the iOS SDK integration.
