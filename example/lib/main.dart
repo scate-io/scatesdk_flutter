@@ -22,6 +22,7 @@ class _MyAppState extends State<MyApp> {
   String _remoteConfigValue = 'Loading...';
   String _adjustStatus = 'Adjust not started';
   String _adjustId = 'Waiting...';
+  String _sdkMetadata = 'Loading SDK metadata...';
 
   @override
   void initState() {
@@ -32,6 +33,15 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     await ScateSDK.Init("uw2YK", debug: true);
+    final sdkMetadata = await ScateSDK.GetSdkMetadata();
+    print('SDK metadata: $sdkMetadata');
+    if (!mounted) return;
+    setState(() {
+      _sdkMetadata =
+          'native=${sdkMetadata['sdkNativeVersion'] ?? ''}, '
+          'platformVer=${sdkMetadata['sdkPlatformVersion'] ?? ''}, '
+          'platform=${sdkMetadata['sdkPlatform'] ?? ''}';
+    });
     await ScateSDK.InitAdjust(_adjustToken);
     setState(() {
       _adjustStatus = 'Adjust initialized, waiting for ADID';
@@ -446,6 +456,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Text(
+            'SDK metadata: $_sdkMetadata\n'
             'Adjust: $_adjustStatus\n'
             'ADID: $_adjustId\n'
             'Remote config: $_remoteConfigValue\n',

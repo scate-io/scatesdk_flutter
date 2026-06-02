@@ -45,9 +45,19 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
             "Init" -> {
                 val appID: String? = call.argument("appID")
                 val debug: Boolean = call.argument("debug") ?: false
+                val sdkPlatform: String = call.argument("sdkPlatform") ?: "flutter"
+                val sdkPlatformVersion: String = call.argument("sdkPlatformVersion") ?: ""
                 ScateCoreSDK.debug = debug
-                ScateCoreSDK.init(appID, context)
+                ScateCoreSDK.init(appID, context, sdkPlatform, sdkPlatformVersion)
                 result.success(null)
+            }
+            "GetSdkMetadata" -> {
+                val metadata = hashMapOf(
+                    "sdkNativeVersion" to ScateCoreSDK.GetSdkNativeVersion(),
+                    "sdkPlatformVersion" to ScateCoreSDK.GetSdkPlatformVersion(),
+                    "sdkPlatform" to ScateCoreSDK.GetSdkPlatform(),
+                )
+                result.success(metadata)
             }
             "SetAdid" -> {
                 val adid: String? = call.argument("adid")

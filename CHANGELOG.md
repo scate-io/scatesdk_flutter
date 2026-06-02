@@ -1,3 +1,8 @@
+## 7.0.4
+
+- Updated native iOS ScateSDK dependency to 7.0.5.
+- Updated native Android Scate SDK dependency to 7.0.6.
+
 ## 7.0.3
 
 - Added `SubscriptionSuccess`, `InAppPurchaseSuccess`, `ContentCreateStart`, `ContentCreateSuccess`, `ContentCreateFail`, `SubsStart`, `SubsSuccess`, `SubsFail`, `SubsCancel`, and `AllServicesInitialized` event methods.

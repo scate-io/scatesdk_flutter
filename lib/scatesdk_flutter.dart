@@ -1,4 +1,5 @@
 import 'scatesdk_flutter_platform_interface.dart';
+import 'src/package_version.dart';
 import 'dart:convert';
 
 enum ScateEvents {
@@ -33,17 +34,21 @@ extension ScateEventsExtension on ScateEvents {
 }
 
 class ScateSDK {
+  static const String packageVersion = kScatesdkFlutterPackageVersion;
+
   static final Map<String, Function> _listeners = {};
 
   static Future<void> Init(
     String appID, {
     bool firebaseUserIdSyncEnabled = true,
     bool debug = false,
+    String? sdkPlatformVersion,
   }) async {
     await ScatesdkFlutterPlatform.instance.Init(
       appID,
       firebaseUserIdSyncEnabled: firebaseUserIdSyncEnabled,
       debug: debug,
+      sdkPlatformVersion: sdkPlatformVersion ?? kScatesdkFlutterPackageVersion,
     );
 
     // To trigger Scate_AppDidBecomeActive manually
@@ -76,6 +81,10 @@ class ScateSDK {
 
   static Future<String?> GetUserID() {
     return ScatesdkFlutterPlatform.instance.GetUserID();
+  }
+
+  static Future<Map<String, String>> GetSdkMetadata() {
+    return ScatesdkFlutterPlatform.instance.GetSdkMetadata();
   }
 
   static Future<void> Event(

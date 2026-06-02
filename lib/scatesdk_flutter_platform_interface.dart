@@ -1,5 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
+import 'src/package_version.dart';
 import 'scatesdk_flutter_method_channel.dart';
 
 abstract class ScatesdkFlutterPlatform extends PlatformInterface {
@@ -29,12 +30,18 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     String appID, {
     bool firebaseUserIdSyncEnabled = true,
     bool debug = false,
+    String sdkPlatformVersion = kScatesdkFlutterPackageVersion,
   }) async {
-    _instance.Init(
+    return _instance.Init(
       appID,
       firebaseUserIdSyncEnabled: firebaseUserIdSyncEnabled,
       debug: debug,
+      sdkPlatformVersion: sdkPlatformVersion,
     );
+  }
+
+  Future<Map<String, String>> GetSdkMetadata() async {
+    return _instance.GetSdkMetadata();
   }
 
   Future<void> SetAdid(String adid) async {

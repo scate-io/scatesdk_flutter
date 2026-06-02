@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
+import 'src/package_version.dart';
 import 'scatesdk_flutter_platform_interface.dart';
 
 /// An implementation of [ScatesdkFlutterPlatform] that uses method channels.
@@ -43,16 +44,38 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
     String appID, {
     bool firebaseUserIdSyncEnabled = true,
     bool debug = false,
+    String sdkPlatformVersion = kScatesdkFlutterPackageVersion,
   }) async {
     try {
       await methodChannel.invokeMethod('Init', {
         'appID': appID,
         'firebaseUserIdSyncEnabled': firebaseUserIdSyncEnabled,
         'debug': debug,
+        'sdkPlatform': 'flutter',
+        'sdkPlatformVersion': sdkPlatformVersion,
       });
       await _initializeEventChannel();
     } on PlatformException catch (e) {
       print("Failed to call Init: '${e.message}'.");
+    }
+  }
+
+  @override
+  Future<Map<String, String>> GetSdkMetadata() async {
+    try {
+      final result = await methodChannel.invokeMethod<Map<dynamic, dynamic>>(
+        'GetSdkMetadata',
+      );
+      if (result == null) {
+        return {};
+      }
+
+      return result.map(
+        (key, value) => MapEntry(key.toString(), value?.toString() ?? ''),
+      );
+    } on PlatformException catch (e) {
+      print("Failed to call GetSdkMetadata: '${e.message}'.");
+      return {};
     }
   }
 

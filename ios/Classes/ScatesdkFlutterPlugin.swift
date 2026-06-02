@@ -27,11 +27,21 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             if let firebaseUserIdSyncEnabled = args["firebaseUserIdSyncEnabled"] as? Bool {
                 configuration.firebaseUserIdSyncEnabled = firebaseUserIdSyncEnabled
             }
+            let sdkPlatform = (args["sdkPlatform"] as? String)?
+                .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            configuration.sdkPlatform = sdkPlatform.isEmpty ? "flutter" : sdkPlatform
+            configuration.sdkPlatformVersion = (args["sdkPlatformVersion"] as? String) ?? ""
             if let debug = args["debug"] as? Bool {
                 ScateCoreSDK.debug = debug
             }
             ScateCoreSDK.Init(appID: appId, configuration: configuration)
             result(nil)
+        case "GetSdkMetadata":
+            result([
+                "sdkNativeVersion": ScateCoreSDK.GetSdkNativeVersion(),
+                "sdkPlatformVersion": ScateCoreSDK.GetSdkPlatformVersion(),
+                "sdkPlatform": ScateCoreSDK.GetSdkPlatform(),
+            ])
         case "SetAdid":
             guard let args = call.arguments as? [String: Any],
                   let adid = args["adid"] as? String else {
