@@ -1,3 +1,10 @@
+## 7.0.5
+
+- Forward SDK metadata on init: `sdkPlatform` is `flutter`, `sdkPlatformVersion` is the plugin version.
+- Added `ScateSDK.GetSdkMetadata()` for `sdkNativeVersion`, `sdkPlatformVersion`, and `sdkPlatform`.
+- Updated native iOS ScateSDK dependency to 7.0.7.
+- Updated native Android Scate SDK dependency to 7.0.7.
+
 ## 7.0.4
 
 - Updated native iOS ScateSDK dependency to 7.0.5.

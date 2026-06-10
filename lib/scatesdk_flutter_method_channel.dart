@@ -198,6 +198,15 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
+  Future<void> FunnelStep(String step) async {
+    try {
+      await methodChannel.invokeMethod('FunnelStep', {'step': step});
+    } on PlatformException catch (e) {
+      print("Failed to call FunnelStep: ${e.message}");
+    }
+  }
+
+  @override
   Future<void> OnboardingFinish() async {
     try {
       await methodChannel.invokeMethod('OnboardingFinish');
@@ -386,6 +395,15 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       await methodChannel.invokeMethod('TabClicked', {'tab': tab});
     } on PlatformException catch (e) {
       print("Failed to call TabClicked: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> TabView(String tab) async {
+    try {
+      await methodChannel.invokeMethod('TabView', {'tab': tab});
+    } on PlatformException catch (e) {
+      print("Failed to call TabView: ${e.message}");
     }
   }
 
@@ -601,6 +619,51 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
+  Future<void> SubscriptionWeekly(String source) async {
+    try {
+      await methodChannel.invokeMethod('SubscriptionWeekly', {'source': source});
+    } on PlatformException catch (e) {
+      print("Failed to call SubscriptionWeekly: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> SubscriptionMonthly(String source) async {
+    try {
+      await methodChannel.invokeMethod('SubscriptionMonthly', {'source': source});
+    } on PlatformException catch (e) {
+      print("Failed to call SubscriptionMonthly: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> SubscriptionYearly(String source) async {
+    try {
+      await methodChannel.invokeMethod('SubscriptionYearly', {'source': source});
+    } on PlatformException catch (e) {
+      print("Failed to call SubscriptionYearly: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> PurchaseFailed(String source) async {
+    try {
+      await methodChannel.invokeMethod('PurchaseFailed', {'source': source});
+    } on PlatformException catch (e) {
+      print("Failed to call PurchaseFailed: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> PurchaseRestored(String source) async {
+    try {
+      await methodChannel.invokeMethod('PurchaseRestored', {'source': source});
+    } on PlatformException catch (e) {
+      print("Failed to call PurchaseRestored: ${e.message}");
+    }
+  }
+
+  @override
   Future<void> InAppPurchaseSuccess() async {
     try {
       await methodChannel.invokeMethod('InAppPurchaseSuccess');
@@ -633,6 +696,51 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
       await methodChannel.invokeMethod('ContentCreateFail');
     } on PlatformException catch (e) {
       print("Failed to call ContentCreateFail: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> ContentCreated(String content) async {
+    try {
+      await methodChannel.invokeMethod('ContentCreated', {'content': content});
+    } on PlatformException catch (e) {
+      print("Failed to call ContentCreated: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> Like() async {
+    try {
+      await methodChannel.invokeMethod('Like');
+    } on PlatformException catch (e) {
+      print("Failed to call Like: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> Dislike() async {
+    try {
+      await methodChannel.invokeMethod('Dislike');
+    } on PlatformException catch (e) {
+      print("Failed to call Dislike: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> OutputSuccess() async {
+    try {
+      await methodChannel.invokeMethod('OutputSuccess');
+    } on PlatformException catch (e) {
+      print("Failed to call OutputSuccess: ${e.message}");
+    }
+  }
+
+  @override
+  Future<void> OutputFail() async {
+    try {
+      await methodChannel.invokeMethod('OutputFail');
+    } on PlatformException catch (e) {
+      print("Failed to call OutputFail: ${e.message}");
     }
   }
 

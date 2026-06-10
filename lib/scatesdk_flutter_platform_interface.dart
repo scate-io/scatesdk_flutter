@@ -94,6 +94,10 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.OnboardingStep(step);
   }
 
+  Future<void> FunnelStep(String step) async {
+    return _instance.FunnelStep(step);
+  }
+
   Future<void> OnboardingFinish() async {
     return _instance.OnboardingFinish();
   }
@@ -176,6 +180,10 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
 
   Future<void> TabClicked(String tab) async {
     return _instance.TabClicked(tab);
+  }
+
+  Future<void> TabView(String tab) async {
+    return _instance.TabView(tab);
   }
 
   Future<void> FeatureClicked(String feature) async {
@@ -262,6 +270,26 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.SubscriptionSuccess();
   }
 
+  Future<void> SubscriptionWeekly(String source) async {
+    return _instance.SubscriptionWeekly(source);
+  }
+
+  Future<void> SubscriptionMonthly(String source) async {
+    return _instance.SubscriptionMonthly(source);
+  }
+
+  Future<void> SubscriptionYearly(String source) async {
+    return _instance.SubscriptionYearly(source);
+  }
+
+  Future<void> PurchaseFailed(String source) async {
+    return _instance.PurchaseFailed(source);
+  }
+
+  Future<void> PurchaseRestored(String source) async {
+    return _instance.PurchaseRestored(source);
+  }
+
   Future<void> InAppPurchaseSuccess() async {
     return _instance.InAppPurchaseSuccess();
   }
@@ -276,6 +304,26 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
 
   Future<void> ContentCreateFail() async {
     return _instance.ContentCreateFail();
+  }
+
+  Future<void> ContentCreated(String content) async {
+    return _instance.ContentCreated(content);
+  }
+
+  Future<void> Like() async {
+    return _instance.Like();
+  }
+
+  Future<void> Dislike() async {
+    return _instance.Dislike();
+  }
+
+  Future<void> OutputSuccess() async {
+    return _instance.OutputSuccess();
+  }
+
+  Future<void> OutputFail() async {
+    return _instance.OutputFail();
   }
 
   Future<void> SubsStart() async {

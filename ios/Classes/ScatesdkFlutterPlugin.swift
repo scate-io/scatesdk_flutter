@@ -123,6 +123,15 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             }
             ScateCoreSDK.OnboardingStep(step: step)
             result(nil)
+
+        case "FunnelStep":
+            guard let args = call.arguments as? [String: Any],
+                  let step = args["step"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing step", details: nil))
+                return
+            }
+            ScateCoreSDK.FunnelStep(step: step)
+            result(nil)
             
         case "OnboardingFinish":
             ScateCoreSDK.OnboardingFinish()
@@ -242,6 +251,15 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             }
             ScateCoreSDK.TabClicked(tab: tab)
             result(nil)
+
+        case "TabView":
+            guard let args = call.arguments as? [String: Any],
+                  let tab = args["tab"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing tab", details: nil))
+                return
+            }
+            ScateCoreSDK.TabView(tab: tab)
+            result(nil)
             
         case "FeatureClicked":
             guard let args = call.arguments as? [String: Any],
@@ -330,6 +348,46 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
         case "SubscriptionSuccess":
             ScateCoreSDK.SubscriptionSuccess()
             result(nil)
+        case "SubscriptionWeekly":
+            guard let args = call.arguments as? [String: Any],
+                  let source = args["source"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing source", details: nil))
+                return
+            }
+            ScateCoreSDK.SubscriptionWeekly(source: source)
+            result(nil)
+        case "SubscriptionMonthly":
+            guard let args = call.arguments as? [String: Any],
+                  let source = args["source"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing source", details: nil))
+                return
+            }
+            ScateCoreSDK.SubscriptionMonthly(source: source)
+            result(nil)
+        case "SubscriptionYearly":
+            guard let args = call.arguments as? [String: Any],
+                  let source = args["source"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing source", details: nil))
+                return
+            }
+            ScateCoreSDK.SubscriptionYearly(source: source)
+            result(nil)
+        case "PurchaseFailed":
+            guard let args = call.arguments as? [String: Any],
+                  let source = args["source"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing source", details: nil))
+                return
+            }
+            ScateCoreSDK.PurchaseFailed(source: source)
+            result(nil)
+        case "PurchaseRestored":
+            guard let args = call.arguments as? [String: Any],
+                  let source = args["source"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing source", details: nil))
+                return
+            }
+            ScateCoreSDK.PurchaseRestored(source: source)
+            result(nil)
         case "InAppPurchaseSuccess":
             ScateCoreSDK.InAppPurchaseSuccess()
             result(nil)
@@ -341,6 +399,26 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             result(nil)
         case "ContentCreateFail":
             ScateCoreSDK.ContentCreateFail()
+            result(nil)
+        case "ContentCreated":
+            guard let args = call.arguments as? [String: Any],
+                  let content = args["content"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing content", details: nil))
+                return
+            }
+            ScateCoreSDK.ContentCreated(content: content)
+            result(nil)
+        case "Like":
+            ScateCoreSDK.Like()
+            result(nil)
+        case "Dislike":
+            ScateCoreSDK.Dislike()
+            result(nil)
+        case "OutputSuccess":
+            ScateCoreSDK.OutputSuccess()
+            result(nil)
+        case "OutputFail":
+            ScateCoreSDK.OutputFail()
             result(nil)
         case "SubsStart":
             ScateCoreSDK.SubsStart()

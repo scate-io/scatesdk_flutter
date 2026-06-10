@@ -124,6 +124,14 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 ScateCoreSDK.OnboardingStep(step)
                 result.success(null)
             }
+            "FunnelStep" -> {
+                val step = call.argument<String>("step") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing step", null)
+                    return
+                }
+                ScateCoreSDK.FunnelStep(step)
+                result.success(null)
+            }
             "OnboardingFinish" -> {
                 ScateCoreSDK.OnboardingFinish()
                 result.success(null)
@@ -236,6 +244,14 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 ScateCoreSDK.TabClicked(tab)
                 result.success(null)
             }
+            "TabView" -> {
+                val tab = call.argument<String>("tab") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing tab", null)
+                    return
+                }
+                ScateCoreSDK.TabView(tab)
+                result.success(null)
+            }
             "FeatureClicked" -> {
                 val feature = call.argument<String>("feature") ?: run {
                     result.error("INVALID_ARGUMENT", "Missing feature", null)
@@ -301,6 +317,51 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 result.success(null)
             }
 
+            "SubscriptionWeekly" -> {
+                val source = call.argument<String>("source") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing source", null)
+                    return
+                }
+                ScateCoreSDK.SubscriptionWeekly(source)
+                result.success(null)
+            }
+
+            "SubscriptionMonthly" -> {
+                val source = call.argument<String>("source") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing source", null)
+                    return
+                }
+                ScateCoreSDK.SubscriptionMonthly(source)
+                result.success(null)
+            }
+
+            "SubscriptionYearly" -> {
+                val source = call.argument<String>("source") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing source", null)
+                    return
+                }
+                ScateCoreSDK.SubscriptionYearly(source)
+                result.success(null)
+            }
+
+            "PurchaseFailed" -> {
+                val source = call.argument<String>("source") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing source", null)
+                    return
+                }
+                ScateCoreSDK.PurchaseFailed(source)
+                result.success(null)
+            }
+
+            "PurchaseRestored" -> {
+                val source = call.argument<String>("source") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing source", null)
+                    return
+                }
+                ScateCoreSDK.PurchaseRestored(source)
+                result.success(null)
+            }
+
             "InAppPurchaseSuccess" -> {
                 ScateCoreSDK.InAppPurchaseSuccess()
                 result.success(null)
@@ -318,6 +379,35 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
 
             "ContentCreateFail" -> {
                 ScateCoreSDK.ContentCreateFail()
+                result.success(null)
+            }
+
+            "ContentCreated" -> {
+                val content = call.argument<String>("content") ?: run {
+                    result.error("INVALID_ARGUMENT", "Missing content", null)
+                    return
+                }
+                ScateCoreSDK.ContentCreated(content)
+                result.success(null)
+            }
+
+            "Like" -> {
+                ScateCoreSDK.Like()
+                result.success(null)
+            }
+
+            "Dislike" -> {
+                ScateCoreSDK.Dislike()
+                result.success(null)
+            }
+
+            "OutputSuccess" -> {
+                ScateCoreSDK.OutputSuccess()
+                result.success(null)
+            }
+
+            "OutputFail" -> {
+                ScateCoreSDK.OutputFail()
                 result.success(null)
             }
 

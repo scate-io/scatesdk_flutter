@@ -185,6 +185,10 @@ class ScateSDK {
     ScatesdkFlutterPlatform.instance.OnboardingStep(step);
   }
 
+  static void FunnelStep(String step) {
+    ScatesdkFlutterPlatform.instance.FunnelStep(step);
+  }
+
   static void OnboardingFinish() {
     ScatesdkFlutterPlatform.instance.OnboardingFinish();
   }
@@ -269,6 +273,10 @@ class ScateSDK {
     ScatesdkFlutterPlatform.instance.TabClicked(tab);
   }
 
+  static void TabView(String tab) {
+    ScatesdkFlutterPlatform.instance.TabView(tab);
+  }
+
   static void FeatureClicked(String feature) {
     ScatesdkFlutterPlatform.instance.FeatureClicked(feature);
   }
@@ -349,6 +357,26 @@ class ScateSDK {
     ScatesdkFlutterPlatform.instance.SubscriptionSuccess();
   }
 
+  static void SubscriptionWeekly(String source) {
+    ScatesdkFlutterPlatform.instance.SubscriptionWeekly(source);
+  }
+
+  static void SubscriptionMonthly(String source) {
+    ScatesdkFlutterPlatform.instance.SubscriptionMonthly(source);
+  }
+
+  static void SubscriptionYearly(String source) {
+    ScatesdkFlutterPlatform.instance.SubscriptionYearly(source);
+  }
+
+  static void PurchaseFailed(String source) {
+    ScatesdkFlutterPlatform.instance.PurchaseFailed(source);
+  }
+
+  static void PurchaseRestored(String source) {
+    ScatesdkFlutterPlatform.instance.PurchaseRestored(source);
+  }
+
   static void InAppPurchaseSuccess() {
     ScatesdkFlutterPlatform.instance.InAppPurchaseSuccess();
   }
@@ -363,6 +391,26 @@ class ScateSDK {
 
   static void ContentCreateFail() {
     ScatesdkFlutterPlatform.instance.ContentCreateFail();
+  }
+
+  static void ContentCreated(String content) {
+    ScatesdkFlutterPlatform.instance.ContentCreated(content);
+  }
+
+  static void Like() {
+    ScatesdkFlutterPlatform.instance.Like();
+  }
+
+  static void Dislike() {
+    ScatesdkFlutterPlatform.instance.Dislike();
+  }
+
+  static void OutputSuccess() {
+    ScatesdkFlutterPlatform.instance.OutputSuccess();
+  }
+
+  static void OutputFail() {
+    ScatesdkFlutterPlatform.instance.OutputFail();
   }
 
   static void SubsStart() {
