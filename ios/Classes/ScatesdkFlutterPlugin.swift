@@ -130,7 +130,11 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
                 result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing step", details: nil))
                 return
             }
-            ScateCoreSDK.FunnelStep(step: step)
+            if let answer = args["answer"] as? String {
+                ScateCoreSDK.FunnelStep(step: step, answer: answer)
+            } else {
+                ScateCoreSDK.FunnelStep(step: step)
+            }
             result(nil)
             
         case "OnboardingFinish":

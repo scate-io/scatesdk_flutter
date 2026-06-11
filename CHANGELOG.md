@@ -1,3 +1,7 @@
+## 7.0.6
+
+- Updated native iOS ScateSDK dependency to 7.0.8.
+
 ## 7.0.5
 
 - Forward SDK metadata on init: `sdkPlatform` is `flutter`, `sdkPlatformVersion` is the plugin version.

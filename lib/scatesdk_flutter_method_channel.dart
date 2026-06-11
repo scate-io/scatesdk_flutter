@@ -198,9 +198,12 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
-  Future<void> FunnelStep(String step) async {
+  Future<void> FunnelStep(String step, [String? answer]) async {
     try {
-      await methodChannel.invokeMethod('FunnelStep', {'step': step});
+      await methodChannel.invokeMethod('FunnelStep', {
+        'step': step,
+        if (answer != null) 'answer': answer,
+      });
     } on PlatformException catch (e) {
       print("Failed to call FunnelStep: ${e.message}");
     }

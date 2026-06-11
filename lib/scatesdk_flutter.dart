@@ -185,8 +185,8 @@ class ScateSDK {
     ScatesdkFlutterPlatform.instance.OnboardingStep(step);
   }
 
-  static void FunnelStep(String step) {
-    ScatesdkFlutterPlatform.instance.FunnelStep(step);
+  static void FunnelStep(String step, [String? answer]) {
+    ScatesdkFlutterPlatform.instance.FunnelStep(step, answer);
   }
 
   static void OnboardingFinish() {

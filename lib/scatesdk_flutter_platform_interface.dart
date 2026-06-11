@@ -94,8 +94,8 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.OnboardingStep(step);
   }
 
-  Future<void> FunnelStep(String step) async {
-    return _instance.FunnelStep(step);
+  Future<void> FunnelStep(String step, [String? answer]) async {
+    return _instance.FunnelStep(step, answer);
   }
 
   Future<void> OnboardingFinish() async {

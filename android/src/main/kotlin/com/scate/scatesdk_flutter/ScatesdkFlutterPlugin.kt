@@ -129,7 +129,12 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                     result.error("INVALID_ARGUMENT", "Missing step", null)
                     return
                 }
-                ScateCoreSDK.FunnelStep(step)
+                val answer = call.argument<String>("answer")
+                if (answer != null) {
+                    ScateCoreSDK.FunnelStep(step, answer)
+                } else {
+                    ScateCoreSDK.FunnelStep(step)
+                }
                 result.success(null)
             }
             "OnboardingFinish" -> {
