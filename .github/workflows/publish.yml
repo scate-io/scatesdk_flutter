@@ -34,6 +34,7 @@ jobs:
         run: |
           sed -i "s/^version:.*/version: $VERSION/" pubspec.yaml
           sed -i "s/^\([[:space:]]*\)scatesdk_flutter:.*/\1scatesdk_flutter: ^$VERSION/" README.md
+          sed -i "s/^const String kScatesdkFlutterPackageVersion = '.*';/const String kScatesdkFlutterPackageVersion = '$VERSION';/" lib/src/package_version.dart
 
       - name: Commit version changes
         run: |
@@ -41,6 +42,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add pubspec.yaml
           git add README.md
+          git add lib/src/package_version.dart
           git commit -m "chore: update version to $VERSION from tag"
           git push origin main
 
