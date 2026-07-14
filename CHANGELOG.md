@@ -1,3 +1,8 @@
+## 7.0.9
+
+- Updated native iOS ScateSDK dependency to 7.0.10.
+- Updated native Android Scate SDK dependency to 7.0.11.
+
 ## 7.0.8
 
 - Updated native iOS ScateSDK dependency to 7.0.9.
