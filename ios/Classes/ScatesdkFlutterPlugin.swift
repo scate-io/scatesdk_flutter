@@ -50,6 +50,14 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             }
             ScateCoreSDK.SetAdid(adid: adid)
             result(nil)
+        case "SetAdjustGlobalPartnerParameter":
+            guard let args = call.arguments as? [String: Any],
+                  let email = args["email"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing email", details: nil))
+                return
+            }
+            ScateCoreSDK.SetAdjustGlobalPartnerParameter(email: email)
+            result(nil)
         case "InitAdjust":
             guard let args = call.arguments as? [String: Any],
                   let adjustToken = args["adjustToken"] as? String else {
