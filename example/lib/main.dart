@@ -455,12 +455,23 @@ class _MyAppState extends State<MyApp> {
           title: const Text('ScateSDK example app'),
         ),
         body: Center(
-          child: Text(
-            'SDK metadata: $_sdkMetadata\n'
-            'Adjust: $_adjustStatus\n'
-            'ADID: $_adjustId\n'
-            'Remote config: $_remoteConfigValue\n',
-            textAlign: TextAlign.center,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'SDK metadata: $_sdkMetadata\n'
+                'Adjust: $_adjustStatus\n'
+                'ADID: $_adjustId\n'
+                'Remote config: $_remoteConfigValue\n',
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  ScateSDK.SetAdjustGlobalPartnerParameter('dummy@example.com');
+                },
+                child: const Text('Send dummy email (SetAdjustGlobalPartnerParameter)'),
+              ),
+            ],
           ),
         ),
       ),
