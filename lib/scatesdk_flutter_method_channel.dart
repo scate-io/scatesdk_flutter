@@ -89,6 +89,15 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
+  Future<void> SetAdjustGlobalPartnerParameter(String email) async {
+    try {
+      await methodChannel.invokeMethod('SetAdjustGlobalPartnerParameter', {'email': email});
+    } on PlatformException catch (e) {
+      print("Failed to call SetAdjustGlobalPartnerParameter: '${e.message}'.");
+    }
+  }
+
+  @override
   Future<void> InitAdjust(
     String adjustToken, {
     bool noATT = false,
