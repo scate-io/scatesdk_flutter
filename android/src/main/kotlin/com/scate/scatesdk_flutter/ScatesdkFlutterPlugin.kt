@@ -64,6 +64,11 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 ScateCoreSDK.SetAdid(adid)
                 result.success(null)
             }
+            "SetAdjustGlobalPartnerParameter" -> {
+                val email: String? = call.argument("email")
+                ScateCoreSDK.SetAdjustGlobalPartnerParameter(email)
+                result.success(null)
+            }
             "InitAdjust" -> {
                 val adjustToken: String? = call.argument("adjustToken")
                 val noATT: Boolean = call.argument("noATT") ?: false
