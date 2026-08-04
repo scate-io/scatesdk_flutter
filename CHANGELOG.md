@@ -1,3 +1,20 @@
+## 7.0.12
+
+- Depend on Adjust/AdjustGoogleOdm subspec (adds Google ICM support). Apps pinning an older
+  `adjust_sdk` version should upgrade to >= 5.6.x.
+- Updated native iOS ScateSDK dependency to 7.0.12 (adds `scate_firebase_sdk_version`,
+  `scate_measurement_health_check` events, and ODM 1PD support).
+
+## 7.0.11
+
+- Updated native iOS ScateSDK dependency to 7.0.11.
+- Updated native Android Scate SDK dependency to 7.0.12.
+
+## 7.0.10
+
+- Added `SetAdjustGlobalPartnerParameter` to the Dart API surface, wired through the iOS and
+  Android native bridges (forwards the sha256-hashed email as an Adjust partner parameter).
+
 ## 7.0.9
 
 - Updated native iOS ScateSDK dependency to 7.0.10.
