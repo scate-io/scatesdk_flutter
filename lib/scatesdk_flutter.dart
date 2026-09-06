@@ -111,6 +111,23 @@ class ScateSDK {
         .GetRemoteConfig(key, defaultValue);
   }
 
+  /// Typed reads fall back to the default when the value is not of that type.
+  static Future<bool> GetRemoteConfigBool(String key, bool defaultValue) async {
+    return await ScatesdkFlutterPlatform.instance
+        .GetRemoteConfigBool(key, defaultValue);
+  }
+
+  static Future<int> GetRemoteConfigInt(String key, int defaultValue) async {
+    return await ScatesdkFlutterPlatform.instance
+        .GetRemoteConfigInt(key, defaultValue);
+  }
+
+  static Future<double> GetRemoteConfigDouble(
+      String key, double defaultValue) async {
+    return await ScatesdkFlutterPlatform.instance
+        .GetRemoteConfigDouble(key, defaultValue);
+  }
+
   static void AddListener(ScateEvents eventType, Function listener) {
     var name = eventType.name;
 

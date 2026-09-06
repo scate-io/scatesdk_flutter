@@ -172,6 +172,42 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
     return null;
   }
 
+  @override
+  Future<bool> GetRemoteConfigBool(String key, bool defaultValue) async {
+    try {
+      final bool? value = await methodChannel.invokeMethod<bool>(
+          'GetRemoteConfigBool', {'key': key, 'defaultValue': defaultValue});
+      return value ?? defaultValue;
+    } on PlatformException catch (e) {
+      print("Failed to call GetRemoteConfigBool: '${e.message}'.");
+      return defaultValue;
+    }
+  }
+
+  @override
+  Future<int> GetRemoteConfigInt(String key, int defaultValue) async {
+    try {
+      final int? value = await methodChannel.invokeMethod<int>(
+          'GetRemoteConfigInt', {'key': key, 'defaultValue': defaultValue});
+      return value ?? defaultValue;
+    } on PlatformException catch (e) {
+      print("Failed to call GetRemoteConfigInt: '${e.message}'.");
+      return defaultValue;
+    }
+  }
+
+  @override
+  Future<double> GetRemoteConfigDouble(String key, double defaultValue) async {
+    try {
+      final double? value = await methodChannel.invokeMethod<double>(
+          'GetRemoteConfigDouble', {'key': key, 'defaultValue': defaultValue});
+      return value ?? defaultValue;
+    } on PlatformException catch (e) {
+      print("Failed to call GetRemoteConfigDouble: '${e.message}'.");
+      return defaultValue;
+    }
+  }
+
   Future<void> AddListener(String name) async {
     try {
       await methodChannel.invokeMethod('AddListener', {'name': name});

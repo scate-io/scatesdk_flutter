@@ -144,6 +144,11 @@ ScateSDK.EventWithValue("button_clicked", "subscribe_btn");
 
 ScateSDK.GetRemoteConfig('key', 'defaultValue');
 
+// Typed reads fall back to the default when the value is not of that type.
+final enabled = await ScateSDK.GetRemoteConfigBool('new_camera', false);
+final limit = await ScateSDK.GetRemoteConfigInt('scan_limit', 10);
+final ratio = await ScateSDK.GetRemoteConfigDouble('crop_ratio', 1.5);
+
 ```
 
 ### Add Listener

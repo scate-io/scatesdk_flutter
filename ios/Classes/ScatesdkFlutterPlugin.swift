@@ -103,6 +103,30 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             }
             let value = ScateCoreSDK.GetRemoteConfig(key: key, defaultValue: defaultValue)
             result(value)
+        case "GetRemoteConfigBool":
+            guard let args = call.arguments as? [String: Any],
+                  let key = args["key"] as? String,
+                  let defaultValue = args["defaultValue"] as? Bool else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing key or defaultValue", details: nil))
+                return
+            }
+            result(ScateCoreSDK.GetRemoteConfigBool(key: key, defaultValue: defaultValue))
+        case "GetRemoteConfigInt":
+            guard let args = call.arguments as? [String: Any],
+                  let key = args["key"] as? String,
+                  let defaultValue = args["defaultValue"] as? Int else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing key or defaultValue", details: nil))
+                return
+            }
+            result(ScateCoreSDK.GetRemoteConfigInt(key: key, defaultValue: defaultValue))
+        case "GetRemoteConfigDouble":
+            guard let args = call.arguments as? [String: Any],
+                  let key = args["key"] as? String,
+                  let defaultValue = args["defaultValue"] as? Double else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing key or defaultValue", details: nil))
+                return
+            }
+            result(ScateCoreSDK.GetRemoteConfigDouble(key: key, defaultValue: defaultValue))
         case "AddListener":
             guard let args = call.arguments as? [String: Any],
                   let name = args["name"] as? String else {

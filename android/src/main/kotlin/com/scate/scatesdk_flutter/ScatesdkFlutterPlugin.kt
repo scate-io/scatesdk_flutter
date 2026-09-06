@@ -111,6 +111,21 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 val value = ScateCoreSDK.getRemoteConfig(key, defaultValue)
                 result.success(value)
             }
+            "GetRemoteConfigBool" -> {
+                val key: String? = call.argument("key")
+                val defaultValue: Boolean = call.argument("defaultValue") ?: false
+                result.success(ScateCoreSDK.getRemoteConfigBoolean(key, defaultValue))
+            }
+            "GetRemoteConfigInt" -> {
+                val key: String? = call.argument("key")
+                val defaultValue: Int = call.argument("defaultValue") ?: 0
+                result.success(ScateCoreSDK.getRemoteConfigInt(key, defaultValue))
+            }
+            "GetRemoteConfigDouble" -> {
+                val key: String? = call.argument("key")
+                val defaultValue: Double = call.argument("defaultValue") ?: 0.0
+                result.success(ScateCoreSDK.getRemoteConfigDouble(key, defaultValue))
+            }
             "AddListener" -> {
                 result.success(null)
             }
