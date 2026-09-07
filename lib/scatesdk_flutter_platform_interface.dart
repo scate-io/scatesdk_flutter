@@ -82,6 +82,18 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.GetRemoteConfig(key, defaultValue);
   }
 
+  Future<bool> GetRemoteConfigBool(String key, bool defaultValue) async {
+    return _instance.GetRemoteConfigBool(key, defaultValue);
+  }
+
+  Future<int> GetRemoteConfigInt(String key, int defaultValue) async {
+    return _instance.GetRemoteConfigInt(key, defaultValue);
+  }
+
+  Future<double> GetRemoteConfigDouble(String key, double defaultValue) async {
+    return _instance.GetRemoteConfigDouble(key, defaultValue);
+  }
+
   Future<void> AddListener(String name) async {
     return _instance.AddListener(name);
   }
