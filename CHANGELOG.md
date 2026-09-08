@@ -1,3 +1,10 @@
+## 7.0.15
+
+- `GetRemoteConfigBool`, `GetRemoteConfigInt`, `GetRemoteConfigDouble`: typed remote config reads
+  that fall back to the default when the value is not of that type.
+- Updated native ScateSDK dependencies to 7.0.15 on both platforms (A/B assignments,
+  `scate_remote_configs_loaded` / `scate_ab_assignment` events, typed getters).
+
 ## 7.0.12
 
 - Depend on Adjust/AdjustGoogleOdm subspec (adds Google ICM support). Apps pinning an older

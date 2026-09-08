@@ -136,6 +136,10 @@ class _MyAppState extends State<MyApp> {
     ScateSDK.AddListener(ScateEvents.REMOTE_CONFIG_READY, (success) async {
       print('Remote Fetched: $success');
       var remoteConfig = await ScateSDK.GetRemoteConfig('test', 'default');
+      final typedBool = await ScateSDK.GetRemoteConfigBool('test', false);
+      final typedInt = await ScateSDK.GetRemoteConfigInt('test1', -1);
+      final typedDouble = await ScateSDK.GetRemoteConfigDouble('test2', -1);
+      print('Typed $typedBool $typedInt $typedDouble');
 
       setState(() {
         _remoteConfigValue = 'Remote -> ' +
