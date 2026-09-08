@@ -78,6 +78,18 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.EventWithValue(name, value);
   }
 
+  Future<void> EventWithValueAndParameters(
+    String name,
+    String value, {
+    Map<String, dynamic>? parameters,
+  }) async {
+    return _instance.EventWithValueAndParameters(
+      name,
+      value,
+      parameters: parameters,
+    );
+  }
+
   Future<String?> GetRemoteConfig(String key, String defaultValue) async {
     return _instance.GetRemoteConfig(key, defaultValue);
   }

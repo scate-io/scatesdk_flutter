@@ -105,6 +105,19 @@ class ScateSDK {
     await ScatesdkFlutterPlatform.instance.EventWithValue(name, value);
   }
 
+  /// An event carrying both a custom value and parameters.
+  static Future<void> EventWithValueAndParameters(
+    String name,
+    String value, {
+    Map<String, dynamic>? parameters,
+  }) async {
+    await ScatesdkFlutterPlatform.instance.EventWithValueAndParameters(
+      name,
+      value,
+      parameters: parameters,
+    );
+  }
+
   static Future<String?> GetRemoteConfig(
       String key, String defaultValue) async {
     return await ScatesdkFlutterPlatform.instance

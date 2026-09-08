@@ -1,3 +1,8 @@
+## Unreleased
+
+- `EventWithValueAndParameters`: an event carrying both a custom value and parameters,
+  which the native SDKs and the React Native wrapper already had.
+
 ## 7.0.15
 
 - `GetRemoteConfigBool`, `GetRemoteConfigInt`, `GetRemoteConfigDouble`: typed remote config reads

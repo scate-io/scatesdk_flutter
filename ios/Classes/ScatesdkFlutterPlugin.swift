@@ -94,6 +94,19 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             }
             ScateCoreSDK.Event(name: name, customValue: value)
             result(nil)
+        case "EventWithValueAndParameters":
+            guard let args = call.arguments as? [String: Any],
+                  let name = args["name"] as? String,
+                  let value = args["value"] as? String else {
+                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing name or value", details: nil))
+                return
+            }
+            if let parameters = args["parameters"] as? [String: Any] {
+                ScateCoreSDK.Event(name: name, customValue: value, parameters: parameters as NSDictionary)
+            } else {
+                ScateCoreSDK.Event(name: name, customValue: value)
+            }
+            result(nil)
         case "GetRemoteConfig":
             guard let args = call.arguments as? [String: Any],
                   let key = args["key"] as? String,

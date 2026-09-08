@@ -138,6 +138,18 @@ ScateSDK.EventWithValue("button_clicked", "subscribe_btn");
 
 ```
 
+### Send Events with Additional Data and Parameters
+
+```dart
+
+ScateSDK.EventWithValueAndParameters("button_clicked", "subscribe_btn", parameters: {
+  "screen": "paywall",
+  "position": 1,
+  "isPrimary": true,
+});
+
+```
+
 ### Get Remote Config for Key
 
 ```dart
