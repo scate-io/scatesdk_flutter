@@ -70,6 +70,16 @@ class _MyAppState extends State<MyApp> {
       },
     );
     await ScateSDK.EventWithValue("test_event", "test_value");
+    await ScateSDK.EventWithValueAndParameters(
+      "test_event_with_value_and_parameters",
+      "test_value",
+      parameters: {
+        "button_id": "flutter_example_purchase",
+        "attempt": 2,
+        "is_trial": false,
+        "price": 19.99,
+      },
+    );
     ScateSDK.OnboardingStart();
     ScateSDK.OnboardingStep("location_screen");
     ScateSDK.OnboardingStep("notification_screen");

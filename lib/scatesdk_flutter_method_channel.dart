@@ -160,6 +160,23 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
   }
 
   @override
+  Future<void> EventWithValueAndParameters(
+    String name,
+    String value, {
+    Map<String, dynamic>? parameters,
+  }) async {
+    try {
+      await methodChannel.invokeMethod('EventWithValueAndParameters', {
+        'name': name,
+        'value': value,
+        if (parameters != null) 'parameters': parameters,
+      });
+    } on PlatformException catch (e) {
+      print("Failed to call EventWithValueAndParameters: '${e.message}'.");
+    }
+  }
+
+  @override
   Future<String?> GetRemoteConfig(String key, String defaultValue) async {
     try {
       String config = await methodChannel.invokeMethod(

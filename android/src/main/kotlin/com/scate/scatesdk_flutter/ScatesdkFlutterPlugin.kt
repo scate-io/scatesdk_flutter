@@ -105,6 +105,17 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 ScateCoreSDK.event(name, value)
                 result.success(null)
             }
+            "EventWithValueAndParameters" -> {
+                val name: String? = call.argument("name")
+                val value: String? = call.argument("value")
+                val parameters: Map<String, Any?>? = call.argument("parameters")
+                if (parameters != null) {
+                    ScateCoreSDK.event(name, value, parameters)
+                } else {
+                    ScateCoreSDK.event(name, value)
+                }
+                result.success(null)
+            }
             "GetRemoteConfig" -> {
                 val key: String? = call.argument("key")
                 val defaultValue: String? = call.argument("defaultValue")
