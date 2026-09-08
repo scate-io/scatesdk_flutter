@@ -1,7 +1,8 @@
-## Unreleased
+## 7.0.16
 
 - `EventWithValueAndParameters`: an event carrying both a custom value and parameters,
   which the native SDKs and the React Native wrapper already had.
+- Updated native ScateSDK dependencies to 7.0.16 on both platforms.
 
 ## 7.0.15
 
