@@ -43,8 +43,14 @@ jobs:
           git add pubspec.yaml
           git add README.md
           git add lib/src/package_version.dart
-          git commit -m "chore: update version to $VERSION from tag"
-          git push origin main
+          # A rerun after a failed publish finds the version already committed; that is
+          # not a reason to stop, the publish below still has to happen.
+          if git diff --cached --quiet; then
+            echo "version already at $VERSION on main"
+          else
+            git commit -m "chore: update version to $VERSION from tag"
+            git push origin main
+          fi
 
       - name: Install dependencies
         run: flutter pub get
