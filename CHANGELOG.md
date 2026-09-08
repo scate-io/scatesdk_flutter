@@ -1,3 +1,9 @@
+## 7.0.18
+
+- Updated native ScateSDK dependencies to 7.0.18 on both platforms: `abName` and
+  `abVariant` are sent on every event, as empty strings when the user is in no test,
+  instead of being left out.
+
 ## 7.0.17
 
 - Updated native ScateSDK dependencies to 7.0.17 on both platforms: the
