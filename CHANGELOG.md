@@ -1,3 +1,9 @@
+## 7.0.17
+
+- Updated native ScateSDK dependencies to 7.0.17 on both platforms: the
+  `scate_remote_configs_loaded` event reports `segment_override` and `ab_override`, and
+  the always-empty `country_override` is gone.
+
 ## 7.0.16
 
 - `EventWithValueAndParameters`: an event carrying both a custom value and parameters,
