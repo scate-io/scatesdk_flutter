@@ -1,3 +1,20 @@
+## 7.0.19
+
+- Updated native ScateSDK dependencies to 7.0.19 on both platforms:
+  - `Init` returns at once and no longer sends `sdk_initialized` before the first remote
+    config answer. A new `sdk_init_started` event goes out inside `Init`, before any config
+    is known; `sdk_initialized` goes out once the first answer (or its final failure) is
+    applied, with `customValue` `from_remote`, `from_local_cache` or `from_defaults`, and
+    carries the A/B membership.
+  - Listen for `Scate_RemoteConfigsReady` before calling `Init` and start config- or
+    A/B-dependent work from it; the SDK no longer refreshes the configs on its own after
+    five minutes in the background, so the event fires once per launch unless the app
+    calls `Init` again.
+  - The config request tells the server whether this is the launch that created the user
+    (`isFirstOpen`), so users whose first launch never reached the server stay out of new
+    A/B tests.
+  - Android: the config request has a read timeout next to its connect timeout.
+
 ## 7.0.18
 
 - Updated native ScateSDK dependencies to 7.0.18 on both platforms: `abName` and
