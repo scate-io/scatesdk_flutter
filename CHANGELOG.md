@@ -1,3 +1,15 @@
+## 7.0.20
+
+- Updated native ScateSDK dependencies to 7.0.20 on both platforms:
+  - Every event carries `audienceOverride`: the strongest audience (segment override) the
+    user matched at the last config answer, empty when none — next to `abName` and
+    `abVariant`.
+  - Debug menu behind the `scate_debug_menu` remote config: when it is `true` for a device
+    (a phone or user pin on the dashboard) the SDK opens a screen with the Scate user id,
+    install time, A/B test and variant, audience override, and a **Reset identity** action
+    that forgets the user id and the cached configs and membership, so the next launch is a
+    new user's first open. Separate from the event list (`debug_event_list_enabled`).
+
 ## 7.0.19
 
 - Updated native ScateSDK dependencies to 7.0.19 on both platforms:
