@@ -93,8 +93,10 @@ class _MyAppState extends State<MyApp> {
       // ADID is non-empty here.
     });
 
-    // Before reading remote configs or showing the first screen.
     await configsReady.future;
+
+    // Nothing below this line runs before the configs are in:
+    // read remote configs, then show the first screen.
 
   }
 
