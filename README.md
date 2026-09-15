@@ -65,6 +65,8 @@ To do this, add the following to your proguard-rules.pro file:
 Register the remote config listener before initializing. It fires once per initialization and is not replayed, so a listener registered afterwards never sees it.
 
 ```dart
+import 'dart:async';
+
 import 'package:scatesdk_flutter/scatesdk_flutter.dart';
 
 
@@ -79,8 +81,9 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
 
+    final configsReady = Completer<bool>();
     ScateSDK.AddListener(ScateEvents.REMOTE_CONFIG_READY, (fetched) {
-      // Remote configs are ready. Read them, then continue app startup.
+      if (!configsReady.isCompleted) configsReady.complete(fetched);
     });
 
     ScateSDK.Init("<your app id>");
@@ -89,7 +92,10 @@ class _MyAppState extends State<MyApp> {
     ScateSDK.GetAdjustId((adid) {
       // ADID is non-empty here.
     });
-    
+
+    // Before reading remote configs or showing the first screen.
+    await configsReady.future
+        .timeout(const Duration(seconds: 2), onTimeout: () => false);
 
   }
 
@@ -97,7 +103,7 @@ class _MyAppState extends State<MyApp> {
 
 ```
 
-Continue app startup — reading remote configs, leaving the splash screen — only after the listener fires. Add a timeout so a slow network cannot hold the splash.
+`Init` returns immediately and never blocks on the network, so without this gate the first screen can render before any config has arrived. The timeout keeps a slow network from holding the splash.
 
 By default, on iOS, `InitAdjust` configures Adjust with a 120 second ATT consent wait interval and requests App Tracking Transparency authorization at init time. Add `NSUserTrackingUsageDescription` to the iOS app Info.plist for the prompt to appear. Pass `noATT: true` to skip ScateSDK's ATT request path:
 
