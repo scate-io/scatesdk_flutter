@@ -94,8 +94,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     // Before reading remote configs or showing the first screen.
-    await configsReady.future
-        .timeout(const Duration(seconds: 5), onTimeout: () => false);
+    await configsReady.future;
 
   }
 
@@ -103,7 +102,7 @@ class _MyAppState extends State<MyApp> {
 
 ```
 
-Do not read remote configs or show the first screen before the listener fires. `Init` returns immediately and never blocks on the network, so without this gate the app can render before any config has arrived. The listener always fires, `true` on a fresh fetch and `false` once retries are exhausted, but a failing network is retried several times first, so cap the wait instead of blocking on it. Five seconds is a reasonable cap, and a late answer still reaches the listener, so the app can pick up the values afterwards.
+Do not read remote configs or show the first screen before the listener fires. `Init` returns immediately and never blocks on the network, so without this gate the app can render before any config has arrived. The listener always fires, `true` on a fresh fetch and `false` once retries are exhausted. A failing network is retried several times first, so if a slow network must not hold the splash, cap the wait at around five seconds and continue with cached or default values; a late answer still reaches the listener either way.
 
 By default, on iOS, `InitAdjust` configures Adjust with a 120 second ATT consent wait interval and requests App Tracking Transparency authorization at init time. Add `NSUserTrackingUsageDescription` to the iOS app Info.plist for the prompt to appear. Pass `noATT: true` to skip ScateSDK's ATT request path:
 
