@@ -1,3 +1,11 @@
+## 7.0.22
+
+- Updated native ScateSDK dependencies to 7.0.22 on both platforms:
+  - iOS: `Init` stops simulator, Xcode and TestFlight builds at launch when `Info.plist` lacks
+    `SKIncludeConsumableInAppPurchaseHistory` = `YES`. App Store builds keep running.
+  - iOS: `scate_measurement_health_check` reports `consumableHistoryEnabled`.
+- The example app's `Info.plist` sets the key.
+
 ## 7.0.21
 
 - Updated native ScateSDK dependencies to 7.0.21 on both platforms:
