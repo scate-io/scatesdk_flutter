@@ -1,3 +1,15 @@
+## 7.0.21
+
+- Updated native ScateSDK dependencies to 7.0.21 on both platforms:
+  - iOS: the SDK notices purchases on its own. Every time the app becomes active it sends
+    StoreKit's transaction history to Scate, which keeps the purchases it has not seen and
+    sends a `scate_transaction` event for each.
+  - iOS: new purchases are logged to Firebase as `in_app_purchase` through `ScateSDKFirebase`,
+    which the podspec adds on its own when the app uses the `firebase_analytics` plugin on
+    Firebase 12.5.0 or later. No code change; apps without Firebase are unaffected.
+  - iOS: apps selling consumables should set `SKIncludeConsumableInAppPurchaseHistory` to
+    `YES` in `Info.plist`.
+
 ## 7.0.20
 
 - Updated native ScateSDK dependencies to 7.0.20 on both platforms:

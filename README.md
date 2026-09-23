@@ -58,6 +58,19 @@ To do this, add the following to your proguard-rules.pro file:
 -keepclassmembers class com.scate.scatesdk_flutter.** { *; }
 ```
 
+## iOS Integration
+
+### Purchases
+
+ScateSDK notices purchases on its own; the app does not report them. When the app uses the `firebase_analytics`
+plugin on Firebase 12.5.0 or later, `pod install` also adds `ScateSDKFirebase` and new purchases are logged to Firebase
+as `in_app_purchase`. No code is needed; run `pod install` again after adding or removing Firebase. Do not log these
+purchases to Firebase yourself as well, or each one is counted twice.
+
+If the app sells consumables (credits, coins), set `SKIncludeConsumableInAppPurchaseHistory` to `YES` in
+`ios/Runner/Info.plist`. Without it StoreKit drops a consumable from the history once it is finished, and ScateSDK
+never sees that purchase (iOS 18 and later).
+
 ## Usage
 
 ### Initialize the SDK
