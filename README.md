@@ -67,9 +67,10 @@ StoreKit's transaction history to Scate, which keeps the purchases it has not se
 app uses Firebase Analytics, new purchases are also logged to Firebase as `in_app_purchase`, once each. No code is
 needed; do not also log purchases to Firebase yourself, or each one is counted twice.
 
-If the app sells consumables (credits, coins), set `SKIncludeConsumableInAppPurchaseHistory` to `YES` in
-`ios/Runner/Info.plist`. Without it StoreKit drops a consumable from the history once it is finished, and ScateSDK never sees
-that purchase (iOS 18 and later).
+Add `SKIncludeConsumableInAppPurchaseHistory` = `YES` to `ios/Runner/Info.plist`. It is required if the app sells
+consumables (credits, coins): without it StoreKit drops a consumable from the history once it is finished, and
+ScateSDK never sees that purchase (iOS 18 and later). We recommend it for every app: it is one line, changes
+nothing for subscriptions and non-consumables, and covers consumables added later.
 
 ## Usage
 

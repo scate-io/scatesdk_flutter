@@ -6,8 +6,8 @@
     sends a `scate_transaction` event for each.
   - iOS: when the app uses Firebase Analytics, new purchases are logged to Firebase as
     `in_app_purchase`, once each. No code change.
-  - iOS: apps selling consumables should set `SKIncludeConsumableInAppPurchaseHistory` to
-    `YES` in `Info.plist`.
+  - iOS: add `SKIncludeConsumableInAppPurchaseHistory` = `YES` to `Info.plist`: required for
+    apps selling consumables, recommended for every app.
 
 ## 7.0.20
 
