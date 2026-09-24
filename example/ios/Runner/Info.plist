@@ -68,5 +68,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>SKIncludeConsumableInAppPurchaseHistory</key>
+	<true/>
 </dict>
 </plist>
