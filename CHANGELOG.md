@@ -1,3 +1,11 @@
+## 7.0.23
+
+- Updated native ScateSDK dependencies to 7.0.23 on both platforms:
+  - `scate_remote_configs_loaded` carries the whole remote config snapshot: the ceiling for its
+    `configs` and `overrides` JSON went from 4 KB to 256 KB, and a value that does not fit is
+    skipped on its own instead of taking every key after it along; `_truncated` names the
+    omitted keys.
+
 ## 7.0.22
 
 - Updated native ScateSDK dependencies to 7.0.22 on both platforms:
