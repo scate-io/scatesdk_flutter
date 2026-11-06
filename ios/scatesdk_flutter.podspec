@@ -12,7 +12,9 @@ Pod::Spec.new do |s|
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency "ScateSDK", "7.0.23"
+  # The iOS SDK binary ships inside this package instead of coming from the ScateSDK pod:
+  # CocoaPods trunk is read-only from 2 December 2026. sdk-release.sh replaces it each release.
+  s.vendored_frameworks = 'ScateSDK.xcframework'
   s.dependency "Adjust/AdjustGoogleOdm", "~> 5.6.1"
   s.platform = :ios, '12.0'
 
