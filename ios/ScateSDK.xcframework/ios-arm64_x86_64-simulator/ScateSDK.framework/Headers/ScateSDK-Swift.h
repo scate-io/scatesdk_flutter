@@ -545,7 +545,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL debug;)
 + (void)InitAdjustWithAdjustToken:(NSString * _Nonnull)adjustToken;
 + (void)InitAdjustWithAdjustToken:(NSString * _Nonnull)adjustToken noATT:(BOOL)noATT;
 + (void)GetAdjustIdWithCallback:(void (^ _Nonnull)(NSString * _Nonnull))callback;
-+ (void)SetAdjustGlobalPartnerParameterWithEmail:(NSString * _Nonnull)email;
 + (void)SetSdkPlatformMetadataWithSdkPlatform:(NSString * _Nonnull)sdkPlatform sdkPlatformVersion:(NSString * _Nonnull)sdkPlatformVersion;
 + (NSString * _Nonnull)GetRemoteConfigWithKey:(NSString * _Nonnull)key defaultValue:(NSString * _Nonnull)defaultValue SWIFT_WARN_UNUSED_RESULT;
 /// “true”/“false”, “1”/“0”, “yes”/“no” in any case; the default otherwise.
@@ -1191,7 +1190,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL debug;)
 + (void)InitAdjustWithAdjustToken:(NSString * _Nonnull)adjustToken;
 + (void)InitAdjustWithAdjustToken:(NSString * _Nonnull)adjustToken noATT:(BOOL)noATT;
 + (void)GetAdjustIdWithCallback:(void (^ _Nonnull)(NSString * _Nonnull))callback;
-+ (void)SetAdjustGlobalPartnerParameterWithEmail:(NSString * _Nonnull)email;
 + (void)SetSdkPlatformMetadataWithSdkPlatform:(NSString * _Nonnull)sdkPlatform sdkPlatformVersion:(NSString * _Nonnull)sdkPlatformVersion;
 + (NSString * _Nonnull)GetRemoteConfigWithKey:(NSString * _Nonnull)key defaultValue:(NSString * _Nonnull)defaultValue SWIFT_WARN_UNUSED_RESULT;
 /// “true”/“false”, “1”/“0”, “yes”/“no” in any case; the default otherwise.

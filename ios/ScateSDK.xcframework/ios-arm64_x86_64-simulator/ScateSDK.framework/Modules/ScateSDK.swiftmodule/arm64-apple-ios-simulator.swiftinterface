@@ -4,7 +4,6 @@
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
 import AVKit
 import AdSupport
-import CommonCrypto
 import Foundation
 @_exported import ScateSDK
 import Security
@@ -57,7 +56,6 @@ import _SwiftConcurrencyShims
   @objc public static func InitAdjust(adjustToken: Swift.String, noATT: Swift.Bool)
   @objc public static func GetAdjustId(callback: @escaping (Swift.String) -> Swift.Void)
   public static func SetAdid(adid: Swift.String)
-  @objc public static func SetAdjustGlobalPartnerParameter(email: Swift.String)
   @objc public static func SetSdkPlatformMetadata(sdkPlatform: Swift.String, sdkPlatformVersion: Swift.String)
   public static func GetSdkNativeVersion() -> Swift.String
   public static func GetSdkPlatformVersion() -> Swift.String

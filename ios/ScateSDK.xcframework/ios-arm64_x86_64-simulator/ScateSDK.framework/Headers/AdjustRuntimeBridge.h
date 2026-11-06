@@ -17,7 +17,6 @@ typedef NS_ENUM(NSInteger, ScateAdjustInitStatus) {
                         attConsentWaitingInterval:(NSUInteger)attConsentWaitingInterval;
 + (BOOL)requestAdidWithCompletion:(void (^)(NSString * _Nullable adid))completion;
 + (BOOL)requestAppTrackingAuthorizationWithCompletion:(void (^)(NSUInteger status))completion;
-+ (BOOL)addGlobalPartnerParameter:(NSString *)value forKey:(NSString *)key;
 + (BOOL)isGoogleOdmFrameworkLinked;
 
 @end
