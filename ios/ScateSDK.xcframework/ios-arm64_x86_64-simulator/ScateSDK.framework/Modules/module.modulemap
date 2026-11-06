@@ -1,0 +1,10 @@
+framework module ScateSDK {
+  umbrella header "ScateSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module ScateSDK.Swift {
+  header "ScateSDK-Swift.h"
+}

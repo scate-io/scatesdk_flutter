@@ -1,23 +1,16 @@
 PODS:
-  - Adjust (5.6.2):
-    - Adjust/Adjust (= 5.6.2)
   - Adjust/Adjust (5.6.2):
     - AdjustSignature (= 3.67.0)
+  - Adjust/AdjustGoogleOdm (5.6.2):
+    - Adjust/Adjust
   - AdjustSignature (3.67.0)
   - Flutter (1.0.0)
-  - integration_test (0.0.1):
-    - Flutter
-  - ScateSDK (7.0.10):
-    - Adjust (~> 5.6.1)
   - scatesdk_flutter (7.0.9):
-    - Adjust (~> 5.6.1)
+    - Adjust/AdjustGoogleOdm (~> 5.6.1)
     - Flutter
-    - ScateSDK (= 7.0.10)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - integration_test (from `.symlinks/plugins/integration_test/ios`)
-  - ScateSDK (from `https://raw.githubusercontent.com/scate-io/ScateSDK-ios/v7.0.10/ScateSDK.podspec`)
   - scatesdk_flutter (from `.symlinks/plugins/scatesdk_flutter/ios`)
 
 SPEC REPOS:
@@ -28,21 +21,15 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  integration_test:
-    :path: ".symlinks/plugins/integration_test/ios"
-  ScateSDK:
-    :podspec: https://raw.githubusercontent.com/scate-io/ScateSDK-ios/v7.0.10/ScateSDK.podspec
   scatesdk_flutter:
     :path: ".symlinks/plugins/scatesdk_flutter/ios"
 
 SPEC CHECKSUMS:
   Adjust: 62ea53a252534df416676e7ac2f1558d60e6e39e
   AdjustSignature: 9498705a4ac67b719e31828be4d74fbb8656950c
-  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
-  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
-  ScateSDK: a90ec490b55c0c96dabf2bebdfd7ecf811a774a4
-  scatesdk_flutter: 28e5312ff930f119c9fd2aed1278860a59d8e80b
+  Flutter: 71a624a5bc0c04062bf19101d501e466baf2fb47
+  scatesdk_flutter: 0b8aa61bc28d64e87c0c45c61f23f835e910c25b
 
-PODFILE CHECKSUM: 8ea7dfa7eb5e5c926c3995ac203fe0bf892d55cd
+PODFILE CHECKSUM: 9c46fd01abff66081b39f5fa5767b3f1d0b11d76
 
-COCOAPODS: 1.16.2
+COCOAPODS: 1.17.0
