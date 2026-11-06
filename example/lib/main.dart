@@ -479,12 +479,6 @@ class _MyAppState extends State<MyApp> {
                 'Remote config: $_remoteConfigValue\n',
                 textAlign: TextAlign.center,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  ScateSDK.SetAdjustGlobalPartnerParameter('dummy@example.com');
-                },
-                child: const Text('Send dummy email (SetAdjustGlobalPartnerParameter)'),
-              ),
             ],
           ),
         ),
