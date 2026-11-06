@@ -62,10 +62,6 @@ class ScateSDK {
     return ScatesdkFlutterPlatform.instance.SetAdid(adid);
   }
 
-  static Future<void> SetAdjustGlobalPartnerParameter(String email) {
-    return ScatesdkFlutterPlatform.instance.SetAdjustGlobalPartnerParameter(email);
-  }
-
   static Future<void> InitAdjust(
     String adjustToken, {
     bool noATT = false,

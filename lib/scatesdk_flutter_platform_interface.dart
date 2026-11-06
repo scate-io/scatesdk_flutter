@@ -48,10 +48,6 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.SetAdid(adid);
   }
 
-  Future<void> SetAdjustGlobalPartnerParameter(String email) async {
-    return _instance.SetAdjustGlobalPartnerParameter(email);
-  }
-
   Future<void> InitAdjust(
     String adjustToken, {
     bool noATT = false,

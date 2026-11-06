@@ -1,3 +1,16 @@
+## 7.0.25
+
+- Removed `SetAdjustGlobalPartnerParameter`. Breaking change: delete the call from your app.
+  - The SDK no longer hashes an email or sends it to Adjust, and the method name is gone from
+    the iOS binary. The privacy manifest no longer declares Email Address.
+  - The method also started Google on-device conversion measurement. Apps that want it can call
+    Firebase Analytics directly, e.g. Flutter
+    `FirebaseAnalytics.instance.initiateOnDeviceConversionMeasurement(emailAddress: email)`.
+  - iOS: the plugin ships `ScateSDK.xcframework` inside the package instead of depending on
+    the `ScateSDK` CocoaPods pod, because CocoaPods trunk stops taking new versions on
+    2 December 2026. Apps change nothing; run `pod install` as usual.
+  - Android SDK: no changes.
+
 ## 7.0.24
 
 - Updated native ScateSDK dependencies to 7.0.24 on both platforms:
