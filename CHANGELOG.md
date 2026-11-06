@@ -1,3 +1,16 @@
+## 7.0.24
+
+- Updated native ScateSDK dependencies to 7.0.24 on both platforms:
+  - iOS: `SetAdjustGlobalPartnerParameter` sets the `sha256_email` Adjust partner parameter only
+    when the user granted App Tracking Transparency. In every other state it removes a
+    `sha256_email` stored earlier, since Adjust keeps global partner parameters across launches.
+    Google on-device conversion measurement still gets the hash, which stays on the device. The
+    ATT status is read at the call, so call it on every launch or login.
+  - iOS: the SDK no longer reads or sends free disk space.
+  - iOS: `ScateSDK.framework` ships its own privacy manifest (`PrivacyInfo.xcprivacy`) with the
+    required-reason APIs it uses and the data it collects.
+  - Android: no changes.
+
 ## 7.0.23
 
 - Updated native ScateSDK dependencies to 7.0.23 on both platforms:
