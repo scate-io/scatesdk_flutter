@@ -323,14 +323,6 @@ class ScateSDK {
     ScatesdkFlutterPlatform.instance.ShowEventList();
   }
 
-  static void ShowPaidProductLoadingScreen() {
-    ScatesdkFlutterPlatform.instance.ShowPaidProductLoadingScreen();
-  }
-
-  static void ClosePaidProductLoadingScreen() {
-    ScatesdkFlutterPlatform.instance.ClosePaidProductLoadingScreen();
-  }
-
   static void SubscriptionSuccess() {
     ScatesdkFlutterPlatform.instance.SubscriptionSuccess();
   }

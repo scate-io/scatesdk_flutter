@@ -355,12 +355,6 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             ScateCoreSDK.OnboardingPaywallClosed()
             result(nil)
 
-        case "ShowPaidProductLoadingScreen":
-            ScateCoreSDK.ShowPaidProductLoadingScreen()
-            result(nil)  
-        case "ClosePaidProductLoadingScreen":
-            ScateCoreSDK.ClosePaidProductLoadingScreen()
-            result(nil)  
         case "ShowEventList":
             ScateCoreSDK.ShowEventList()
             result(nil) 

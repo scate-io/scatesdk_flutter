@@ -319,13 +319,3 @@ ScateSDK.OnboardingPaywallClosed();
 ScateSDK.ShowEventList();
 ```
 
-## Show Paid Product Loading Screen
-```dart
-ScateSDK.ShowPaidProductLoadingScreen();
-```
-
-## Close Paid Product Loading Screen
-```dart
-ScateSDK.ClosePaidProductLoadingScreen();
-```
-
