@@ -1,2 +1,2 @@
 /// Must stay in sync with [version] in `pubspec.yaml`.
-const String kScatesdkFlutterPackageVersion = '7.0.25';
+const String kScatesdkFlutterPackageVersion = '7.0.26';
