@@ -319,28 +319,6 @@ ScateSDK.OnboardingPaywallClosed();
 ScateSDK.ShowEventList();
 ```
 
-## Onboarding And Paywall Screen Functions and Events
-
-## Show Paywall Screen
-```dart
-ScateSDK.ShowPaywall("jsonString");
-```
-
-## Close Paywall Screen
-```dart
-ScateSDK.ClosePaywall();
-```
-
-## Show Onboarding Screen
-```dart
-ScateSDK.ShowOnboarding("jsonString");
-```
-
-## Close Onboarding Screen
-```dart
-ScateSDK.CloseOnboarding();
-```
-
 ## Show Paid Product Loading Screen
 ```dart
 ScateSDK.ShowPaidProductLoadingScreen();
@@ -351,12 +329,3 @@ ScateSDK.ShowPaidProductLoadingScreen();
 ScateSDK.ClosePaidProductLoadingScreen();
 ```
 
-## Paywall And Onboarding Screen Events 
-```dart
-  ScateSDK.AddListener(ScateEvents.ONBOARDING_SCREENS_FINISHED, (identifier) => {});
-  ScateSDK.AddListener(ScateEvents.PAYWALL_SCREEN_FINISHED,(identifier) => {});
-  ScateSDK.AddListener(ScateEvents.PAID_PRODUCT_CLICKED, (identifier) => {});
-  ScateSDK.AddListener(ScateEvents.PAYWALL_SCREEN_CLOSED, (success) => {});
-  ScateSDK.AddListener(ScateEvents.ONBOARDING_SCREEN_CLOSED, (success) => {});
-  ScateSDK.AddListener(ScateEvents.RESTORE_PURCHASE_CLICKED, (success) => {});
-```

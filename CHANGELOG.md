@@ -1,3 +1,14 @@
+## 7.0.26
+
+- Removed the SDK's built-in paywall and onboarding screens. Breaking change for apps that used them; no known app does.
+  - Removed `ShowPaywall`, `ClosePaywall`, `ShowOnboarding` and `CloseOnboarding`, and the
+    listener events that only those screens sent: `PAID_PRODUCT_CLICKED`, `ONBOARDING_SCREENS_FINISHED`, `PAYWALL_SCREEN_CLOSED`, `ONBOARDING_SCREEN_CLOSED`, `PAYWALL_SCREEN_FINISHED` and `RESTORE_PURCHASE_CLICKED`.
+  - The iOS binary no longer contains the screens, so binary scans stop reporting a
+    "configurable paywall" in the SDK. Paywall and onboarding analytics events
+    (`PaywallShown`, `OnboardingStart`, `OnboardingPaywallShown`, ...) and
+    `ShowPaidProductLoadingScreen` stay.
+  - Android SDK: no changes.
+
 ## 7.0.25
 
 - Removed `SetAdjustGlobalPartnerParameter`. Breaking change: delete the call from your app.

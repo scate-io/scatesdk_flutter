@@ -4,12 +4,6 @@ import 'dart:convert';
 
 enum ScateEvents {
   REMOTE_CONFIG_READY,
-  PAID_PRODUCT_CLICKED,
-  ONBOARDING_SCREENS_FINISHED,
-  PAYWALL_SCREEN_CLOSED,
-  ONBOARDING_SCREEN_CLOSED,
-  PAYWALL_SCREEN_FINISHED,
-  RESTORE_PURCHASE_CLICKED
 }
 
 extension ScateEventsExtension on ScateEvents {
@@ -17,18 +11,6 @@ extension ScateEventsExtension on ScateEvents {
     switch (this) {
       case ScateEvents.REMOTE_CONFIG_READY:
         return 'Scate_RemoteConfigsReady';
-      case ScateEvents.PAID_PRODUCT_CLICKED:
-        return 'Scate_PaidProductClicked';
-      case ScateEvents.ONBOARDING_SCREENS_FINISHED:
-        return 'Scate_OnboardingScreensFinished';
-      case ScateEvents.PAYWALL_SCREEN_CLOSED:
-        return 'Scate_PaywallScreenClosed';
-      case ScateEvents.ONBOARDING_SCREEN_CLOSED:
-        return 'Scate_OnboardingScreenClosed';
-      case ScateEvents.PAYWALL_SCREEN_FINISHED:
-        return 'Scate_PaywallScreenFinished';
-      case ScateEvents.RESTORE_PURCHASE_CLICKED:
-        return 'Scate_RestorePurchaseClicked';
     }
   }
 }
@@ -179,24 +161,6 @@ class ScateSDK {
           final remoteConfigFetched =
               parsedEvent['data']?['remoteConfigFetched'];
           listener(remoteConfigFetched);
-        } else if (name == 'Scate_PaidProductClicked') {
-          final productClicked = parsedEvent['data']?['identifier'];
-          listener(productClicked);
-        } else if (name == 'Scate_OnboardingScreensFinished') {
-          final onboardingFinished = parsedEvent['data']?['identifier'];
-          listener(onboardingFinished);
-        } else if (name == 'Scate_PaywallScreenClosed') {
-          final paywallScreenClosed = parsedEvent['data']?['success'];
-          listener(paywallScreenClosed);
-        } else if (name == 'Scate_OnboardingScreenClosed') {
-          final onboardingScreenClosed = parsedEvent['data']?['success'];
-          listener(onboardingScreenClosed);
-        } else if (name == 'Scate_PaywallScreenFinished') {
-          final onboardingFinished = parsedEvent['data']?['identifier'];
-          listener(onboardingFinished);
-        } else if (name == 'Scate_RestorePurchaseClicked') {
-          final restorePurchaseClicked = parsedEvent['data']?['success'];
-          listener(restorePurchaseClicked);
         } else {
           print("Unknown event: $name");
         }
@@ -353,22 +317,6 @@ class ScateSDK {
 
   static void OnboardingPaywallClosed() {
     ScatesdkFlutterPlatform.instance.OnboardingPaywallClosed();
-  }
-
-  static void ShowPaywall(String jsonString) {
-    ScatesdkFlutterPlatform.instance.ShowPaywall(jsonString);
-  }
-
-  static void ShowOnboarding(String jsonString) {
-    ScatesdkFlutterPlatform.instance.ShowOnboarding(jsonString);
-  }
-
-  static void ClosePaywall() {
-    ScatesdkFlutterPlatform.instance.ClosePaywall();
-  }
-
-  static void CloseOnboarding() {
-    ScatesdkFlutterPlatform.instance.CloseOnboarding();
   }
 
   static void ShowEventList() {

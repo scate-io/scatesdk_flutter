@@ -258,22 +258,6 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     return _instance.OnboardingPaywallClosed();
   }
 
-  Future<void> ShowPaywall(String jsonString) async {
-    return _instance.ShowPaywall(jsonString);
-  }
-
-  Future<void> ShowOnboarding(String jsonString) async {
-    return _instance.ShowOnboarding(jsonString);
-  }
-
-  Future<void> ClosePaywall() async {
-    return _instance.ClosePaywall();
-  }
-
-  Future<void> CloseOnboarding() async {
-    return _instance.CloseOnboarding();
-  }
-
   Future<void> ShowEventList() async {
     return _instance.ShowEventList();
   }
