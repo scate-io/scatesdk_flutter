@@ -355,34 +355,6 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             ScateCoreSDK.OnboardingPaywallClosed()
             result(nil)
 
-        case "ShowPaywall":
-            guard let args = call.arguments as? [String: Any],
-                  let jsonString = args["jsonString"] as? String else {
-                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing paywall", details: nil))
-                return
-            }
-            ScateCoreSDK.ShowPaywall(jsonString: jsonString)
-            result(nil) 
-        case "ShowOnboarding":
-            guard let args = call.arguments as? [String: Any],
-                  let jsonString = args["jsonString"] as? String else {
-                result(FlutterError(code: "INVALID_ARGUMENT", message: "Missing paywall", details: nil))
-                return
-            }
-            ScateCoreSDK.ShowOnboarding(jsonString: jsonString)
-            result(nil)
-        case "ClosePaywall":
-            ScateCoreSDK.ClosePaywall()
-            result(nil)   
-        case "CloseOnboarding":
-            ScateCoreSDK.CloseOnboarding()
-            result(nil)  
-        case "ShowPaidProductLoadingScreen":
-            ScateCoreSDK.ShowPaidProductLoadingScreen()
-            result(nil)  
-        case "ClosePaidProductLoadingScreen":
-            ScateCoreSDK.ClosePaidProductLoadingScreen()
-            result(nil)  
         case "ShowEventList":
             ScateCoreSDK.ShowEventList()
             result(nil) 
