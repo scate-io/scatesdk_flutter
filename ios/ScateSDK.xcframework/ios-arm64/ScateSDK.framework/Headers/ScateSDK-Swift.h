@@ -346,10 +346,8 @@ extern "C" {
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import CoreFoundation;
 @import Foundation;
 @import ObjectiveC;
-@import UIKit;
 #endif
 
 #endif // defined(__OBJC__)
@@ -373,151 +371,12 @@ extern "C" {
 #if defined(__OBJC__)
 
 @class NSString;
-@class NSArray;
-@class NSCoder;
-@class NSBundle;
-SWIFT_CLASS("_TtC8ScateSDK35OnboardingBasicScreenViewController")
-@interface OnboardingBasicScreenViewController : UIViewController
-- (nonnull instancetype)initWithMediaURL:(NSString * _Nonnull)mediaURL heading:(NSString * _Nonnull)heading details:(NSArray * _Nonnull)details buttonTitle:(NSString * _Nonnull)buttonTitle buttonAction:(void (^ _Nonnull)(void))buttonAction exitButtonDelay:(NSInteger)exitButtonDelay showExitButton:(BOOL)showExitButton showArrow:(BOOL)showArrow title:(NSString * _Nonnull)title backgroundColor:(NSString * _Nonnull)backgroundColor actionButtonColor1:(NSString * _Nonnull)actionButtonColor1 actionButtonColor2:(NSString * _Nonnull)actionButtonColor2 detailsColor:(NSString * _Nonnull)detailsColor stepIndex:(NSInteger)stepIndex stepCount:(NSInteger)stepCount titleColor:(NSString * _Nonnull)titleColor headingColor:(NSString * _Nonnull)headingColor buttonTitleColor:(NSString * _Nonnull)buttonTitleColor exitButtonColor:(NSString * _Nonnull)exitButtonColor OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (void)viewDidLoad;
-- (void)viewDidLayoutSubviews;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
-@end
-
-@class PaidProduct;
-@class UICollectionView;
-@class NSIndexPath;
-@class UICollectionViewCell;
-@class UICollectionViewLayout;
-SWIFT_CLASS("_TtC8ScateSDK37OnboardingPaywallScreenViewController")
-@interface OnboardingPaywallScreenViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
-- (nonnull instancetype)initWithMediaURL:(NSString * _Nonnull)mediaURL heading:(NSString * _Nonnull)heading details:(NSArray * _Nonnull)details buttonTitle:(NSString * _Nonnull)buttonTitle paidProducts:(NSArray<PaidProduct *> * _Nonnull)paidProducts buttonAction:(void (^ _Nonnull)(NSString * _Nonnull))buttonAction selectedPaidProduct:(NSString * _Nonnull)selectedPaidProduct exitButtonDelay:(NSInteger)exitButtonDelay showExitButton:(BOOL)showExitButton showArrow:(BOOL)showArrow termsOfUseURL:(NSString * _Nonnull)termsOfUseURL privacyPolicyURL:(NSString * _Nonnull)privacyPolicyURL title:(NSString * _Nonnull)title footNote:(NSString * _Nonnull)footNote backgroundColor:(NSString * _Nonnull)backgroundColor actionButtonColor1:(NSString * _Nonnull)actionButtonColor1 actionButtonColor2:(NSString * _Nonnull)actionButtonColor2 detailsColor:(NSString * _Nonnull)detailsColor stepIndex:(NSInteger)stepIndex stepCount:(NSInteger)stepCount titleColor:(NSString * _Nonnull)titleColor headingColor:(NSString * _Nonnull)headingColor buttonTitleColor:(NSString * _Nonnull)buttonTitleColor footNoteColor:(NSString * _Nonnull)footNoteColor termsOfUseColor:(NSString * _Nonnull)termsOfUseColor privacyPolicyColor:(NSString * _Nonnull)privacyPolicyColor restoreButtonColor:(NSString * _Nonnull)restoreButtonColor exitButtonColor:(NSString * _Nonnull)exitButtonColor OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (void)viewDidLoad;
-- (void)viewDidLayoutSubviews;
-- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
-@end
-
-SWIFT_CLASS("_TtC8ScateSDK25OnboardingStepsParameters")
-@interface OnboardingStepsParameters : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull type;
-@property (nonatomic, readonly, copy) NSString * _Nonnull media;
-@property (nonatomic, readonly, copy) NSString * _Nonnull title;
-@property (nonatomic, readonly, copy) NSString * _Nonnull titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull heading;
-@property (nonatomic, readonly, copy) NSString * _Nonnull headingColor;
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull details;
-@property (nonatomic, readonly, copy) NSString * _Nonnull detailsColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull buttonTitle;
-@property (nonatomic, readonly, copy) NSString * _Nonnull buttonTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull termsOfUse;
-@property (nonatomic, copy) NSString * _Nonnull termsOfUseColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull footNote;
-@property (nonatomic, readonly, copy) NSString * _Nonnull footNoteColor;
-@property (nonatomic, readonly, copy) NSArray<PaidProduct *> * _Nonnull paidProducts;
-@property (nonatomic, readonly, copy) NSString * _Nonnull selectedPaidProduct;
-@property (nonatomic, readonly) NSInteger exitButtonDelay;
-@property (nonatomic, readonly, copy) NSString * _Nonnull privacyPolicy;
-@property (nonatomic, readonly, copy) NSString * _Nonnull backgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull actionButtonColor1;
-@property (nonatomic, readonly, copy) NSString * _Nonnull actionButtonColor2;
-@property (nonatomic, readonly, copy) NSString * _Nonnull restoreButtonColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull privacyPolicyColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull exitButtonColor;
-- (nonnull instancetype)initWithType:(NSString * _Nonnull)type media:(NSString * _Nonnull)media heading:(NSString * _Nonnull)heading details:(NSArray<NSString *> * _Nonnull)details buttonTitle:(NSString * _Nonnull)buttonTitle paidProducts:(NSArray<PaidProduct *> * _Nonnull)paidProducts selectedPaidProduct:(NSString * _Nonnull)selectedPaidProduct exitButtonDelay:(NSInteger)exitButtonDelay termsOfUse:(NSString * _Nonnull)termsOfUse privacyPolicy:(NSString * _Nonnull)privacyPolicy title:(NSString * _Nonnull)title footNote:(NSString * _Nonnull)footNote backgroundColor:(NSString * _Nonnull)backgroundColor actionButtonColor1:(NSString * _Nonnull)actionButtonColor1 actionButtonColor2:(NSString * _Nonnull)actionButtonColor2 detailsColor:(NSString * _Nonnull)detailsColor titleColor:(NSString * _Nonnull)titleColor headingColor:(NSString * _Nonnull)headingColor buttonTitleColor:(NSString * _Nonnull)buttonTitleColor termsOfUseColor:(NSString * _Nonnull)termsOfUseColor footNoteColor:(NSString * _Nonnull)footNoteColor restoreButtonColor:(NSString * _Nonnull)restoreButtonColor privacyPolicyColor:(NSString * _Nonnull)privacyPolicyColor exitButtonColor:(NSString * _Nonnull)exitButtonColor OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-SWIFT_CLASS("_TtC8ScateSDK11PaidProduct")
-@interface PaidProduct : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull title;
-@property (nonatomic, readonly, copy) NSString * _Nonnull price;
-@property (nonatomic, readonly, copy) NSString * _Nonnull identifier;
-@property (nonatomic, readonly, copy) NSString * _Nonnull selectedBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull unselectedBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull selectedBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull unselectedBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tagText;
-@property (nonatomic, readonly, copy) NSString * _Nullable badgeText;
-@property (nonatomic, readonly, copy) NSString * _Nullable badgeSelectedColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable badgeUnselectedColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tagSelectedColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tagUnselectedColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionText;
-@property (nonatomic, readonly, copy) NSString * _Nullable badgeTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull priceColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tagTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionTextColor;
-- (nonnull instancetype)initWithTitle:(NSString * _Nonnull)title price:(NSString * _Nonnull)price identifier:(NSString * _Nonnull)identifier selectedBackgroundColor:(NSString * _Nonnull)selectedBackgroundColor unselectedBackgroundColor:(NSString * _Nonnull)unselectedBackgroundColor selectedBorderColor:(NSString * _Nonnull)selectedBorderColor unselectedBorderColor:(NSString * _Nonnull)unselectedBorderColor tagText:(NSString * _Nullable)tagText badgeText:(NSString * _Nullable)badgeText badgeSelectedColor:(NSString * _Nullable)badgeSelectedColor badgeUnselectedColor:(NSString * _Nullable)badgeUnselectedColor tagSelectedColor:(NSString * _Nullable)tagSelectedColor tagUnselectedColor:(NSString * _Nullable)tagUnselectedColor descriptionText:(NSString * _Nullable)descriptionText badgeTextColor:(NSString * _Nullable)badgeTextColor titleColor:(NSString * _Nonnull)titleColor priceColor:(NSString * _Nonnull)priceColor tagTextColor:(NSString * _Nullable)tagTextColor descriptionTextColor:(NSString * _Nullable)descriptionTextColor OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-SWIFT_CLASS("_TtC8ScateSDK17PaywallParameters")
-@interface PaywallParameters : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull media;
-@property (nonatomic, readonly, copy) NSString * _Nonnull heading;
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull details;
-@property (nonatomic, readonly, copy) NSArray<PaidProduct *> * _Nonnull paidProducts;
-@property (nonatomic, readonly) NSInteger exitButtonDelay;
-@property (nonatomic, readonly, copy) NSString * _Nonnull selectedPaidProduct;
-@property (nonatomic, readonly, copy) NSString * _Nonnull buttonTitle;
-@property (nonatomic, readonly, copy) NSString * _Nonnull termsOfUse;
-@property (nonatomic, readonly, copy) NSString * _Nonnull privacyPolicy;
-@property (nonatomic, readonly, copy) NSString * _Nonnull footNote;
-@property (nonatomic, readonly, copy) NSString * _Nonnull backgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull actionButtonColor1;
-@property (nonatomic, readonly, copy) NSString * _Nonnull actionButtonColor2;
-@property (nonatomic, readonly, copy) NSString * _Nonnull headingColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull buttonTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull termsOfUseColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull footNoteColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull restoreButtonColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull privacyPolicyColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull detailsColor;
-@property (nonatomic, readonly, copy) NSString * _Nonnull exitButtonColor;
-- (nonnull instancetype)initWithMedia:(NSString * _Nonnull)media heading:(NSString * _Nonnull)heading details:(NSArray<NSString *> * _Nonnull)details paidProducts:(NSArray<PaidProduct *> * _Nonnull)paidProducts selectedPaidProduct:(NSString * _Nonnull)selectedPaidProduct buttonTitle:(NSString * _Nonnull)buttonTitle termsOfUse:(NSString * _Nonnull)termsOfUse privacyPolicy:(NSString * _Nonnull)privacyPolicy footNote:(NSString * _Nonnull)footNote backgroundColor:(NSString * _Nonnull)backgroundColor actionButtonColor1:(NSString * _Nonnull)actionButtonColor1 actionButtonColor2:(NSString * _Nonnull)actionButtonColor2 headingColor:(NSString * _Nonnull)headingColor buttonTitleColor:(NSString * _Nonnull)buttonTitleColor termsOfUseColor:(NSString * _Nonnull)termsOfUseColor footNoteColor:(NSString * _Nonnull)footNoteColor restoreButtonColor:(NSString * _Nonnull)restoreButtonColor privacyPolicyColor:(NSString * _Nonnull)privacyPolicyColor exitButtonDelay:(NSInteger)exitButtonDelay detailsColor:(NSString * _Nonnull)detailsColor exitButtonColor:(NSString * _Nonnull)exitButtonColor OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-SWIFT_CLASS("_TtC8ScateSDK27PaywallScreenViewController")
-@interface PaywallScreenViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
-- (nonnull instancetype)initWithMediaURL:(NSString * _Nonnull)mediaURL heading:(NSString * _Nonnull)heading details:(NSArray<NSString *> * _Nonnull)details paidProducts:(NSArray<PaidProduct *> * _Nonnull)paidProducts exitButtonDelay:(NSInteger)exitButtonDelay selectedPaidProduct:(NSString * _Nonnull)selectedPaidProduct buttonTitle:(NSString * _Nonnull)buttonTitle termsOfUseURL:(NSString * _Nonnull)termsOfUseURL privacyPolicyURL:(NSString * _Nonnull)privacyPolicyURL footNote:(NSString * _Nonnull)footNote backgroundColor:(NSString * _Nonnull)backgroundColor actionButtonColor1:(NSString * _Nonnull)actionButtonColor1 actionButtonColor2:(NSString * _Nonnull)actionButtonColor2 headingColor:(NSString * _Nonnull)headingColor buttonTitleColor:(NSString * _Nonnull)buttonTitleColor termsOfUseColor:(NSString * _Nonnull)termsOfUseColor footNoteColor:(NSString * _Nonnull)footNoteColor restoreButtonColor:(NSString * _Nonnull)restoreButtonColor privacyPolicyColor:(NSString * _Nonnull)privacyPolicyColor detailsColor:(NSString * _Nonnull)detailsColor exitButtonColor:(NSString * _Nonnull)exitButtonColor OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (void)viewDidLoad;
-- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
-@end
-
 @class ScateSDKConfiguration;
 @class NSDictionary;
 SWIFT_CLASS("_TtC8ScateSDK12ScateCoreSDK")
 @interface ScateCoreSDK : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull RemoteConfigsReady;)
 + (NSNotificationName _Nonnull)RemoteConfigsReady SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull PaidProductClicked;)
-+ (NSNotificationName _Nonnull)PaidProductClicked SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull OnboardingScreensFinished;)
-+ (NSNotificationName _Nonnull)OnboardingScreensFinished SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull PaywallScreenClosed;)
-+ (NSNotificationName _Nonnull)PaywallScreenClosed SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull OnboardingScreenClosed;)
-+ (NSNotificationName _Nonnull)OnboardingScreenClosed SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull PaywallScreenFinished;)
-+ (NSNotificationName _Nonnull)PaywallScreenFinished SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull RestorePurchaseClicked;)
-+ (NSNotificationName _Nonnull)RestorePurchaseClicked SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull EventListUpdated;)
 + (NSNotificationName _Nonnull)EventListUpdated SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -527,16 +386,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL debug;)
 + (void)setDebug:(BOOL)value;
 + (void)InitWithAppID:(NSString * _Nonnull)appID;
 + (void)InitWithAppID:(NSString * _Nonnull)appID configuration:(ScateSDKConfiguration * _Nonnull)configuration;
-/// A floating “S” badge that reopens the debug menu after it was closed; stays for the
-/// rest of the launch.
-+ (void)ShowDebugBadge;
-+ (void)HideDebugBadge;
 /// Forgets this device’s Scate identity and everything cached with it: the Keychain user
 /// record, the remote configs, the A/B membership and the audience. The next launch is a
-/// new user’s first open. Meant for the debug menu; the app must be relaunched afterwards.
+/// new user’s first open. Meant for test builds; the app must be relaunched afterwards.
 + (void)ResetIdentity;
-+ (void)ShowDebugMenu;
-+ (void)CloseDebugMenu;
 + (void)EventWithName:(NSString * _Nonnull)name customValue:(NSString * _Nullable)customValue;
 + (void)EventWithName:(NSString * _Nonnull)name parameters:(NSDictionary * _Nullable)parameters;
 + (void)EventWithName:(NSString * _Nonnull)name customValue:(NSString * _Nullable)customValue parameters:(NSDictionary * _Nullable)parameters;
@@ -609,15 +462,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL debug;)
 + (void)SubsFail;
 + (void)SubsCancel;
 + (void)AllServicesInitialized;
-+ (void)ShowOnboardingWithJsonString:(NSString * _Nonnull)jsonString;
-+ (void)ShowPaywallWithJsonString:(NSString * _Nonnull)jsonString;
-+ (void)CloseOnboarding;
-+ (void)ClosePaywall;
 + (void)ShowEventList;
 + (void)CloseEventList;
 + (void)ClearEventList;
-+ (void)ShowPaidProductLoadingScreen;
-+ (void)ClosePaidProductLoadingScreen;
 @end
 
 SWIFT_CLASS("_TtC8ScateSDK21ScateSDKConfiguration")
