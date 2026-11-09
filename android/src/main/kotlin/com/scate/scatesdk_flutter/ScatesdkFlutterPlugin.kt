@@ -47,8 +47,9 @@ class ScatesdkFlutterPlugin: FlutterPlugin, MethodCallHandler, StreamHandler {
                 val debug: Boolean = call.argument("debug") ?: false
                 val sdkPlatform: String = call.argument("sdkPlatform") ?: "flutter"
                 val sdkPlatformVersion: String = call.argument("sdkPlatformVersion") ?: ""
+                val abOptOut: Boolean = call.argument("abOptOut") ?: false
                 ScateCoreSDK.debug = debug
-                ScateCoreSDK.init(appID, context, sdkPlatform, sdkPlatformVersion)
+                ScateCoreSDK.init(appID, context, sdkPlatform, sdkPlatformVersion, abOptOut)
                 result.success(null)
             }
             "GetSdkMetadata" -> {

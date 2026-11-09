@@ -45,6 +45,7 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
     bool firebaseUserIdSyncEnabled = true,
     bool debug = false,
     String sdkPlatformVersion = kScatesdkFlutterPackageVersion,
+    bool abOptOut = false,
   }) async {
     try {
       await methodChannel.invokeMethod('Init', {
@@ -53,6 +54,7 @@ class MethodChannelScatesdkFlutter extends ScatesdkFlutterPlatform {
         'debug': debug,
         'sdkPlatform': 'flutter',
         'sdkPlatformVersion': sdkPlatformVersion,
+        'abOptOut': abOptOut,
       });
       await _initializeEventChannel();
     } on PlatformException catch (e) {
