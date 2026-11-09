@@ -27,6 +27,9 @@ public class ScatesdkFlutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
             if let firebaseUserIdSyncEnabled = args["firebaseUserIdSyncEnabled"] as? Bool {
                 configuration.firebaseUserIdSyncEnabled = firebaseUserIdSyncEnabled
             }
+            if let abOptOut = args["abOptOut"] as? Bool {
+                configuration.abOptOut = abOptOut
+            }
             let sdkPlatform = (args["sdkPlatform"] as? String)?
                 .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             configuration.sdkPlatform = sdkPlatform.isEmpty ? "flutter" : sdkPlatform

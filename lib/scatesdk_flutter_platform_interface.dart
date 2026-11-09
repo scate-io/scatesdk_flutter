@@ -31,12 +31,14 @@ abstract class ScatesdkFlutterPlatform extends PlatformInterface {
     bool firebaseUserIdSyncEnabled = true,
     bool debug = false,
     String sdkPlatformVersion = kScatesdkFlutterPackageVersion,
+    bool abOptOut = false,
   }) async {
     return _instance.Init(
       appID,
       firebaseUserIdSyncEnabled: firebaseUserIdSyncEnabled,
       debug: debug,
       sdkPlatformVersion: sdkPlatformVersion,
+      abOptOut: abOptOut,
     );
   }
 

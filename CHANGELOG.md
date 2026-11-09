@@ -1,3 +1,8 @@
+## 7.0.27
+
+- `Init` takes `abOptOut` (default `false`). With `true`, a user on the first open joins no A/B test and still gets the app's remote config values; a user already in a test keeps their variant. Use it when a deep link opened the app.
+  - iOS SDK: `ScateSDKConfiguration.abOptOut`. Android SDK: new `init` overloads that take `abOptOut`.
+
 ## 7.0.26
 
 - Removed the SDK's built-in paywall and onboarding screens. Breaking change for apps that used them; no known app does.

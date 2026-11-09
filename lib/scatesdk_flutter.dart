@@ -25,12 +25,14 @@ class ScateSDK {
     bool firebaseUserIdSyncEnabled = true,
     bool debug = false,
     String? sdkPlatformVersion,
+    bool abOptOut = false,
   }) async {
     await ScatesdkFlutterPlatform.instance.Init(
       appID,
       firebaseUserIdSyncEnabled: firebaseUserIdSyncEnabled,
       debug: debug,
       sdkPlatformVersion: sdkPlatformVersion ?? kScatesdkFlutterPackageVersion,
+      abOptOut: abOptOut,
     );
 
     // To trigger Scate_AppDidBecomeActive manually
