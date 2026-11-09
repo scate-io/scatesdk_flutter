@@ -476,6 +476,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @property (nonatomic, copy) NSString * _Nonnull sdkPlatformVersion;
 /// Client SDK platform: <code>swift</code> (native), <code>kotlin</code> (native Android), <code>flutter</code>, or <code>react</code>.
 @property (nonatomic, copy) NSString * _Nonnull sdkPlatform;
+/// Keeps this user out of A/B tests, e.g. when a deep link opened the app. A user joins a
+/// test only on the first open, so the flag matters on the Init of that open.
+@property (nonatomic) BOOL abOptOut;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFirebaseUserIdSyncEnabled:(BOOL)firebaseUserIdSyncEnabled OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFirebaseUserIdSyncEnabled:(BOOL)firebaseUserIdSyncEnabled sdkPlatformVersion:(NSString * _Nonnull)sdkPlatformVersion sdkPlatform:(NSString * _Nonnull)sdkPlatform OBJC_DESIGNATED_INITIALIZER;

@@ -551,6 +551,106 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "abOptOut",
+            "printedName": "abOptOut",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@ScateSDK@objc(cs)ScateSDKConfiguration(py)abOptOut",
+            "mangledName": "$s8ScateSDK0A16SDKConfigurationC8abOptOutSbvp",
+            "moduleName": "ScateSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@ScateSDK@objc(cs)ScateSDKConfiguration(im)abOptOut",
+                "mangledName": "$s8ScateSDK0A16SDKConfigurationC8abOptOutSbvg",
+                "moduleName": "ScateSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@ScateSDK@objc(cs)ScateSDKConfiguration(im)setAbOptOut:",
+                "mangledName": "$s8ScateSDK0A16SDKConfigurationC8abOptOutSbvs",
+                "moduleName": "ScateSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8ScateSDK0A16SDKConfigurationC8abOptOutSbvM",
+                "mangledName": "$s8ScateSDK0A16SDKConfigurationC8abOptOutSbvM",
+                "moduleName": "ScateSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -4867,35 +4967,35 @@
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/RemoteConfigHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1513,
+      "offset": 1536,
       "length": 25,
       "value": "\"https:\/\/api.scate.tech\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/RemoteConfigHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1584,
+      "offset": 1607,
       "length": 11,
       "value": "\"v1\/config\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/RemoteConfigHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 1628,
+      "offset": 1651,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/RemoteConfigHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1663,
+      "offset": 1686,
       "length": 20,
       "value": "\"ScateRemoteConfigs\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/RemoteConfigHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 1847,
+      "offset": 1870,
       "length": 1,
       "value": "0"
     },
@@ -4908,344 +5008,351 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
+      "kind": "BooleanLiteral",
+      "offset": 799,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 1955,
+      "offset": 2229,
       "length": 14,
       "value": "\"FIRAnalytics\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 2088,
+      "offset": 2362,
       "length": 8,
       "value": "\"FIRApp\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 7672,
+      "offset": 7946,
       "length": 33,
       "value": "\"ScateReportedFirebaseSdkVersion\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 9704,
+      "offset": 9978,
       "length": 24,
       "value": "\"cstr6suwn9.skadnetwork\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 9767,
+      "offset": 10041,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 12191,
+      "offset": 12465,
       "length": 41,
       "value": "\"SKIncludeConsumableInAppPurchaseHistory\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 12269,
+      "offset": 12543,
       "length": 283,
       "value": "\"ScateSDK: add this to the app's Info.plist, or purchases of consumables are not detected:\n<key>SKIncludeConsumableInAppPurchaseHistory<\/key>\n<true\/>\nThis stops Xcode, simulator and TestFlight builds only; App Store builds keep running.\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 13701,
+      "offset": 13975,
       "length": 3,
       "value": "120"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 13819,
+      "offset": 14093,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 14007,
+      "offset": 14281,
       "length": 32,
       "value": "\"NSUserTrackingUsageDescription\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 14078,
+      "offset": 14352,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 18020,
+      "offset": 18294,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "Array",
-      "offset": 18371,
+      "offset": 18645,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "Dictionary",
-      "offset": 18487,
+      "offset": 18761,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 18526,
+      "offset": 18800,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 18678,
+      "offset": 18952,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 18725,
+      "offset": 18999,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 18888,
+      "offset": 19162,
       "length": 43,
       "value": "\"io.scate.scatesdk.firebase-analytics-sync\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 19055,
+      "offset": 19329,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19099,
+      "offset": 19373,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19157,
+      "offset": 19431,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19212,
+      "offset": 19486,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 19271,
+      "offset": 19545,
       "length": 29,
       "value": "\"io.scate.scatesdk.adjust-id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "Array",
-      "offset": 19358,
+      "offset": 19632,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19460,
+      "offset": 19734,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19503,
+      "offset": 19777,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19539,
+      "offset": 19813,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19579,
+      "offset": 19853,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 19657,
+      "offset": 19931,
       "length": 26,
       "value": "\"Scate_RemoteConfigsReady\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 19750,
+      "offset": 20024,
       "length": 24,
       "value": "\"Scate_EventListUpdated\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 20088,
+      "offset": 20362,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 20149,
+      "offset": 20423,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 20291,
+      "offset": 20565,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 23591,
+      "offset": 23865,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 41150,
+      "offset": 41458,
       "length": 29,
       "value": "\"scate_remote_configs_loaded\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 41227,
+      "offset": 41535,
       "length": 21,
       "value": "\"scate_ab_assignment\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 62231,
+      "offset": 62539,
       "length": 46,
       "value": "\"https:\/\/api.scate.tech\/v1\/check_transactions\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 63676,
+      "offset": 63984,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 66655,
+      "offset": 66963,
       "length": 21,
       "value": "\"firebase not linked\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 66706,
+      "offset": 67014,
       "length": 25,
       "value": "\"firebase method changed\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 66798,
+      "offset": 67106,
       "length": 109,
       "value": "\"logTransactionWithProductID:transactionID:originalTransactionID:webOrderLineItemID:productType:isFreeTrial:\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 66922,
+      "offset": 67230,
       "length": 99,
       "value": "\"isIntroductoryOffer:paymentQuantity:purchaseDate:originalPurchaseDate:subscriptionExpirationDate:\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 67036,
+      "offset": 67344,
       "length": 42,
       "value": "\"cancellationDate:environment:isVerified:\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 67138,
+      "offset": 67446,
       "length": 53,
       "value": "\"verifyTransactionWithDeviceVerification:UUID:nonce:\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "Array",
-      "offset": 67298,
+      "offset": 67606,
       "length": 80,
       "value": "[\"@\", \":\", \"@\", \"@\", \"@\", \"@\", \"q\", \"B\", \"B\", \"q\", \"@\", \"@\", \"@\", \"@\", \"@\", \"B\"]"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "Array",
-      "offset": 67416,
+      "offset": 67724,
       "length": 25,
       "value": "[\"@\", \":\", \"@\", \"@\", \"@\"]"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 69735,
+      "offset": 70043,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "StringLiteral",
-      "offset": 72413,
+      "offset": 72721,
       "length": 37,
       "value": "\"scate_payment_queue_transaction_ids\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/ScateCoreSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 72482,
+      "offset": 72790,
       "length": 3,
       "value": "100"
     },
@@ -5274,6 +5381,13 @@
       "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/EventData.swift",
       "kind": "BooleanLiteral",
       "offset": 874,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ScateCoreSDK-ios\/ScateCoreSDK-ios\/ScateSDK\/EventData.swift",
+      "kind": "BooleanLiteral",
+      "offset": 905,
       "length": 5,
       "value": "false"
     },

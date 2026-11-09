@@ -23,6 +23,7 @@ import _SwiftConcurrencyShims
   @objc final public var firebaseUserIdSyncEnabled: Swift.Bool
   @objc final public var sdkPlatformVersion: Swift.String
   @objc final public var sdkPlatform: Swift.String
+  @objc final public var abOptOut: Swift.Bool
   @objc override dynamic public init()
   @objc public init(firebaseUserIdSyncEnabled: Swift.Bool)
   @objc public init(firebaseUserIdSyncEnabled: Swift.Bool, sdkPlatformVersion: Swift.String, sdkPlatform: Swift.String)
